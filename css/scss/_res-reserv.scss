@@ -1,0 +1,896 @@
+/* 
+=========================================================
+=========================================================
+========================MOBILE=====================
+=========================================================
+=========================================================
+*/
+
+//상단 배너
+@media (max-width:480px){
+    .banner{
+        width:100%;
+        margin: 0 auto;
+        position: relative;
+        color: #FFFFFF;
+        text-align: center;
+        p{
+            img {
+            width: 100%; height: 100%;
+            }
+        }
+        .banner_text{
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 1.12rem;
+                span:nth-of-type(){}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+            }
+            b{
+                font-size: 0.5rem;
+                font-weight: normal;
+            }
+        }
+    }
+    //input 스타일
+    .input_icon{
+        padding: 10px;
+        font-size: 20px;
+        width: 30%;
+    }
+    .name, .tel, .email, .num{
+        height: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #B6B6B6;
+    }
+    .name::before{
+        content: url(../img/reserv/reserv02_user_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 9px;
+        font-size: 0px;
+    }
+    .tel::before{
+        content: url(../img/reserv/reserv02_call_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 4px;
+        font-size: 0px;
+    }
+    .email::before{
+        content: url(../img/reserv/reserv02_mail_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 5px;
+        font-size: 0px;
+    }
+    .num::before{
+        content: url(../img/reserv/reserv03_num_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 5px;
+        font-size: 0px;
+    }
+    
+    //팝업창 top 스타일
+    .user_top, .calender_top, .reserv03_check_top{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        padding: 5px 28px ;
+        background-color: #999F54;
+        border-radius: 16px 16px 0 0 ;
+        text-align: center;
+        h3{
+            color: #FFF8EB;
+            font-weight: normal;
+        }
+    }
+    //팝업창 닫기 버튼
+    .close{
+        margin-left: 54px;
+        width: 12px; height: 12px;
+        background : url(../img/reserv/reserv_X_01.svg) 0 0 / cover no-repeat;
+    }
+    
+    //예약하기 바
+    .reserve_bar{
+        width: 90%;
+        margin: 50px auto;
+        ul{
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            li{
+                flex-shrink: 0;
+            }
+            li > a{
+                color: #999F54;
+                display: inline-block;
+            }
+            li::after{
+                content: url(../img/reserv/reserv_arrow_02.svg);
+                padding: 0 0 0 1.6em;
+                display: inline-block;
+            }
+            li:last-of-type::after{
+                content:'';
+            }
+            li.active a{
+                color: #566418;
+                font-weight: bold;
+            }
+            li.active a::after{
+                content: '';
+                border-bottom: 1px solid #566418;
+                display: block;
+            }
+            li.active::after{
+                content: url(../img/reserv/reserv_arrow_01.svg);
+                padding: 0 0 0 1.6em;
+                display: inline-block;
+            }
+            li:last-of-type.active::after{
+                content: '';
+                padding: 0 0 0 1.6em;
+                display: inline-block;
+            }
+        }
+    }
+    
+    //예약 현황
+    #calendar{
+        width: 1400px;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+    
+    //예약하기 바
+    .reserve_popupbar{
+        display: flex;
+        .reserve_popupbar_flex{
+            height: 118px;
+            .left{
+                display: flex;
+                align-items: center;
+                background-color: #fff8eb86;
+                height: 100px;
+                div{
+                    h3{ 
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                    p{
+                        font-size: 1.25rem;
+                        font-weight: bold;
+                    }
+                    border-right: 1px solid black;
+                    padding: 0 53px;
+                }
+                .adult, .children{
+                    text-align: center;
+                }
+                .children{
+                    border: none;
+                }
+            }
+            .right{
+                height: 100px;
+                a{
+                    display: block;
+                    font-size: 1.5rem;
+                    padding: 32px 91px;
+                    color: white;
+                    background-color: #999F54;
+                }
+            }
+        }
+        //인원선택
+        .user{
+            // position: absolute;
+            width: 250px;
+            h3::before{
+                content: url(../img/reserv/reserv_uesr_01.svg);
+                display: inline-block;
+                font-size: 0px;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            .plus_btn{
+                width: 26px; height: 26px;
+                background : url(../img/reserv/reserv_icoPlusBtn.svg) 0 0 / cover no-repeat;
+            }   
+            .minus_btn{
+                width: 26px; height: 26px;
+                background : url(../img/reserv/reserv_icoMinusBtn.svg) 0 0 / cover no-repeat;
+            }
+            .user_1{
+                border:1px solid #999F54;
+                border-radius: 0 0 16px 16px;
+                background-color: #fff;
+                padding: 20px 33px;
+                .user_btn{
+                    text-align: center;
+                    a{
+                        background-color: #ECEBC2;
+                        border-radius: 20px;
+                        padding: 13px 27px;
+                    }
+                }
+            }
+            .user_adult, .user_children{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                p:nth-of-type(2){
+                    font-size: 0.7rem;
+                }
+            }
+            .button_num{
+                width: 90px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        //날짜선택
+        .calender{
+            // position: absolute;
+            width: 750px;
+            h3::before{
+                content: url(../img/reserv/reserv_date_01.svg);
+                display: inline-block;
+                font-size: 0px;
+                vertical-align: middle;
+                margin-right: 300px;
+            }
+        }
+    }
+    // ----------------------------------------------------------
+    //reserv02. html
+    .reserv02{
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        line-height: 24px;
+        .dot{
+            word-break: keep-all;
+            line-height: 1.8;
+        }
+        .dot::before{
+            content: ' ⁕ ';
+            margin-right: 5px;
+        }
+        h3{
+            margin-bottom: 30px;
+            font-size: 1.25rem;
+        }
+        .checkbox, .radio{
+            width: 16px; height: 16px;
+            margin: 2px 10px 0 0;
+        }
+        .left{
+            padding: 150px 60px;
+            .content_box{
+                margin-bottom: 70px;
+                .qna::after{content: ' | ';}
+                .qna, .tel_01, .email_01{display: inline-block;}
+                .tel_01::before{
+                    content: url(../img/reserv/reserv02_call_02.svg);
+                    display: inline-block;
+                }
+                .email_01::before{
+                    content: url(../img/reserv/reserv02_mail_02.svg);
+                    display: inline-block;
+                }
+                a{
+                    margin-left: 13px;
+                    font-size: 0.8rem;
+                    color: #6f6f6f;
+                    border-bottom: 1px solid #6f6f6f;
+                }
+            }
+        }
+        
+        //오른쪽 결제창
+        .right{
+            position: sticky;
+            background-color: #FFF8EB;
+            padding: 150px 60px;
+            .cash{
+                .room{
+                    b, p{margin-bottom: 10px;}
+                .reserv_children>p{
+                    margin-bottom: 26px;
+                }
+                }
+                margin: 0  0 100px;
+                .total{
+                    border-top: 2px dashed #333;
+                    b{
+                        padding-top: 36px;
+                        font-size: 1.25rem;
+                    }
+                    p{
+                        padding-top: 32px;
+                        font-size: 1.8rem;
+                    }
+                }
+                .check_in_out, .reserv_adult, .reserv_children, .total{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .reserv_payment{
+                .payment_methods01{
+                    margin-bottom: 50px;
+                }
+                .payment_methods02{
+                    margin-bottom: 50px;
+                    p{margin: 30px 0 ;}
+                    display: none;
+                }
+                .payment_methods02.active{
+                    display: block;
+                }
+                .payment_methods02  > b::before{
+                    content: url(../img/reserv/reserv02_bank_01.svg);
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+            a{
+                padding: 20px 0;
+                border-radius: 10px;
+                text-align: center;
+                display: block;
+                background-color: #999F54;
+                color: #FFF8EB;
+            }
+        }
+    }
+    // ----------------------------------------------------------
+    //예약 확인 및 취소
+    
+    .reserv03{
+        width: 1400px; 
+        margin: 0 auto;
+        .reserv03_inputbox{
+            margin: 0 auto;
+            display: flex;
+            width: 554px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-align: center;
+            font-size: 1.25rem;
+            color: #FFF8EB;
+            display: inline-block;
+            background-color: #999F54;
+            padding: 30px 50px;
+            border-radius: 20px;
+        }
+    
+        //조회하기 팝업창
+        .reserv03_check{
+            // position: absolute;
+            margin: 0 auto;
+            width: 500px;
+            h3::before{
+                content: url(../img/reserv/reserv03_popup_01.svg);
+                display: inline-block;
+                font-size: 0px;
+                vertical-align: middle;
+                margin-right: 132px;
+            }
+            .room_num{
+                margin-bottom: 50px;
+                h2{
+                    font-size: 1.25rem;
+                    margin-bottom: 40px;
+                }
+                ul{
+                    border-bottom: 1px solid #555;
+                    li{
+                        margin-bottom: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        p{
+                            font-size: 1rem;
+                            font-weight: normal;
+                        }
+                    }
+                    li:last-of-type{
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+            .room_check{
+                border:1px solid #999F54;
+                border-radius: 0 0 16px 16px;
+                background-color: #fff;
+                padding: 55px
+            }
+            .reserv03_btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                a{
+                    border-radius: 15px;
+                    padding: 12px 20px;
+                    background-color: #999F54;
+                    color: #FFF8EB;
+                }
+                a:nth-of-type(1){
+                    background-color: #ECEBC2;
+                    color: #566418;
+                }
+            }
+        }
+    }
+}
+/* 
+=========================================================
+=========================================================
+========================IPAD=====================
+=========================================================
+=========================================================
+*/
+
+@media (min-width:768px) and (max-width:1024px) {
+    .banner{
+        width:100%;
+        margin: 0 auto 150px;
+        position: relative;
+        color: #FFFFFF;
+        text-align: center;
+        p{
+            img {
+            width: 100%; height: 100%;
+            }
+        }
+        .banner_text{
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 2.8rem;
+                span:nth-of-type(){}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+                span{}
+            }
+            b{
+                font-weight: normal;
+            }
+        }
+    }
+    //input 스타일
+    .input_icon{
+        padding: 10px;
+        font-size: 20px;
+        width: 30%;
+    }
+    .name, .tel, .email, .num{
+        height: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #B6B6B6;
+    }
+    .name::before{
+        content: url(../img/reserv/reserv02_user_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 9px;
+        font-size: 0px;
+    }
+    .tel::before{
+        content: url(../img/reserv/reserv02_call_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 4px;
+        font-size: 0px;
+    }
+    .email::before{
+        content: url(../img/reserv/reserv02_mail_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 5px;
+        font-size: 0px;
+    }
+    .num::before{
+        content: url(../img/reserv/reserv03_num_01.svg);
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 5px;
+        font-size: 0px;
+    }
+    
+    //팝업창 top 스타일
+    .user_top, .calender_top, .reserv03_check_top{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        padding: 5px 28px ;
+        background-color: #999F54;
+        border-radius: 16px 16px 0 0 ;
+        text-align: center;
+        h3{
+            color: #FFF8EB;
+            font-weight: normal;
+        }
+    }
+    //팝업창 닫기 버튼
+    .close{
+        margin-left: 54px;
+        width: 12px; height: 12px;
+        background : url(../img/reserv/reserv_X_01.svg) 0 0 / cover no-repeat;
+    }
+    
+    //예약하기 바
+    .reserve_bar{
+        width: 1400px;
+        margin: 0 auto 150px;
+        ul{
+            margin: 0 270px 0 300px;
+            display: flex;
+            justify-content: space-evenly;
+            li{
+                flex-shrink: 0;
+            }
+            li > a{
+                color: #999F54;
+                display: inline-block;
+            }
+            li::after{
+                content: url(../img/reserv/reserv_arrow_02.svg);
+                padding: 0 134px;
+                display: inline-block;
+            }
+            li:last-of-type::after{
+                content:'';
+            }
+            li.active a{
+                color: #566418;
+                font-weight: bold;
+            }
+            li.active a::after{
+                content: '';
+                border-bottom: 1px solid #566418;
+                display: block;
+            }
+            li.active::after{
+                content: url(../img/reserv/reserv_arrow_01.svg);
+                padding: 0 134px;
+                display: inline-block;
+            }
+            li:last-of-type.active::after{
+                content: '';
+                padding: 0 134px;
+                display: inline-block;
+            }
+        }
+    }
+    
+    //예약 현황
+    #calendar{
+        width: 1400px;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+    
+    //예약하기 바
+    .reserve_popupbar{
+        position: relative;
+        .reserve_popupbar_flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 118px;
+            .left{
+                display: flex;
+                align-items: center;
+                background-color: #fff8eb86;
+                height: 100px;
+                div{
+                    h3{ 
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                    p{
+                        font-size: 1.25rem;
+                        font-weight: bold;
+                    }
+                    border-right: 1px solid black;
+                    padding: 0 53px;
+                }
+                .adult, .children{
+                    text-align: center;
+                }
+                .children{
+                    border: none;
+                }
+            }
+            .right{
+                height: 100px;
+                a{
+                    display: block;
+                    font-size: 1.5rem;
+                    padding: 32px 91px;
+                    color: white;
+                    background-color: #999F54;
+                }
+            }
+        }
+        //인원선택
+        .user{
+            // position: absolute;
+            width: 250px;
+            h3::before{
+                content: url(../img/reserv/reserv_uesr_01.svg);
+                display: inline-block;
+                font-size: 0px;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            .plus_btn{
+                width: 26px; height: 26px;
+                background : url(../img/reserv/reserv_icoPlusBtn.svg) 0 0 / cover no-repeat;
+            }   
+            .minus_btn{
+                width: 26px; height: 26px;
+                background : url(../img/reserv/reserv_icoMinusBtn.svg) 0 0 / cover no-repeat;
+            }
+            .user_1{
+                border:1px solid #999F54;
+                border-radius: 0 0 16px 16px;
+                background-color: #fff;
+                padding: 20px 33px;
+                .user_btn{
+                    text-align: center;
+                    a{
+                        background-color: #ECEBC2;
+                        border-radius: 20px;
+                        padding: 13px 27px;
+                    }
+                }
+            }
+            .user_adult, .user_children{
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                p:nth-of-type(2){
+                    font-size: 0.7rem;
+                }
+            }
+            .button_num{
+                width: 90px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        //날짜선택
+        .calender{
+            // position: absolute;
+            width: 750px;
+            h3::before{
+                content: url(../img/reserv/reserv_date_01.svg);
+                display: inline-block;
+                font-size: 0px;
+                vertical-align: middle;
+                margin-right: 300px;
+            }
+        }
+    }
+    // ----------------------------------------------------------
+    //reserv02. html
+    .reserv02{
+        width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        line-height: 24px;
+        .dot{
+            word-break: keep-all;
+            line-height: 1.8;
+        }
+        .dot::before{
+            content: ' ⁕ ';
+            margin-right: 5px;
+        }
+        h3{
+            margin-bottom: 30px;
+            font-size: 1.25rem;
+        }
+        .checkbox, .radio{
+            width: 16px; height: 16px;
+            margin: 2px 10px 0 0;
+        }
+        .left{
+            padding: 150px 60px;
+            .content_box{
+                margin-bottom: 70px;
+                .qna::after{content: ' | ';}
+                .qna, .tel_01, .email_01{display: inline-block;}
+                .tel_01::before{
+                    content: url(../img/reserv/reserv02_call_02.svg);
+                    display: inline-block;
+                }
+                .email_01::before{
+                    content: url(../img/reserv/reserv02_mail_02.svg);
+                    display: inline-block;
+                }
+                a{
+                    margin-left: 13px;
+                    font-size: 0.8rem;
+                    color: #6f6f6f;
+                    border-bottom: 1px solid #6f6f6f;
+                }
+            }
+        }
+        
+        //오른쪽 결제창
+        .right{
+            position: sticky;
+            background-color: #FFF8EB;
+            padding: 150px 60px;
+            .cash{
+                .room{
+                    b, p{margin-bottom: 10px;}
+                .reserv_children>p{
+                    margin-bottom: 26px;
+                }
+                }
+                margin: 0  0 100px;
+                .total{
+                    border-top: 2px dashed #333;
+                    b{
+                        padding-top: 36px;
+                        font-size: 1.25rem;
+                    }
+                    p{
+                        padding-top: 32px;
+                        font-size: 1.8rem;
+                    }
+                }
+                .check_in_out, .reserv_adult, .reserv_children, .total{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .reserv_payment{
+                .payment_methods01{
+                    margin-bottom: 50px;
+                }
+                .payment_methods02{
+                    margin-bottom: 50px;
+                    p{margin: 30px 0 ;}
+                    display: none;
+                }
+                .payment_methods02.active{
+                    display: block;
+                }
+                .payment_methods02  > b::before{
+                    content: url(../img/reserv/reserv02_bank_01.svg);
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+            a{
+                padding: 20px 0;
+                border-radius: 10px;
+                text-align: center;
+                display: block;
+                background-color: #999F54;
+                color: #FFF8EB;
+            }
+        }
+    }
+    // ----------------------------------------------------------
+    //예약 확인 및 취소
+    
+    .reserv03{
+        width: 1400px; 
+        margin: 0 auto;
+        .reserv03_inputbox{
+            margin: 0 auto;
+            display: flex;
+            width: 554px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-align: center;
+            font-size: 1.25rem;
+            color: #FFF8EB;
+            display: inline-block;
+            background-color: #999F54;
+            padding: 30px 50px;
+            border-radius: 20px;
+        }
+    
+        //조회하기 팝업창
+        .reserv03_check{
+            // position: absolute;
+            margin: 0 auto;
+            width: 500px;
+            h3::before{
+                content: url(../img/reserv/reserv03_popup_01.svg);
+                display: inline-block;
+                font-size: 0px;
+                vertical-align: middle;
+                margin-right: 132px;
+            }
+            .room_num{
+                margin-bottom: 50px;
+                h2{
+                    font-size: 1.25rem;
+                    margin-bottom: 40px;
+                }
+                ul{
+                    border-bottom: 1px solid #555;
+                    li{
+                        margin-bottom: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        p{
+                            font-size: 1rem;
+                            font-weight: normal;
+                        }
+                    }
+                    li:last-of-type{
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+            .room_check{
+                border:1px solid #999F54;
+                border-radius: 0 0 16px 16px;
+                background-color: #fff;
+                padding: 55px
+            }
+            .reserv03_btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                a{
+                    border-radius: 15px;
+                    padding: 12px 20px;
+                    background-color: #999F54;
+                    color: #FFF8EB;
+                }
+                a:nth-of-type(1){
+                    background-color: #ECEBC2;
+                    color: #566418;
+                }
+            }
+        }
+    }
+    // end
+}
