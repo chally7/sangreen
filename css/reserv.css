@@ -268,18 +268,6 @@ header.active {
   width: 20px;
 }
 
-@font-face {
-  font-family: "HakgyoansimDunggeunmisoTTF-R";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "HakgyoansimDunggeunmisoTTF-B";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
 .banner {
   width: 100%;
   margin: 0 auto 150px;
@@ -292,6 +280,7 @@ header.active {
   height: 100%;
 }
 .banner .banner_text {
+  text-align: center;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -299,11 +288,28 @@ header.active {
 }
 .banner .banner_text h2 {
   display: flex;
+  justify-content: center;
   font-family: "HakgyoansimDunggeunmisoTTF-B";
   font-size: 2.8rem;
 }
+.banner .banner_text h2 span {
+  opacity: 0;
+  animation: blink 0.5s 1 alternate forwards;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .banner .banner_text b {
   font-weight: normal;
+}
+.banner .banner_text b span {
+  opacity: 0;
+  animation: blink 2s 1 alternate forwards;
 }
 
 .input_icon {

@@ -44,3 +44,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // 캘린더 렌더링
     calendar.render();
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const textElement = document.querySelectorAll(".banner_text span");
+//     const text = textElement.innerText;
+//     textElement.innerHTML = ""; 
+//     let random = Math.ceil(Math.random()*4);
+
+//     text.forEach((char, i) => {
+//         const span = document.createElement("span");
+//         span.innerText = char;
+//         span.style.animationDelay = `${i}*${random}s`;
+//         textElement.appendChild(span);
+//     });
+// });
+
+    const textElement = document.querySelectorAll(".banner_text h2 span");
+
+    textElement.forEach((char, i) => {
+        let random = Math.random()*0.15;
+        char.style.animationDelay = i * random +'s';
+    });
