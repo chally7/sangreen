@@ -1,0 +1,228 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+body {
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: "NanumSquare";
+}
+
+h1, h2, h3, h4, h5, p, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input, textarea {
+  border: 0;
+}
+
+::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.special {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1400px;
+  margin: 200px auto;
+}
+.special ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.special ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.special ul li.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.special ul li .image-container {
+  width: 660px;
+  height: 440px;
+  position: relative;
+}
+.special ul li .image-container .swiper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.special ul li .image-container .swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.special ul li .image-container .bullets {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #999f54;
+  letter-spacing: 5px;
+}
+.special ul li .info {
+  width: 600px;
+  padding: 20px;
+  text-align: left;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.special ul li .info .title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #999f54;
+  margin-bottom: 50px;
+}
+.special ul li .info .txt {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+.special ul li.show .info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .tour {
+    width: 90%;
+    margin: 200px auto;
+  }
+  .tour ul li {
+    display: block; /* 세로 정렬을 위해 flex 대신 block 사용 */
+    margin: 150px 0;
+    list-style-type: none;
+  }
+  .swiper-pagination-bullet {
+    background-color: #999f54;
+  }
+  .info {
+    opacity: 1; /* 항상 보이도록 설정 */
+    transform: translateY(30px); /* 아래에서 시작 */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  .title {
+    margin-bottom: 50px;
+    font-size: 24px;
+    color: #999f54;
+    display: block; /* 블록 요소로 변경하여 세로 정렬 */
+    opacity: 1;
+    visibility: visible;
+  }
+  .txt {
+    font-size: 20px;
+    color: black;
+    display: block; /* 텍스트를 블록 요소로 설정하여 세로 배치 */
+    margin-top: 20px; /* 이미지와 텍스트 사이에 간격을 주기 */
+    opacity: 1;
+    visibility: visible;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #999F54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #566418;
+  }
+  button.active {
+    background-color: #566418;
+  }
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .map {
+    text-align: center;
+  }
+  .map #imageBox {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+  }
+  .map #imageBox img {
+    width: 100%;
+    display: block; /* 이미지를 블록으로 설정하여 세로로 배치 */
+    opacity: 1;
+    visibility: visible;
+  }
+  .map #imageBox img:first-child {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  .map button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #999F54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .map button:hover {
+    background-color: #566418;
+  }
+  .map button.active {
+    background-color: #566418;
+  }
+}

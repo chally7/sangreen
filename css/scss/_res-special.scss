@@ -1,0 +1,59 @@
+@media (max-width: 480px) {
+    .tour {
+      width: 90%;
+      margin: 80px auto;
+  
+      ul {
+        li {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 2px 0;
+          list-style-type: none;
+  
+          .swiper {
+            img {
+              max-width: 100%;
+              height: auto;
+              display: block !important;
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+  
+          div {
+            width: 100%;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  
+    .swiper-pagination-bullet {
+      background-color: #999f54;
+    }
+  
+    .info {
+      opacity: 1;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+  
+    .title {
+      margin-bottom: 50px;
+      font-size: clamp(18px, 4vw, 24px);
+      color: #999f54;
+      display: block;
+      text-align: center;
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .txt {
+      font-size: clamp(16px, 4vw, 20px); /* 화면 크기에 따라 자동 조정 */
+      color: black;
+  
