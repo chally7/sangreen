@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+           <style>
+           body {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               padding: 20px;
+           }
+           #imageBox {
+               width: 500px;
+               height: 300px;
+               border: 2px solid #ddd;
+               margin-bottom: 20px;
+           }
+           .btn-group {
+               display: flex;
+               gap: 10px;
+           }
+           button {
+               padding: 10px 20px;
+               font-size: 16px;
+               background-color: #999F54;
+               color: white;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+           }
+           button:hover,button.active {
+               background-color: #566418;
+           }
+           img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+           }
+       </style>
+    </head>
+    <body>
+       <div id="imageBox">
+           <img src="img/tour/tour_map_01.png" class="main-image">
+           <img src="img/tour/tour_map_02.png" class="main-image">
+           <img src="img/tour/tour_map_03.png" class="main-image">
+           <img src="img/tour/tour_map_04.png" class="main-image">
+       </div>
+       
+       <div class="btn-group">
+           <button onclick="changeImage(0)">운악산</button>
+           <button class="active" onclick="changeImage(1)">아침고요 수목원</button>
+           <button onclick="changeImage(2)">남이섬</button>
+           <button onclick="changeImage(3)">청평호반</button>
+       </div>
+    
+       <script>
+           // 모든 이미지 숨기기
+           const images = document.querySelectorAll('.main-image');
+           const button = document.querySelectorAll('.btn-group button');
+           images.forEach((img, index) => {
+               if(index !== 0) { // 첫번째 이미지만 보이게
+                   img.style.display = 'none';
+               }
+           });
+    
+           // 이미지 변경 함수
+           function changeImage(num) {
+               images.forEach((img, index) => {
+                   if(index === num) {
+                       img.style.display = 'block';
+                       button[num].classList.add('active');
+                       
+                    } else {
+                        img.style.display = 'none';
+                        button[index].classList.remove('active');
+                   }
+               });
+           }
+       </script>
+    </body>
+    </html>
