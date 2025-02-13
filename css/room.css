@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
 @font-face {
   font-family: "HakgyoansimDunggeunmisoTTF-R";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2") format("woff2");
@@ -43,6 +45,12 @@ ol, ul, li {
   padding: 0;
 }
 
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 img {
   border: 0;
   vertical-align: middle;
@@ -50,7 +58,7 @@ img {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #333;
 }
 
 input, textarea {
@@ -251,6 +259,12 @@ ol, ul, li {
   padding: 0;
 }
 
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 img {
   border: 0;
   vertical-align: middle;
@@ -258,7 +272,7 @@ img {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #333;
 }
 
 input, textarea {
