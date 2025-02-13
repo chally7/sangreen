@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap');
+
 *{box-sizing: border-box; padding:0; margin: 0; } 
-html{font-size: 18px; color: #555; line-height: 1.5;} 
+html{
+    font-size: 18px; 
+    color: #555; 
+    line-height: 1.5;
+} 
 body{ 
     user-select: none; 
     -webkit-user-select: none;
@@ -9,9 +15,11 @@ body{
 }
 h1,h2,h3,h4,h5,p,figure{margin: 0; padding: 0;}
 ol,ul,li{list-style: none; margin: 0; padding:0;}
+button{border: 0; margin: 0; padding: 0;}
 img{border: 0; vertical-align: middle;}
+button{border: 0; margin: 0; padding: 0;}
 a{text-decoration: none; color: inherit;}
-input, textarea{border:0;} 
+input, textarea{border:none; outline: none;} 
 ::before,::after{margin:0; padding: 0; box-sizing: border-box;}
 *{
     box-sizing: border-box;

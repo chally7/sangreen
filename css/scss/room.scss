@@ -1,0 +1,151 @@
+@font-face {
+font-family: 'HakgyoansimDunggeunmisoTTF-R';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2') format('woff2');
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: 'HakgyoansimDunggeunmisoTTF-B';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+}
+@import './_common';
+
+.top{
+    position: relative;
+    img{
+        width: 100%;
+    }
+    div{
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        color: #FFFFFF;
+        b{
+            font-family: 'Hakgyoansim Dunggeunmiso TTF';
+            font-size: 45px;
+        }
+        p{
+            font-family: 'Noto Sans KR Regular';
+            font-size: 16px;
+            text-align: center;
+            margin-left: -97px;
+        }
+    }
+}
+.room{
+    width:1400px; 
+    margin:0 auto;
+    overflow: hidden;
+    padding-top:175px;
+
+    article{
+        margin-bottom:150px;
+        h5{
+            color: #999F54;
+            font-size: 50px;
+            font-family: 'HakgyoansimDunggeunmisoTTF-R';
+            width: 970px;
+            margin:0 auto;
+            padding-bottom:30px;
+        b{font-size: 100px;}
+        }
+    }
+
+}
+.swiper{
+    position: relative;
+    transform: scale(1.4);
+    &-slide{
+        img{width:100%;}
+    }
+    a{
+        position: absolute;
+        right: 0; bottom: 0;
+        transform: scale(0.8);
+
+    }
+    &-pagination-bullet{
+        background-color: #999F54;
+    }
+    &-pagination{
+        position:static ;
+        // 불릿모양이 스크린 이상한 위치에 들어가 있어서 씀
+        // position: absolute; 없애지고 들어감
+    }
+}
+.room-2{
+    width: 970px;
+    display: flex;
+    justify-content: space-between;
+    margin: 80px auto;
+    li{
+        color: #333333;
+        font-family: 'NanumSquare Regular';
+        font-size: 16px;
+    }
+    p{
+        color: #566418;
+        font-family: 'NanumSquare';
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.room-indi{
+    position: fixed;
+    right: 5%; top: 40%;
+    z-index: 3;
+    li{
+        font-family: 'NanumSquare';
+        font-size: 20px;
+        color: #999F54;
+        &.active{
+            color: #566418;
+            font-weight: 900;
+            text-decoration: underline;
+        }
+        &:hover{
+            color: #566418;
+            font-weight:900;
+            text-decoration: underline;
+            transform: translateX(20%);
+            transition: .5s;
+        }
+    }
+}
+.res{
+    position: fixed;
+    width:1400px;
+    left:50%; bottom:0;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: right;
+    a{
+        width: 260px; height: 100px;
+        display: inline-block;
+        font-family: 'NanumSquare';
+        font-size: 24px;
+        background-color: #F3EAD6;
+        text-decoration: none;
+        color: black;
+        padding: 41px 86px;
+        font-weight: bold;
+    }
+}
+@import './res-room';
+    
+    // ul{
+    //     display: flex;
+    //     text-align: center;
+    //     align-items: center;
+    //     padding: 10px 10px;
+    //     border: 1px solid #F3EAD6;
+    //     width: 918px;
+    //     display: none;
+    // }
+    
