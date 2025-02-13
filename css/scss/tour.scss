@@ -2,6 +2,30 @@
 
 // ✅ 텍스트 애니메이션 관련 SCSS 수정
 *{word-break: keep-all;}
+
+.top{
+    position: relative;
+    img{
+        width: 100%;
+    }
+    div{
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        color: #FFFFFF;
+        b{
+            font-family: 'Hakgyoansim Dunggeunmiso TTF';
+            font-size: 45px;
+        }
+        p{
+            font-family: 'Noto Sans KR Regular';
+            font-size: 16px;
+            text-align: center;
+            margin-left: -97px;
+        }
+    }
+}
+
 .tour {
     width: 1400px;
     margin: 200px auto;

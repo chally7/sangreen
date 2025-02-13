@@ -1,5 +1,29 @@
 @import "_common";
 
+
+.top{
+    position: relative;
+    img{
+        width: 100%;
+    }
+    div{
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        color: #FFFFFF;
+        b{
+            font-family: 'Hakgyoansim Dunggeunmiso TTF';
+            font-size: 45px;
+        }
+        p{
+            font-family: 'Noto Sans KR Regular';
+            font-size: 16px;
+            text-align: center;
+            margin-left: -97px;
+        }
+    }
+}
+
 .special {
     display: flex;
     flex-direction: column;
