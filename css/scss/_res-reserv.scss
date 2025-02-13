@@ -8,9 +8,10 @@
 
 //상단 배너
 @media (max-width:480px){
+    //상단 배너
     .banner{
-        width:100%;
-        margin: 0 auto;
+        width: 100%;
+        margin: 0 auto 80px;
         position: relative;
         color: #FFFFFF;
         text-align: center;
@@ -26,7 +27,7 @@
             h2{
                 display: flex;
                 font-family: 'HakgyoansimDunggeunmisoTTF-B';
-                font-size: 1.12rem;
+                font-size: 1.125rem;
                 span:nth-of-type(){}
                 span{}
                 span{}
@@ -84,7 +85,7 @@
         margin-right: 5px;
         font-size: 0px;
     }
-    
+
     //팝업창 top 스타일
     .user_top, .calender_top, .reserv03_check_top{
         display: flex;
@@ -106,63 +107,66 @@
         width: 12px; height: 12px;
         background : url(../img/reserv/reserv_X_01.svg) 0 0 / cover no-repeat;
     }
-    
+
     //예약하기 바
     .reserve_bar{
         width: 90%;
-        margin: 50px auto;
+        margin: 0 auto 50px;
         ul{
-            margin: 0;
             display: flex;
             justify-content: space-around;
             li{
+                position: relative;
                 flex-shrink: 0;
-            }
-            li > a{
-                color: #999F54;
-                display: inline-block;
+                a{
+                    display: inline;
+                    text-align: center;
+                }
+                p{
+                    font-size: 0.9rem;
+                    display: inline-block;
+                    color: #999F54;
+                }
             }
             li::after{
                 content: url(../img/reserv/reserv_arrow_02.svg);
-                padding: 0 0 0 1.6em;
                 display: inline-block;
+                position: absolute;
+                right:-42%; top: 0;
             }
             li:last-of-type::after{
                 content:'';
             }
-            li.active a{
+            li.active p{
                 color: #566418;
                 font-weight: bold;
-            }
-            li.active a::after{
-                content: '';
                 border-bottom: 1px solid #566418;
-                display: block;
             }
             li.active::after{
                 content: url(../img/reserv/reserv_arrow_01.svg);
-                padding: 0 0 0 1.6em;
                 display: inline-block;
             }
             li:last-of-type.active::after{
                 content: '';
-                padding: 0 0 0 1.6em;
                 display: inline-block;
             }
         }
     }
-    
+
     //예약 현황
     #calendar{
-        width: 1400px;
+        width: 90%;
         margin: 0 auto;
         text-transform: uppercase;
     }
-    
+
     //예약하기 바
     .reserve_popupbar{
-        display: flex;
+        position: relative;
         .reserve_popupbar_flex{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 118px;
             .left{
                 display: flex;
@@ -262,9 +266,9 @@
     // ----------------------------------------------------------
     //reserv02. html
     .reserv02{
-        width: 90%;
+        width: 1400px;
         margin: 0 auto;
-        display: block;
+        display: flex;
         line-height: 24px;
         .dot{
             word-break: keep-all;
@@ -364,7 +368,7 @@
     }
     // ----------------------------------------------------------
     //예약 확인 및 취소
-    
+
     .reserv03{
         width: 1400px; 
         margin: 0 auto;
@@ -385,7 +389,7 @@
             padding: 30px 50px;
             border-radius: 20px;
         }
-    
+
         //조회하기 팝업창
         .reserv03_check{
             // position: absolute;
@@ -445,6 +449,7 @@
         }
     }
 }
+
 /* 
 =========================================================
 =========================================================
@@ -454,8 +459,9 @@
 */
 
 @media (min-width:768px) and (max-width:1024px) {
+    //상단 배너
     .banner{
-        width:100%;
+        width: 100%;
         margin: 0 auto 150px;
         position: relative;
         color: #FFFFFF;
@@ -529,7 +535,7 @@
         margin-right: 5px;
         font-size: 0px;
     }
-    
+
     //팝업창 top 스타일
     .user_top, .calender_top, .reserv03_check_top{
         display: flex;
@@ -551,59 +557,64 @@
         width: 12px; height: 12px;
         background : url(../img/reserv/reserv_X_01.svg) 0 0 / cover no-repeat;
     }
-    
+
     //예약하기 바
     .reserve_bar{
         width: 1400px;
         margin: 0 auto 150px;
         ul{
-            margin: 0 270px 0 300px;
+            // margin: 0 270px 0 300px;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
             li{
+                position: relative;
                 flex-shrink: 0;
-            }
-            li > a{
-                color: #999F54;
-                display: inline-block;
+                a{
+                    display: inline-block;
+                    width: 7.125rem;
+                    text-align: center;
+                }
+                p{
+                    display: inline-block;
+                    color: #999F54;
+                }
             }
             li::after{
                 content: url(../img/reserv/reserv_arrow_02.svg);
-                padding: 0 134px;
+                // margin-right: 134px;
                 display: inline-block;
+                position: absolute;
+                right:-150%; top: 0;
+                
             }
             li:last-of-type::after{
                 content:'';
             }
-            li.active a{
+            li.active p{
                 color: #566418;
                 font-weight: bold;
-            }
-            li.active a::after{
-                content: '';
                 border-bottom: 1px solid #566418;
-                display: block;
             }
             li.active::after{
                 content: url(../img/reserv/reserv_arrow_01.svg);
-                padding: 0 134px;
+                // margin-right: 134px;
                 display: inline-block;
             }
             li:last-of-type.active::after{
                 content: '';
-                padding: 0 134px;
+                // margin-right: 134px;
                 display: inline-block;
             }
         }
     }
-    
+
     //예약 현황
     #calendar{
         width: 1400px;
         margin: 0 auto;
         text-transform: uppercase;
     }
-    
+
     //예약하기 바
     .reserve_popupbar{
         position: relative;
@@ -812,7 +823,7 @@
     }
     // ----------------------------------------------------------
     //예약 확인 및 취소
-    
+
     .reserv03{
         width: 1400px; 
         margin: 0 auto;
@@ -833,7 +844,7 @@
             padding: 30px 50px;
             border-radius: 20px;
         }
-    
+
         //조회하기 팝업창
         .reserv03_check{
             // position: absolute;
@@ -892,5 +903,4 @@
             }
         }
     }
-    // end
 }

@@ -116,45 +116,42 @@
     width: 1400px;
     margin: 0 auto 150px;
     ul{
-        // margin: 0 270px 0 300px;
         display: flex;
-        justify-content: space-between;
-        position: relative;
+        justify-content: space-around;
         li{
+            position: relative;
             flex-shrink: 0;
+            a{
+                display: inline-block;
+                width: 7.125rem;
+                text-align: center;
+            }
+            p{
+                display: inline-block;
+                color: #999F54;
+            }
         }
-        li > a{
-            color: #999F54;
-            display: inline-block;
-        }
-        
         li::after{
             content: url(../img/reserv/reserv_arrow_02.svg);
-            // margin-right: 134px;
             display: inline-block;
             position: absolute;
+            right:-150%; top: 0;
+            
         }
         li:last-of-type::after{
             content:'';
         }
-        li.active a{
+        li.active p{
             color: #566418;
             font-weight: bold;
-        }
-        li.active a::after{
-            content: '';
             border-bottom: 1px solid #566418;
-            display: block;
         }
         li.active::after{
             content: url(../img/reserv/reserv_arrow_01.svg);
-            // margin-right: 134px;
             display: inline-block;
         }
-        
         li:last-of-type.active::after{
             content: '';
-            // margin-right: 134px;
             display: inline-block;
         }
     }

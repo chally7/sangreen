@@ -173,32 +173,35 @@ input, textarea {
 }
 .reserve_bar ul {
   display: flex;
-  justify-content: space-between;
-  position: relative;
+  justify-content: space-around;
 }
 .reserve_bar ul li {
+  position: relative;
   flex-shrink: 0;
 }
-.reserve_bar ul li > a {
-  color: #999F54;
+.reserve_bar ul li a {
   display: inline-block;
+  width: 7.125rem;
+  text-align: center;
+}
+.reserve_bar ul li p {
+  display: inline-block;
+  color: #999F54;
 }
 .reserve_bar ul li::after {
   content: url(../img/reserv/reserv_arrow_02.svg);
   display: inline-block;
   position: absolute;
+  right: -150%;
+  top: 0;
 }
 .reserve_bar ul li:last-of-type::after {
   content: "";
 }
-.reserve_bar ul li.active a {
+.reserve_bar ul li.active p {
   color: #566418;
   font-weight: bold;
-}
-.reserve_bar ul li.active a::after {
-  content: "";
   border-bottom: 1px solid #566418;
-  display: block;
 }
 .reserve_bar ul li.active::after {
   content: url(../img/reserv/reserv_arrow_01.svg);
@@ -508,7 +511,7 @@ input, textarea {
 @media (max-width: 480px) {
   .banner {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 80px;
     position: relative;
     color: #FFFFFF;
     text-align: center;
@@ -526,7 +529,7 @@ input, textarea {
   .banner .banner_text h2 {
     display: flex;
     font-family: "HakgyoansimDunggeunmisoTTF-B";
-    font-size: 1.12rem;
+    font-size: 1.125rem;
   }
   .banner .banner_text b {
     font-size: 0.5rem;
@@ -592,56 +595,60 @@ input, textarea {
   }
   .reserve_bar {
     width: 90%;
-    margin: 50px auto;
+    margin: 0 auto 50px;
   }
   .reserve_bar ul {
-    margin: 0;
     display: flex;
     justify-content: space-around;
   }
   .reserve_bar ul li {
+    position: relative;
     flex-shrink: 0;
   }
-  .reserve_bar ul li > a {
-    color: #999F54;
+  .reserve_bar ul li a {
+    display: inline;
+    text-align: center;
+  }
+  .reserve_bar ul li p {
+    font-size: 0.9rem;
     display: inline-block;
+    color: #999F54;
   }
   .reserve_bar ul li::after {
     content: url(../img/reserv/reserv_arrow_02.svg);
-    padding: 0 0 0 1.6em;
     display: inline-block;
+    position: absolute;
+    right: -42%;
+    top: 0;
   }
   .reserve_bar ul li:last-of-type::after {
     content: "";
   }
-  .reserve_bar ul li.active a {
+  .reserve_bar ul li.active p {
     color: #566418;
     font-weight: bold;
-  }
-  .reserve_bar ul li.active a::after {
-    content: "";
     border-bottom: 1px solid #566418;
-    display: block;
   }
   .reserve_bar ul li.active::after {
     content: url(../img/reserv/reserv_arrow_01.svg);
-    padding: 0 0 0 1.6em;
     display: inline-block;
   }
   .reserve_bar ul li:last-of-type.active::after {
     content: "";
-    padding: 0 0 0 1.6em;
     display: inline-block;
   }
   #calendar {
-    width: 1400px;
+    width: 90%;
     margin: 0 auto;
     text-transform: uppercase;
   }
   .reserve_popupbar {
-    display: flex;
+    position: relative;
   }
   .reserve_popupbar .reserve_popupbar_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 118px;
   }
   .reserve_popupbar .reserve_popupbar_flex .left {
@@ -736,9 +743,9 @@ input, textarea {
     margin-right: 300px;
   }
   .reserv02 {
-    width: 90%;
+    width: 1400px;
     margin: 0 auto;
-    display: block;
+    display: flex;
     line-height: 24px;
   }
   .reserv02 .dot {
@@ -1012,42 +1019,43 @@ input, textarea {
     margin: 0 auto 150px;
   }
   .reserve_bar ul {
-    margin: 0 270px 0 300px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
   .reserve_bar ul li {
+    position: relative;
     flex-shrink: 0;
   }
-  .reserve_bar ul li > a {
-    color: #999F54;
+  .reserve_bar ul li a {
     display: inline-block;
+    width: 7.125rem;
+    text-align: center;
+  }
+  .reserve_bar ul li p {
+    display: inline-block;
+    color: #999F54;
   }
   .reserve_bar ul li::after {
     content: url(../img/reserv/reserv_arrow_02.svg);
-    padding: 0 134px;
     display: inline-block;
+    position: absolute;
+    right: -150%;
+    top: 0;
   }
   .reserve_bar ul li:last-of-type::after {
     content: "";
   }
-  .reserve_bar ul li.active a {
+  .reserve_bar ul li.active p {
     color: #566418;
     font-weight: bold;
-  }
-  .reserve_bar ul li.active a::after {
-    content: "";
     border-bottom: 1px solid #566418;
-    display: block;
   }
   .reserve_bar ul li.active::after {
     content: url(../img/reserv/reserv_arrow_01.svg);
-    padding: 0 134px;
     display: inline-block;
   }
   .reserve_bar ul li:last-of-type.active::after {
     content: "";
-    padding: 0 134px;
     display: inline-block;
   }
   #calendar {
