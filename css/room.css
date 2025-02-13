@@ -31,7 +31,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
-  font-family: "";
+  font-family: "NanumSquare";
 }
 
 h1, h2, h3, h4, h5, p, figure {
@@ -56,13 +56,20 @@ img {
   vertical-align: middle;
 }
 
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
-  color: #333;
+  color: inherit;
 }
 
 input, textarea {
-  border: 0;
+  border: none;
+  outline: none;
 }
 
 ::before, ::after {
@@ -245,7 +252,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
-  font-family: "";
+  font-family: "NanumSquare";
 }
 
 h1, h2, h3, h4, h5, p, figure {
@@ -270,13 +277,20 @@ img {
   vertical-align: middle;
 }
 
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
-  color: #333;
+  color: inherit;
 }
 
 input, textarea {
-  border: 0;
+  border: none;
+  outline: none;
 }
 
 ::before, ::after {

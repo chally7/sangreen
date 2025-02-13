@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -31,9 +32,21 @@ ol, ul, li {
   padding: 0;
 }
 
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 img {
   border: 0;
   vertical-align: middle;
+}
+
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -42,7 +55,8 @@ a {
 }
 
 input, textarea {
-  border: 0;
+  border: none;
+  outline: none;
 }
 
 ::before, ::after {
