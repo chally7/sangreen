@@ -1,0 +1,698 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+body {
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: "NanumSquare";
+}
+
+h1, h2, h3, h4, h5, p, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+input, textarea {
+  border: 0;
+}
+
+::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  margin: 0 auto;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  z-index: 9;
+}
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 115px;
+}
+header .header .logo a {
+  color: white;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 35px;
+  font-weight: 500;
+}
+header .header .header-rig {
+  display: flex;
+  justify-content: space-between;
+}
+header .header .header-rig .lang {
+  padding-right: 54px;
+}
+header .header .header-rig .lang a {
+  padding-left: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-family: "NanumSquareBold";
+}
+header .header .header-rig .bug {
+  width: 40px;
+  height: 25px;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+header .header .header-rig .bug span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+}
+header .header .header-rig .bug span:nth-of-type(1) {
+  top: 0;
+}
+header .header .header-rig .bug span:nth-of-type(2) {
+  top: 50%;
+}
+header .header .header-rig .bug span:nth-of-type(3) {
+  top: 100%;
+}
+header .header .header-rig .bug.active span:nth-of-type(1) {
+  top: 50%;
+  rotate: 45deg;
+}
+header .header .header-rig .bug.active span:nth-of-type(2) {
+  top: 50%;
+  opacity: 0;
+}
+header .header .header-rig .bug.active span:nth-of-type(3) {
+  top: 50%;
+  rotate: -45deg;
+}
+
+.nav-menu00 {
+  position: relative;
+  width: 100%;
+  z-index: 11;
+  transform: translateX(100%);
+  transition: 0.5s;
+}
+.nav-menu00 .nav-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 572px;
+  height: 100vh;
+  background-color: rgba(243, 234, 214, 0.93);
+  padding: 230px 0 0 127px;
+}
+.nav-menu00 .nav-menu > a {
+  display: inline-block;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.nav-menu00 .nav-menu > a p {
+  font-family: "NanumSquareBold";
+  font-size: 28px;
+  color: #333;
+  margin-right: 15px;
+}
+.nav-menu00 .nav-menu > a span {
+  font-family: "NanumSquare";
+  font-size: 14px;
+  letter-spacing: -2%;
+  color: #333;
+}
+.nav-menu00 .nav-menu div {
+  margin: 50px 0;
+}
+.nav-menu00 .nav-menu div > a:nth-of-type(1) {
+  display: inline-block;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 17px;
+}
+.nav-menu00 .nav-menu div > a:nth-of-type(1) p {
+  font-family: "NanumSquareBold";
+  font-size: 28px;
+  color: #333;
+  margin-right: 15px;
+}
+.nav-menu00 .nav-menu div > a:nth-of-type(1) span {
+  font-family: "NanumSquare";
+  font-size: 14px;
+  letter-spacing: -2%;
+  color: #333;
+}
+.nav-menu00 .nav-menu div .nav-menu-roomNum span {
+  margin-right: 20px;
+}
+.nav-menu00 .nav-menu div > a:nth-of-type(3) {
+  margin: 0 20px;
+}
+.nav-menu00.active {
+  transform: translateX(0%);
+}
+
+header.active {
+  transform: translateY(-100%);
+}
+
+.footer {
+  width: 90%;
+  margin: 0 auto;
+  padding: 80px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .footer-left h3 a {
+  color: #999F54;
+  font-family: "Baloo Bhaijaan 2";
+  font-size: 30px;
+  font-weight: 500;
+}
+.footer .footer-left .footer-text1 {
+  font-size: 14px;
+  margin: 29px 0 52px 0;
+}
+.footer .footer-left .footer-text1 p {
+  margin-bottom: 13px;
+}
+.footer .footer-left .footer-text1 p img {
+  width: 12px;
+}
+.footer .footer-left .footer-text1 p:nth-of-type(2) {
+  display: inline;
+}
+.footer .footer-left .footer-text1 p:nth-of-type(3) {
+  display: inline;
+}
+.footer .footer-left .footer-text1 p:nth-of-type(4) {
+  margin-top: 13px;
+}
+.footer .footer-left .footer-text2 p {
+  font-size: 14px;
+}
+.footer .footer-rig {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+.footer .footer-rig .footer-menu a {
+  padding-left: 43px;
+  font-size: 14px;
+}
+.footer .footer-rig .footer-icon a {
+  margin-left: 13px;
+}
+.footer .footer-rig .footer-icon a img {
+  width: 20px;
+}
+
+@font-face {
+  font-family: "HakgyoansimDunggeunmisoTTF-R";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HakgyoansimDunggeunmisoTTF-B";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+.wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+main .main_img {
+  position: relative;
+}
+main .main_img .swip {
+  height: 100vh;
+}
+main .main_img .swip .mySwiper {
+  width: 100%;
+  height: 100%;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide {
+  position: relative;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 80px;
+  font-family: "Baloo Bhaijaan 2";
+  font-weight: bold;
+  color: white;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title01 div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title01 div span {
+  opacity: 1;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title01 div:nth-of-type(1) {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-58%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title01 div:nth-of-type(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title01 div:nth-of-type(3) {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-53%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title02 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 80px;
+  font-family: "Baloo Bhaijaan 2";
+  font-weight: bold;
+  color: white;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title02 div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title02 div span {
+  opacity: 1;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title02 div:nth-of-type(1) {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-59%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title02 div:nth-of-type(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title02 div:nth-of-type(3) {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-44%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 80px;
+  font-family: "Baloo Bhaijaan 2";
+  font-weight: bold;
+  color: white;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title03 div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title03 div span {
+  opacity: 1;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title03 div:nth-of-type(1) {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-54%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title03 div:nth-of-type(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title03 div:nth-of-type(3) {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-48%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title04 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 80px;
+  font-family: "Baloo Bhaijaan 2";
+  font-weight: bold;
+  color: white;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title04 div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title04 div span {
+  opacity: 1;
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title04 div:nth-of-type(1) {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-53.5%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title04 div:nth-of-type(2) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main .main_img .swip .mySwiper .swiper-wrapper .swiper-slide .silde-title04 div:nth-of-type(3) {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-40%, -50%);
+}
+main .main_img .reserv {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+main .main_img .reserv .reserv_left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 100px;
+}
+main .main_img .reserv .reserv_left div {
+  display: inline-block;
+  border-right: 1px solid #555;
+  padding: 0 30px;
+}
+main .main_img .reserv .reserv_left div p:nth-of-type(1) {
+  font-size: 14px;
+  color: #555;
+}
+main .main_img .reserv .reserv_left div p:nth-of-type(2) {
+  font-size: 20px;
+  font-family: "NanumSquareBold";
+  color: #333;
+}
+main .main_img .reserv .reserv_left .adult {
+  text-align: center;
+}
+main .main_img .reserv .reserv_left .children {
+  text-align: center;
+  border: none;
+}
+main .main_img .reserv .reserv_rig {
+  height: 100px;
+}
+main .main_img .reserv .reserv_rig a {
+  background-color: #F3EAD6;
+  padding: 32px 86px;
+  font-size: 24px;
+  font-family: "NanumSquareBold";
+  display: block;
+}
+main .roomlist {
+  width: 1400px;
+  margin: 200px auto 100px;
+}
+main .roomlist .room_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+main .roomlist .room_top .text h3 {
+  font-family: "HakgyoansimDunggeunmisoTTF-B";
+  font-size: 24px;
+  color: #A66D45;
+  margin-bottom: 7px;
+}
+main .roomlist .room_top .text p {
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+main .roomlist .room_top .btn a {
+  font-family: "HakgyoansimDunggeunmisoTTF-R";
+  font-size: 16px;
+  color: #A66D45;
+}
+main .roomlist .room_img {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+main .roomlist .room_img li {
+  position: relative;
+  overflow: hidden;
+  transition: 0.8s;
+  width: 350px;
+}
+main .roomlist .room_img li p {
+  position: relative;
+}
+main .roomlist .room_img li p img {
+  width: 350px;
+}
+main .roomlist .room_img li p span {
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  font-family: "HakgyoansimDunggeunmisoTTF-B";
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 5px 5px 10px rgba(125, 125, 125, 0.2);
+}
+main .roomlist .room_img li > div {
+  position: absolute;
+  z-index: 2;
+  left: 350px;
+  top: 0;
+  width: 700px;
+  height: 455px;
+  background-color: rgba(255, 248, 235, 0.95);
+  padding: 132px 0 132px 63px;
+}
+main .roomlist .room_img li > div .hov_text {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+}
+main .roomlist .room_img li > div .hov_text span {
+  display: inline-block;
+  line-height: 27px;
+  color: #333;
+}
+main .roomlist .room_img li > div b {
+  display: block;
+  margin-top: 30px;
+  font-family: "NanumSquareBold";
+  font-size: 30px;
+  color: #555;
+}
+main .roomlist .room_img li.active {
+  flex-shrink: 0;
+  width: 1050px;
+}
+main .section3 {
+  background-color: #FFF8EB;
+  height: 500vh;
+}
+main .section3 .special {
+  width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+main .section3 .special .special_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+main .section3 .special .special_top .text h3 {
+  font-family: "HakgyoansimDunggeunmisoTTF-B";
+  font-size: 24px;
+  color: #A66D45;
+  margin-bottom: 7px;
+}
+main .section3 .special .special_top .text p {
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+main .section3 .special .special_top .btn a {
+  font-family: "HakgyoansimDunggeunmisoTTF-R";
+  font-size: 16px;
+  color: #A66D45;
+}
+main .section3 .special .special_con {
+  position: relative;
+  width: 100%;
+  height: 389px;
+}
+main .section3 .special .special_con li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+main .section3 .special .special_con li .con_img {
+  width: 1400px;
+  height: 450px;
+  overflow: hidden;
+}
+main .section3 .special .special_con li .con_img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .section3 .special .special_con li div {
+  width: 1400px;
+  opacity: 0;
+}
+main .section3 .special .special_con li div b {
+  display: block;
+  margin: 50px 0 23px;
+  font-family: "HakgyoansimDunggeunmisoTTF-B";
+  font-size: 20px;
+  color: #566418;
+}
+main .section3 .special .special_con li div p {
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+main .section3 .special .special_con li div p:nth-of-type(2) {
+  margin-top: 15px;
+}
+main .tour {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 180px 0;
+}
+main .tour .tour_slider .tour_top {
+  position: relative;
+}
+main .tour .tour_slider .tour_top .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main .tour .tour_slider .tour_top .text h3 {
+  font-family: "HakgyoansimDunggeunmisoTTF-B";
+  font-size: 24px;
+  color: #A66D45;
+  margin-bottom: 7px;
+}
+main .tour .tour_slider .tour_top .text p {
+  line-height: 24px;
+  letter-spacing: -2%;
+}
+main .tour .tour_slider .tour_con00 {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+main .tour .tour_slider .tour_con00 .tour_left_text .tour_content .tour_title {
+  display: block;
+  font-family: "NanumSquareBold";
+  font-size: 20px;
+  color: #566418;
+  margin-bottom: 20px;
+}
+main .tour .tour_slider .tour_con00 .tour_left_text .tour_content .tour_text {
+  line-height: 28px;
+}
+main .tour .tour_slider .tour_con00 .tour_left_text .tour_content .tour_text img {
+  width: 12px;
+}
+main .tour .tour_slider .tour_con00 .tour_left_text .tour_content .tour_tag {
+  margin: 15px 0 20px;
+}
+main .tour .tour_slider .tour_con00 .tour_left_text .tour_content .tour_button {
+  display: inline-block;
+  font-family: "NanumSquareBold";
+  font-size: 20px;
+  color: #333;
+  padding: 18px 40px;
+  background-color: #ECEBC2;
+}
+main .tour .tour_slider .tour_con00 .tour-swiper .tour-swiper-wrapper .tour-swiper-slide {
+  width: 768px;
+  height: 593px;
+  overflow: hidden;
+}
+main .tour .tour_slider .tour_con00 .tour-swiper .tour-swiper-wrapper .tour-swiper-slide img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
