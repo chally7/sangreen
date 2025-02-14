@@ -1,5 +1,14 @@
+const textElement = document.querySelectorAll(".banner_text span");
+
+textElement.forEach((char, i) => {
+    let random = Math.random()*0.15;
+    char.style.animationDelay = i * random +'s';
+}); 
+
 const elTab_btn =document.querySelectorAll('.tab-head button');
 const elTab_contents =document.querySelectorAll('.tab-body div');
+
+
 
 elTab_btn.forEach(function(btn,indexkey){
     btn.onclick=function(ele,k){

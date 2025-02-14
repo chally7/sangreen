@@ -15,13 +15,39 @@
 
 <body>
   <main>
-    <div class="top">
-      <img src="./img/room/room_top.jpg" alt="">
+    <div class="banner">
+      <p><img src="./img/room/room_top.jpg" alt=""></p>
+      <div class="banner_text">
+          <h2>
+              <span>R</span>
+              <span>o</span>
+              <span>o</span>
+              <span>m</span>
+              <span>L</span>
+              <span>i</span>
+              <span>s</span>
+              <span>t</span>
+          </h2>
+          <b>
+              <span>지친 일상 속 자연을 느낄 수 있는 산그린펜션 입니다.</span>
+          </b>
+      </div> 
+    </div> 
+    
+    <aside class="room-indi">
+      <ul>
+        <li>101호</li>
+        <li>102호</li>
+        <li>103호</li>
+        <li>104호</li>
+      </ul>
+    </aside>
+  
+    <aside class="res">
       <div>
-        <b>Room List</b>
-        <p>지친 일상 속 자연을 느낄 수 있는 산그린펜션의 객실입니다.</p>
+      <a href="#">예약하기</a>
       </div>
-    </div>
+    </aside>
 
     <div class="room">
       <article>
@@ -52,6 +78,19 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
+      <!-- 확대 팝업 (처음에는 숨김 상태) -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span> <!-- 닫기 버튼 -->
+            
+            <!-- Swiper 슬라이드 추가 -->
+            <div class="swiper popupSwiper">
+                <div class="swiper-wrapper" id="popup-swiper-wrapper">
+                    <!-- 여기에 JavaScript로 슬라이드 이미지 추가됨 -->
+                </div>
+            </div>
+        </div>
+      </div>
 
         <div class="room-2">
           <ul>
@@ -206,24 +245,6 @@
     </div>
   </main>
 
-  <aside class="room-indi">
-    <ul>
-      <li>101호</li>
-      <li>102호</li>
-      <li>103호</li>
-      <li>104호</li>
-    </ul>
-  </aside>
 
-  <aside class="res">
-    <a href="#">예약하기</a>
-    <!-- <div>
-      <ul>
-        <li> Reservation <br> Room 101</li>
-        <li> check in out <br> 20202004002</li>
-        <li> check in out <br> 20202004002</li>
-      </ul>
-    </div> -->
-  </aside>
 </body>
 </html>

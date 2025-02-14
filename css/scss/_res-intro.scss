@@ -1,23 +1,46 @@
 @import './common';
 
 @media(max-width:480px){
-    .intro{
+    .banner{
+        width: 100%;
+        margin: 0 auto 150px;
         position: relative;
-        img{max-width: 100%;}
-        div{
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%,-50%);
-            color: #FFFFFF;
-            font-size: 45px;
-            font-family: 'Hakgyoansim Dunggeunmiso TTF';
-            p{
-                font-family: 'Noto Sans KR Regular';
-                font-size: 16px;
-                text-align: center;
+        color: #FFFFFF;
+        text-align: center;
+        p{
+            img {
+            width: 100%; height: 100%;
             }
         }
-    }
+        .banner_text{
+            text-align: center;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                justify-content: center;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 2.8rem;
+                span{
+                    opacity: 0;
+                    animation: blink 0.5s 1 alternate forwards;
+                }
+    
+                @keyframes blink {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+            }
+            b{
+                font-weight: normal;
+                span{
+                    opacity: 0;
+                    animation: blink 2s 1 alternate forwards;
+                }
+            }
+        }
+    } 
     .center{
         padding: 200px;
         background-color: #FFF8EB;
@@ -114,58 +137,83 @@
         li{padding: 10px;}
         }
     }
-    
-    
-    
 }
-@media(max-width:768px){
-    .intro{
+@media(min-width: 768px) and (max-width:1024px){
+    .banner{
+        width: 100%;
+        margin: 0 auto;
         position: relative;
-        img{width: 100%;}
-        div{
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%,-50%);
-            color: #FFFFFF;
-            font-size: 45px;
-            font-family: 'Hakgyoansim Dunggeunmiso TTF';
-            p{
-                font-family: 'Noto Sans KR Regular';
-                font-size: 16px;
-                text-align: center;
+        color: #FFFFFF;
+        text-align: center;
+        p{
+            img {
+            max-width: 100%; height: auto;
             }
         }
-    }
+        .banner_text{
+            text-align: center;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                justify-content: center;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 40px;
+                span{
+                    opacity: 0;
+                    animation: blink 0.5s 1 alternate forwards;
+                }
+    
+                @keyframes blink {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+            }
+            b{
+                font-weight: normal;
+                span{
+                    font-size: 16px;
+                    opacity: 0;
+                    animation: blink 2s 1 alternate forwards;
+                    line-height: 24px;
+                
+                }
+            }
+        }
+    } 
     .center{
-        padding: 200px;
+        padding: 80px;
         background-color: #FFF8EB;
         .view-wrap{
-            width:90%px;
+            max-width:100%;
             margin:0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             div{
+                padding: 0 5px;
                 &:nth-of-type(1){
-                    width:60%;
-                    img{width:100%;border-radius: 0 15px 15px 0;}
+                    max-width:55%;
+                    img{border-radius: 0 15px 15px 0;}
                 }
                 &:nth-of-type(2){
-                    width:34%;
+                    width:260px;
                     p{
-                        font-size: 60px;
+                        font-size: 30px;
                         color: #999F54;
                         font-family: 'Baloo Bhaijaan 2 SemiBold';
-                        margin: 14px 0 32px;
+                        margin: 12px 0 20px;
                         line-height: 1;
                     }
                     p small{
-                        font-size: 35px;
+                        font-size: 20px;
                         color: #ECEBC2;
                         font-family: 'Baloo Bhaijaan 2 SemiBold';
                     }
                     span{
-                        font-size: 20px;
+                        
+                        font-size: 12px;
                         color: #555555;
                         font-weight: bold;
                         font-family: 'NanumSquare';
@@ -176,14 +224,14 @@
     }
     
     .bottom{
-        width:90%; margin:150px auto;
+        width: 90%;margin:80px auto;
         article{
-            height: 850px;
+            height: 700px;
             h2{
                 color: #A66D45;
-                font-size: 24px;
+                font-size: 22px;
                 font-family: 'Hakgyoansim Dunggeunmiso TTF';
-                padding: 150px 0 50px 0;
+                padding: 0px 0 10px 0;
             }
             .tab-head{
                 font-family: 'inter Regular';
@@ -209,14 +257,13 @@
             .tab-body{
                 position: relative;
                 .map{
-                    width:100%;
-                    height:564px;
+                    
                     position: absolute;
                     left: 0; top: 0;
                     background-color: #eee;
                     border: 1px solid #999F54;
                     display: none;
-                    img{width:100%}
+                    img{max-width:100%; height:100%;}
                     &.active{display: block;}
                 }
             }   
@@ -229,10 +276,8 @@
             color: #555555;
             font-family: "NanumSquare Regular";
             width: 50%;
+            font-size: 12px;
         li{padding: 10px;}
         }
     }
-    
-    
-    
 }

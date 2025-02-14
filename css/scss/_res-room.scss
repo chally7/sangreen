@@ -1,59 +1,62 @@
-@font-face {
-    font-family: 'HakgyoansimDunggeunmisoTTF-R';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    }
-    @font-face {
-    font-family: 'HakgyoansimDunggeunmisoTTF-B';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    }
-
 @import './common';
 
-
-
-@media (max-width: 768px) {
-    .top{
+@media (min-width: 768px) and (max-width:1024px) {
+    .banner{
         position: relative;
-        img{
-            max-width: 100%;
-            height: auto;
+        color: #FFFFFF;
+        text-align: center;
+        p{
+            img {
+            max-width: 100%; height: auto;
+            }
         }
-        div{
+        .banner_text{
             position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%,-50%);
-            color: #FFFFFF;
             text-align: center;
-            b{
-                font-family: 'Hakgyoansim Dunggeunmiso TTF';
-                font-size: 25px;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                justify-content: center;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 40px;
+                span{
+                    opacity: 0;
+                    animation: blink 0.5s 1 alternate forwards;
+                }
+    
+                @keyframes blink {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
             }
-            p{
-                font-family: 'Noto Sans KR Regular';
-                font-size: 12px;
-                margin-left: -5px;
+            b{
+                font-weight: normal;
+                span{
+                    font-size:16px;
+                    opacity: 0;
+                    animation: blink 2s 1 alternate forwards;
+                    line-height: 24px;
+                }
             }
         }
-    }
+    } 
     .room{
         width:90%; 
         margin:0 auto;
         overflow: hidden;
-        padding-top:80px;
-    
         article{
-            margin-bottom:80px;
+            margin: 0 auto;
+            width: 100%;
+            
+            
             h5{
                 color: #999F54;
                 font-size: 30px;
                 font-family: 'HakgyoansimDunggeunmisoTTF-R';
-                width: 420px;
+                
                 margin:0 auto;
-                padding-bottom:20px;
+                padding-bottom:30px;
                 font-weight: normal;
             b{
                 font-size: 40px;
@@ -65,14 +68,14 @@
     }
     .swiper{
         position: relative;
-        transform: scale(1.3);
+        transform: scale(1.0);
         &-slide{
-            img{width:100%;}
+            img{width:100%; }
         }
         a{
             position: absolute;
             right: 0; bottom: 0;
-            transform: scale(0.5);
+            transform: scale(0.8);
     
         }
         &-pagination-bullet{
@@ -81,40 +84,80 @@
     
     }
     .room-2{
-        width: 420px;
-        display: flex;
+        width: 100%;
 
+        display: flex;
         margin: 20px auto;
-        ul{
-        }
+    ul{
+        width: auto;
         li{
             color: #333333;
             font-family: 'NanumSquare Regular';
-            font-size: 12px;
             line-height: 1.5;
         }
-        p{ 
-            color: #566418;
-            font-family: 'NanumSquare';
-            font-size: 20px;
-            font-weight: bold;
-        }
+    }
+    p{ 
+        color: #566418;
+        font-family: 'NanumSquare';
+        font-weight: bold;
+    }
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    
+    /* 팝업 내부 컨텐츠 */
+    .popup-content {
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 80%;
+        max-height: 90%;
+    }
+    
+    /* Swiper 스타일 */
+    .popupSwiper {
+        width: 100%;
+    }
+    
+    .popupSwiper .swiper-slide img {
+
+        object-fit: cover;
+        //비율을 지키게 끔 해줌 대신 짤릴 수 있음
+        // object-fit: contain;
+        //이미지를 짤림없이 보여주지만 영역을 꽉채우지는 않음
+        transform: scale(1); /* 150% 확대 */
     }
     .room-indi{
-
-        right: 50%; top: 35%;
+        position: sticky;
+        top: 13%;
+        width: 30%;
         ul{
-            
+            border-radius: 15px;
             display: flex;
-            margin: 30px auto;
+            background-color:rgba($color:#FFFFFF, $alpha: 0.7) ;
+            
+            margin-bottom:75px ;
             li{
-                width: 60px;
+                padding: 10px;
                 font-family: 'NanumSquare';
-                font-size: 20px;
+                
                 color: #999F54;
                 font-weight: bold;
-                
-    
+                text-align: center;
+
                 &.active{
                     color: #566418;
                     font-weight: 900;
@@ -136,19 +179,56 @@
         left:75%; bottom:0;
         transform: translateX(-50%);
         z-index: 3;
-        a{
-            width: 150px; height: 50px;
-            font-family: 'NanumSquare';
-            font-size: 10px;
-            background-color:rgba($color:#F3EAD6, $alpha: 0.5) ;
-            color: black;
-            padding: 30px 30px;
-            font-weight: bold;
-            text-align: center;
+        div {
+            position: relative; // ul의 위치를 조정하기 위해 필요할 수 있음
+    
+            a {
+                width: 235px;
+                height: 80px;
+                display: inline-block;
+                font-family: 'NanumSquare';
+                font-size: 16px;
+                background-color: rgba(#F3EAD6,$alpha:0.7); // 오류 수정
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                text-align: center;
+                line-height: 1.1;
+
+            }
+    
+            ul {
+                width: 260px;
+                height: 100px;
+                display: none; // ✅ ul을 기본적으로 숨김
+                position: absolute;
+                right: 70%; // 우측 정렬 (필요에 따라 조정 가능)
+                top: 10%; // 버튼 아래로 배치
+                background: red;
+                border: 1px solid red;
+                list-style: none;
+
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+                li {
+                    display: flex;
+                    display: block; // ✅ 개별 li 숨기지 않음
+                    padding: 10px;
+                    border-bottom: 1px solid #ddd;
+    
+    
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+    
+            .active ul { // ✅ div:hover 시 ul 보이게 설정
+                display: block;
+            }
         }
     }
 }
-
 @media (max-width: 480px) {
     .top{
         position: relative;
@@ -214,9 +294,49 @@
             // 불릿모양이 스크린 이상한 위치에 들어가 있어서 씀
             // position: absolute; 없애지고 들어감
         }
-
-    
     }
+
+    .popup {
+        display: none; /* 기본적으로 숨김 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+    
+    /* 팝업 내부 컨텐츠 */
+    .popup-content {
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    /* 확대된 이미지 스타일 */
+    .popup img {
+        max-width: 90%;
+        max-height: 90vh;
+        transform: scale(1.2); /* 150% 확대 */
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* 닫기 버튼 스타일 */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        cursor: pointer;
+        color: black;
+    }
+    
+    
     .room-2{
         width: 200px;
         display: flex;
@@ -234,8 +354,6 @@
             font-family: 'NanumSquare';
             font-size: 12px;
             font-weight: bold;
-
-
         }
     }
     .room-indi{
@@ -269,7 +387,6 @@
                 }
             }
         }
-
     }
     .res{
         position: fixed;
@@ -277,16 +394,48 @@
         left:75%; bottom:0;
         transform: translateX(-50%);
         z-index: 3;
-        a{
-            width: 100px; height: 10px;
-            font-family: 'NanumSquare';
-            font-size: 10px;
-            background-color:rgba($color:#F3EAD6, $alpha: 0.5) ;
-            text-decoration: none;
-            color: black;
-            padding: 18px 18px;
-            font-weight: bold;
-            text-align: center;
+        div {
+            position: relative; // ul의 위치를 조정하기 위해 필요할 수 있음
+    
+            a {
+                width: 260px;
+                height: 100px;
+                display: inline-block;
+                font-family: 'NanumSquare';
+                font-size: 24px;
+                background-color: rgba(243, 234, 214, 0.8); // 오류 수정
+                text-decoration: none;
+                color: black;
+                padding: 41px 86px;
+                font-weight: bold;
+            }
+    
+            ul {
+                display: none; // ✅ ul을 기본적으로 숨김
+                position: absolute;
+                right: 0%; // 우측 정렬 (필요에 따라 조정 가능)
+                top: 5%; // 버튼 아래로 배치
+                background: red;
+                border: 1px solid red;
+                padding: 10px;
+                list-style: none;
+                width: 260px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+                li {
+                    display: block; // ✅ 개별 li 숨기지 않음
+                    padding: 10px;
+                    border-bottom: 1px solid #ddd;
+    
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+    
+            &:hover ul { // ✅ div:hover 시 ul 보이게 설정
+                display: block;
+            }
         }
     }
 }

@@ -1,23 +1,45 @@
-
 @import './_common';
 
-.intro{
+.banner{
+    width: 100%;
+    margin: 0 auto 150px;
     position: relative;
-    img{width: 100%;}
-    div{
-        position: absolute;
-        left: 50%; top: 50%;
-        transform: translate(-50%,-50%);
-        color: #FFFFFF;
-        font-size: 45px;
-        font-family: 'Hakgyoansim Dunggeunmiso TTF';
-        p{
-            font-family: 'Noto Sans KR Regular';
-            font-size: 16px;
-            text-align: center;
+    color: #FFFFFF;
+    text-align: center;
+    p{
+        img {
+        width: 100%; height: 100%;
         }
     }
-}
+    .banner_text{
+        text-align: center;
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        h2{
+            display: flex;
+            justify-content: center;
+            font-family: 'HakgyoansimDunggeunmisoTTF-B';
+            font-size: 2.8rem;
+            span{
+                opacity: 0;
+                animation: blink 0.5s 1 alternate forwards;
+            }
+
+            @keyframes blink {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+        }
+        b{
+            font-weight: normal;
+            span{
+                opacity: 0;
+                animation: blink 2s 1 alternate forwards;
+            }
+        }
+    }
+} 
 .center{
     padding: 200px;
     background-color: #FFF8EB;
@@ -60,7 +82,7 @@
 .bottom{
     width:1400px; margin:150px auto;
     article{
-        height: 850px;
+        height: 880px;
         h2{
             color: #A66D45;
             font-size: 24px;
@@ -72,19 +94,21 @@
             display: flex;
             button{
                 border: 1px solid #ECEBC2;
-                padding: 10px 0px;
+                padding: 16px 0px;
                 width:50%;
                 background-color: #ECEBC2;
                 text-decoration: none;
                 color: #999F54;
                 font-family: 'NanumSquare';
-                font-weight: bold;
+                
+                font-size: 20px;
                 &:nth-of-type(1){border-radius: 15px 0 0 0;}
                 &:nth-of-type(2){border-radius: 0 15px 0 0;}
                 &.active{
                     border: 1px solid #999F54;
                     background-color: #999F54;
                     color: #ECEBC2;
+                    font-weight: bold;
                 }
             }
         }
@@ -115,5 +139,5 @@
     }
 }
 
-
+@import './res-intro'
 
