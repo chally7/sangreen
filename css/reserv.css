@@ -476,7 +476,6 @@ li {
   top: -225px;
   left: -12px;
   z-index: 99;
-  background-color: rgb(255, 255, 255);
   padding: 10px;
 }
 .reserve_popupbar .reserve_popupbar_flex .left .room_list p {
@@ -498,7 +497,7 @@ li {
 }
 .reserve_popupbar .reserve_popupbar_flex .left .line {
   border-right: 1px solid #6f6f6f;
-  padding: 0 80px;
+  padding: 0 78px;
 }
 .reserve_popupbar .reserve_popupbar_flex .left .line h3 {
   font-size: 14px;
@@ -589,7 +588,7 @@ li {
   position: absolute;
   left: 315px;
   bottom: 109px;
-  width: 683px;
+  width: 500px;
   z-index: 1;
 }
 .reserve_popupbar .calender h3::before {
@@ -597,12 +596,9 @@ li {
   display: inline-block;
   font-size: 0px;
   vertical-align: middle;
-  margin-right: 260px;
+  margin-right: 170px;
 }
 .reserve_popupbar .calender .calender_flex {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
   border: 1px solid #999F54;
   border-radius: 0 0 16px 16px;
   background-color: #fff;
@@ -1289,8 +1285,6 @@ li {
     margin-right: 93px;
   }
   .reserve_popupbar .calender .calender_flex {
-    display: flex;
-    justify-content: center;
     border: 1px solid #999F54;
     border-radius: 0 0 16px 16px;
     background-color: #fff;
@@ -1702,6 +1696,8 @@ li {
     margin: 0 auto;
   }
   .reserve_popupbar .reserve_popupbar_flex {
+    display: block;
+    align-items: center;
     background-color: rgba(255, 248, 235, 0.5254901961);
     width: 100%;
     flex-direction: column;
@@ -1715,23 +1711,52 @@ li {
     background-color: transparent;
     height: 120px;
   }
-  .reserve_popupbar .reserve_popupbar_flex .left .line {
+  .reserve_popupbar .reserve_popupbar_flex .left .room_name {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    row-gap: 10px;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .room_list {
+    display: none;
+    position: absolute;
+    top: -225px;
+    left: -12px;
+    z-index: 99;
+    padding: 10px;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .room_list p {
+    padding: 5px 0;
+    font-weight: normal !important;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .room_list.active {
+    display: block;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .room_name > h3 {
+    grid-column: 1/3;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .room_name > p {
+    grid-column: 1/2;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .room_name > .room_select {
+    grid-column: 2/3;
+    margin-left: 15px;
+  }
+  .reserve_popupbar .reserve_popupbar_flex .left .line {
+    margin-bottom: 12px;
     line-height: 1.8;
     border-right: none;
     padding: 0 10px;
   }
   .reserve_popupbar .reserve_popupbar_flex .left .line h3 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: normal;
   }
   .reserve_popupbar .reserve_popupbar_flex .left .line p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
   }
   .reserve_popupbar .reserve_popupbar_flex .left .adult, .reserve_popupbar .reserve_popupbar_flex .left .children {
-    text-align: center;
+    text-align: start;
   }
   .reserve_popupbar .reserve_popupbar_flex .left .children {
     border: none;
@@ -2058,26 +2083,7 @@ li {
   }
 }
 @media (max-width: 480px) {
-  .fc .fc-toolbar.fc-header-toolbar {
-    margin-bottom: 50px;
-  }
-  .fc .fc-toolbar-title {
-    line-height: 57px;
-    font-size: 1.25rem;
-    margin: 0;
-  }
-  .fc .fc-col-header-cell-cushion {
-    font-size: 14px;
-    display: inline-block;
-    padding: 2px 4px;
-  }
-  .fc .fc-daygrid-day-number {
-    font-size: 16px;
-    position: relative;
-    z-index: 4;
-    padding: 4px;
-  }
-  .fixed-text {
-    font-size: 10px !important;
+  #calendar01 {
+    display: none;
   }
 }

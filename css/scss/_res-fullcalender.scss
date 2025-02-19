@@ -24,27 +24,8 @@
 }
 
 @media (max-width:480px){
-    .fc .fc-toolbar.fc-header-toolbar {
-        margin-bottom: 50px;
-    }
-    .fc .fc-toolbar-title {
-        line-height: 57px;
-        font-size: 1.25rem;
-        margin: 0;
-    }
-    .fc .fc-col-header-cell-cushion {
-        font-size: 14px;
-        display: inline-block;
-        padding: 2px 4px;
-    }
-    .fc .fc-daygrid-day-number {
-        font-size: 16px;
-        position: relative;
-        z-index: 4;
-        padding: 4px;
-    }
-    .fixed-text{
-        font-size: 10px !important; 
+    #calendar01{
+        display: none;
     }
 }
 

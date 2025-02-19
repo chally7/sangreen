@@ -1,24 +1,22 @@
-#calender_left, #calender_right{
+#calender_left{
   background-color: #fff;
-  width: 50%;
+  width: 100%;
 }
 #calender_left.fc-toolbar-title{
-  font-size: 1rem !important;
+  font-size: 1.2rem !important;
 }
 #calender_left.fc .fc-daygrid-day-frame{
   height: 100% !important;
 }
-#calender_left .fc-toolbar-title, #calender_right .fc-toolbar-title{
-  font-size: 1rem;
+#calender_left .fc-toolbar-title, .fc-toolbar-title{
+  font-size: 1.2rem;
 }
-#calender_right.fc .fc-daygrid-day-frame{
-  height: 100% !important;
-}
-#calender_left.fc .fc-toolbar.fc-header-toolbar, #calender_right.fc .fc-toolbar.fc-header-toolbar{
+
+#calender_left.fc .fc-toolbar.fc-header-toolbar{
   margin-bottom : 1rem;
 }
 
-#calender_left .fc-col-header, #calender_right .fc-col-header{
+#calender_left .fc-col-header{
   margin-bottom : 1rem;
 }
 
@@ -462,7 +460,7 @@ a.fc-event:hover {
 }
 
 .fc-event .fc-event-resizer {
-  display: none;
+  display: block;
   position: absolute;
   z-index: 4;
 }
@@ -712,7 +710,7 @@ a.fc-event:hover {
 }
 
 .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
-  display: none;
+  display: block;
 }
 
 .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
