@@ -6,69 +6,39 @@
     <title>Document</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/swiper-tour.css" />
     <link rel="stylesheet" href="./css/index.css">
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="./js/swiper-tour.js"></script>
     <script defer src="./js/common.js"></script>
     <script defer src="./js/index.js"></script>
     
 </head>
 <body class="main">
-<!-- <header>
-    <div class="header">
-        <h1 class="logo">
-            <a href="#">SANGREEN</a>
-        </h1>
-        <div class="header-rig">
-            <div class="lang">
-                <a href="#">KO</a>
-                <a href="#">EN</a>
-            </div>
-            <nav class="bug">
-                <span></span>
-                <span></span>
-                <span></span>
-            </nav>
-        </div>
-    </div>
-</header>
 
-<footer>
-    <div class="footer">
-        <div class="footer-left">
-            <h3>
-                <a href="#">SANGREEN</a>
-            </h3>
-            <div class="footer-text1">
-                <p>경기도 가평군 조종면 현등사길 35-9, 산그린펜션</p>
-                <p>대표자 : 이엽 | </p>
-                <p><img src="./img/index_logo_01.svg" alt="mail"> sidezzz@naver.com</p>
-                <p><img src="./img/index_logo_02.svg" alt="call"> 031-584-5748 | 010-2206-5748</p>
-            </div>
-            <div class="footer-text2">
-                <p>Copyrightⓒ All rights reserved.</p>
-            </div>
+<div class="reserv">
+    <div class="reserv_left">
+        <div class="room">
+            <p>Reservation</p>
+            <p>Room 101</p>
         </div>
-        <div class="footer-rig">
-            <div class="footer-menu">
-                <a href="#">고객센터</a>
-                <a href="#">이용약관</a>
-                <a href="#">개인정보처리방침</a>
-                <a href="#">Contact Us</a>
-            </div>
-            <div class="footer-icon">
-                <a href="https://www.instagram.com">
-                    <img src="./img/index_logo_03.svg" alt="insta">
-                </a>
-                <a href="https://www.facebook.com">
-                    <img src="./img/index_logo_04.svg" alt="facebook">
-                </a>
-            </div>
+        <div class="check">
+            <p>Check In/Out</p>
+            <p>2025.01.27 월 - 2025.01.28 화</p>
+        </div>
+        <div class="adult">
+            <p>Adult</p>
+            <p>2</p>
+        </div>
+        <div class="children">
+            <p>Children</p>
+            <p>0</p>
         </div>
     </div>
-</footer> -->
+    <div class="reserv_rig">
+        <a href="./reserv02.html">예약하기</a>
+    </div>
+</div>
+
 <div class="wrap">
     <main>
         <div class="main_img">
@@ -77,7 +47,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img src="./img/index_silde_01.png" alt="silde01">
-                            <div class="silde-title01">
+                            <div class="silde-title silde-title01">
                                 <div>
                                     <span>T</span>
                                     <span>h</span>
@@ -102,7 +72,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="./img/index_silde_02.png" alt="silde02">
-                            <div class="silde-title02">
+                            <div class="silde-title silde-title02">
                                 <div>
                                     <span>T</span>
                                     <span>h</span>
@@ -137,7 +107,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="./img/index_silde_03.png" alt="silde03">
-                            <div class="silde-title03">
+                            <div class="silde-title silde-title03">
                                 <div>
                                     <span>T</span>
                                     <span>h</span>
@@ -165,7 +135,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="./img/index_silde_04.png" alt="silde04">
-                            <div class="silde-title04">
+                            <div class="silde-title silde-title04">
                                 <div>
                                     <span>T</span>
                                     <span>h</span>
@@ -199,29 +169,6 @@
                     </div>
                 </div>
             </div>
-            <div class="reserv">
-                <div class="reserv_left">
-                    <div class="room">
-                        <p>Reservation</p>
-                        <p>Room 101</p>
-                    </div>
-                    <div class="check">
-                        <p>Check In/Out</p>
-                        <p>2025.01.27 월 - 2025.01.28 화</p>
-                    </div>
-                    <div class="adult">
-                        <p>Adult</p>
-                        <p>2</p>
-                    </div>
-                    <div class="children">
-                        <p>Children</p>
-                        <p>0</p>
-                    </div>
-                </div>
-                <div class="reserv_rig">
-                    <a href="#">예약하기</a>
-                </div>
-            </div>
         </div>
         <section class="roomlist">
             <div class="room_top">
@@ -241,12 +188,13 @@
                     </p>
                     <div class="img_hov">
                         <div class="hov_text">
-                            <span>Size <br>
-                                Guests <br>
-                                1F <br>
-                                2F <br>
-                                Supplies
-                            </span>
+                            <div class="hov_left">
+                                <span>Size</span>
+                                <span>Guests</span>
+                                <span>1F</span>
+                                <span>2F</span>
+                                <span>Supplies</span>
+                            </div>
                             <span>
                                 125.4m² (38평) <br>
                                 최대 7명 <br>
@@ -265,12 +213,13 @@
                     </p>
                     <div class="img_hov">
                         <div class="hov_text">
-                            <span>Size <br>
-                                Guests <br>
-                                1F <br>
-                                2F <br>
-                                Supplies
-                            </span>
+                            <div class="hov_left">
+                                <span>Size</span>
+                                <span>Guests</span>
+                                <span>1F</span>
+                                <span>2F</span>
+                                <span>Supplies</span>
+                            </div>
                             <span>
                                 125.4m² (38평) <br>
                                 최대 7명 <br>
@@ -289,12 +238,14 @@
                     </p>
                     <div class="img_hov">
                         <div class="hov_text">
-                            <span>Size <br>
-                                Guests <br>
-                                1F <br>
-                                2F <br>
-                                Supplies
-                            </span>
+                            <div class="hov_left">
+                                <span>Size</span>
+                                <span>Guests</span>
+                                <span>1F</span>
+                                
+                                <span>2F</span>
+                                <span>Supplies</span>
+                            </div>
                             <span>
                                 141.9m² (43평) <br>
                                 최대 10명 <br>
@@ -313,12 +264,13 @@
                     </p>
                     <div class="img_hov">
                         <div class="hov_text">
-                            <span>Size <br>
-                                Guests <br>
-                                1F <br>
-                                2F <br>
-                                Supplies
-                            </span>
+                            <div class="hov_left">
+                                <span>Size</span>
+                                <span>Guests</span>
+                                <span>1F</span>
+                                <span>2F</span>
+                                <span>Supplies</span>
+                            </div>
                             <span>
                                 247.5m² (75평) <br>
                                 최대 12명 <br>
@@ -404,7 +356,7 @@
 
                 <div class="tour_con00">
                     <div class="tour_left_text">
-                        <div class="tour_content">
+                        <div class="tour_content t_con0">
                             <b class="tour_title">남이섬</b>
                             <p class="tour_text">
                                 <img src="./img/index_logo_05.svg" alt="logo05">
@@ -415,7 +367,7 @@
                             <p class="tour_tag">#문화예술의섬 #생명의섬 #남이섬 #나미나라공화국</p>
                             <a href="./tour.html" class="tour_button">Read More</a>
                         </div>
-                        <div class="tour_content">
+                        <div class="tour_content t_con1">
                             <b class="tour_title">청평호반</b>
                             <p class="tour_text">
                                 <img src="./img/index_logo_05.svg" alt="logo05">
@@ -426,7 +378,7 @@
                             <p class="tour_tag">#가평8경 #수상레포츠 #낚시 #드라이브코스</p>
                             <a href="./tour.html" class="tour_button">Read More</a>
                         </div>
-                        <div class="tour_content">
+                        <div class="tour_content t_con2">
                             <b class="tour_title">아침고요수목원</b>
                             <p class="tour_text">
                                 <img src="./img/index_logo_05.svg" alt="logo05">
@@ -437,7 +389,7 @@
                             <p class="tour_tag">#별빛정원 #힐링체험 #오늘의축제 #연중무휴</p>
                             <a href="./tour.html" class="tour_button">Read More</a>
                         </div>
-                        <div class="tour_content">
+                        <div class="tour_content t_con3">
                             <b class="tour_title">운악산</b>
                             <p class="tour_text">
                                 <img src="./img/index_logo_05.svg" alt="logo05">
@@ -449,18 +401,18 @@
                             <a href="./tour.html" class="tour_button">Read More</a>
                         </div>
                     </div>
-                    <div class="tour-swiper tour-mySwiper">
-                        <div class="tour-swiper-wrapper">
-                            <div class="tour-swiper-slide">
+                    <div class="swiper tour-mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
                                 <img src="./img/index_tour_01.png" alt="tour1">
                             </div>
-                            <div class="tour-swiper-slide">
+                            <div class="swiper-slide">
                                 <img src="./img/index_tour_02.png" alt="tour2">
                             </div>
-                            <div class="tour-swiper-slide">
+                            <div class="swiper-slide">
                                 <img src="./img/index_tour_03.png" alt="tour3">
                             </div>
-                            <div class="tour-swiper-slide">
+                            <div class="swiper-slide">
                                 <img src="./img/index_tour_04.png" alt="tour4">
                             </div>
                         </div>
@@ -471,16 +423,5 @@
         </section>
     </main>
 </div>
-
-
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            sildesPerview: 4,
-            loop: true,
-            autoplay:true
-        });
-    </script> -->
 </body>
 </html>

@@ -1,28 +1,63 @@
 @import '_common';
 
-@font-face {
-    font-family: 'HakgyoansimDunggeunmisoTTF-R';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-R.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'HakgyoansimDunggeunmisoTTF-B';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimDunggeunmisoTTF-B.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
 
-// body{overflow: hidden;}
-::-webkit-scrollbar{
-    // display: none;
-}
 .wrap{
     position:fixed;
     left:0; top:0; 
     width:100%;
     // transition: .5s ease-out;
 }
+.swiper-pagination-bullet{
+    background-color: #ECEBC2;
+}
+.swiper-pagination-bullet-active{
+    background-color: #999F54;
+}
+
+.reserv{
+    position: fixed;
+    right: 0; bottom: 0;
+    z-index: 2;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    .reserv_left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        height: 100px;
+        div{
+            display: inline-block;
+            border-right: 1px solid #555;
+            padding: 0 30px;
+            p:nth-of-type(1){
+                font-size: 14px;
+                color: #555;
+            }
+            p:nth-of-type(2){
+                font-size: 20px;
+                font-family: 'NanumSquareBold';
+                color: #333;
+            }
+        }
+        .adult{text-align: center;}
+        .children{text-align: center; border: none;}
+    }
+    .reserv_rig{
+        height: 100px;
+        a{
+            background-color: #F3EAD6;
+            padding: 32px 86px;
+            font-size: 24px;
+            font-family: 'NanumSquareBold';
+            display: block;
+        }
+    }
+}
+
+
 main{
     .main_img{
         position: relative;
@@ -34,6 +69,9 @@ main{
                 .swiper-wrapper{
                     .swiper-slide{
                         position: relative;
+                        &.swiper-slide-active span{
+                            animation: blink 0.5s 1 alternate forwards;
+                        }
                         img{
                             display: block;
                             width: 100%;
@@ -41,10 +79,6 @@ main{
                             object-fit: cover;
                         }
                         .silde-title01{
-                            // position: absolute;
-                            // left: 50%;
-                            // top: 50%;
-                            // transform: translate(-50%, -50%);
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -58,7 +92,12 @@ main{
                                 display: flex;
                                 justify-content: center;
                                 span{
-                                    opacity: 1;
+                                    opacity: 0;
+                                }
+                                
+                                @keyframes blink {
+                                    0% { opacity: 0; }
+                                    100% { opacity: 1; }
                                 }
                             }
                             div:nth-of-type(1){
@@ -81,10 +120,6 @@ main{
                             }
                         }
                         .silde-title02{
-                            // position: absolute;
-                            // left: 50%;
-                            // top: 50%;
-                            // transform: translate(-50%, -50%);
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -98,8 +133,9 @@ main{
                                 display: flex;
                                 justify-content: center;
                                 span{
-                                    opacity: 1;
+                                    opacity: 0;
                                 }
+                                
                             }
                             div:nth-of-type(1){
                                 position: absolute;
@@ -121,10 +157,6 @@ main{
                             }
                         }
                         .silde-title03{
-                            // position: absolute;
-                            // left: 50%;
-                            // top: 50%;
-                            // transform: translate(-50%, -50%);
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -138,8 +170,9 @@ main{
                                 display: flex;
                                 justify-content: center;
                                 span{
-                                    opacity: 1;
+                                    opacity: 0;
                                 }
+                                
                             }
                             div:nth-of-type(1){
                                 position: absolute;
@@ -161,10 +194,6 @@ main{
                             }
                         }
                         .silde-title04{
-                            // position: absolute;
-                            // left: 50%;
-                            // top: 50%;
-                            // transform: translate(-50%, -50%);
                             display: flex;
                             justify-content: center;
                             align-items: center;
@@ -178,7 +207,7 @@ main{
                                 display: flex;
                                 justify-content: center;
                                 span{
-                                    opacity: 1;
+                                    opacity: 0;
                                 }
                             }
                             div:nth-of-type(1){
@@ -204,51 +233,7 @@ main{
                 }
             }
         }
-        .reserv{
-            position: fixed;
-            right: 0; bottom: 0;
-            z-index: 2;
-    
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            // height: 100px;
-            .reserv_left{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: white;
-                height: 100px;
-                // padding: 40px 0;
-                div{
-                    display: inline-block;
-                    border-right: 1px solid #555;
-                    padding: 0 30px;
-                    p:nth-of-type(1){
-                        font-size: 14px;
-                        color: #555;
-                        // padding: 29px 32px 0 44px;
-                    }
-                    p:nth-of-type(2){
-                        font-size: 20px;
-                        font-family: 'NanumSquareBold';
-                        color: #333;
-                    }
-                }
-                .adult{text-align: center;}
-                .children{text-align: center; border: none;}
-            }
-            .reserv_rig{
-                height: 100px;
-                a{
-                    background-color: #F3EAD6;
-                    padding: 32px 86px;
-                    font-size: 24px;
-                    font-family: 'NanumSquareBold';
-                    display: block;
-                }
-            }
-        }
+        
     }
     .roomlist{
         width: 1400px;
@@ -308,7 +293,11 @@ main{
                     left: 350px; top: 0;
                     width: 700px; height: 455px;
                     background-color: rgba(255, 248, 235, 0.95);
-                    padding: 132px 0 132px  63px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    padding: 0 0 0 63px;
                     .hov_text{
                         width: 100%;
                         display: flex;
@@ -317,6 +306,9 @@ main{
                             display: inline-block;
                             line-height: 27px;
                             color: #333;
+                        }
+                        .hov_left>span{
+                            display: block;
                         }
                     }
                     b{
@@ -337,7 +329,7 @@ main{
     }
     .section3{
         background-color: #FFF8EB;
-        height:500vh;
+        height:400vh;
         .special{
             width: 1400px;
             height: 100vh;
@@ -370,11 +362,17 @@ main{
             .special_con{
                 position: relative;
                 width: 100%;
-                height: 389px;
+                height: 100%;
                 li{
                     position: absolute;
                     left: 0; top: 0;
                     width: 100%;
+                    &:nth-of-type(1){z-index: 3;}
+                    &:nth-of-type(2){z-index: 2;}
+                    &:nth-of-type(3){z-index: 1;}
+                    .con1_text{
+                        opacity: 0;
+                    }
                     .con_img{
                         width: 1400px;
                         height: 450px;
@@ -413,7 +411,7 @@ main{
     }
     .tour{
         width: 1400px;
-        // height: 100vh;
+        height: 100vh;
         margin: 0 auto;
         padding: 180px 0;
         .tour_slider{
@@ -439,7 +437,14 @@ main{
                 justify-content: space-between;
                 align-items: end;
                 .tour_left_text{
+                    width: 45%;
+                    position: relative;
                     .tour_content{
+                        position: absolute;
+                        left: 0; bottom: 0;
+                        opacity: 0;
+                        transform: translateY(50%);
+                        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
                         .tour_title{
                             display: block;
                             font-family: 'NanumSquareBold';
@@ -461,11 +466,17 @@ main{
                             background-color: #ECEBC2;
                         }
                     }
+                    .t_con0{
+                        opacity: 1;
+                        transform: translateY(0);
+                        display: block;
+                    }
                 }
-                .tour-swiper{
-                    .tour-swiper-wrapper{
-                        .tour-swiper-slide{
-                            width: 768px;
+                .tour-mySwiper{
+                    width: 55%;
+                    .swiper-wrapper{
+                        .swiper-slide{
+                            // width: 768px;
                             height: 593px;
                             overflow: hidden;
                             img{
@@ -476,16 +487,9 @@ main{
                     }
                 }
             }
-            // .tour_slider_all{
-            //     .tour_slider_item{
-            //         .tour_slider_left{
-            //             display:flex;
-            //             align-items: end;
-            //         }
-            //     }
-            // }
         }
     }
 }
 
 
+@import "./res-index";
