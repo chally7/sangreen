@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약하기</title>
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/reserv.css">
     <script defer src="./js/common.js"></script>
     <script defer src="./js/reserv.js"></script>
@@ -52,13 +51,13 @@
                     <h3>예약자 정보</h3>
                     <form action="#">
                         <ul>
-                            <li class="name">
+                            <li class="name content_box_01">
                                 <input class="input_icon" type="text" placeholder="이름">
                             </li>
-                            <li class="tel">
+                            <li class="tel content_box_01">
                                 <input class="input_icon" type="tel" placeholder="전화번호">
                             </li>
-                            <li class="email">
+                            <li class="email content_box_01">
                                 <input class="input_icon" type="email" placeholder="이메일">
                             </li>
                         </ul>
@@ -100,15 +99,21 @@
                 <div class="content_box">
                     <h3>개인정보 수집 동의</h3>
                     <form action="#">
-                        <input class="checkbox" type="checkbox">전체 동의
-                        <div>
-                            <input class="checkbox" type="checkbox">(필수) 개인정보 수집항목 및 이용 동의
-                            <a href="#">내용보기</a>
-                        </div>
-                        <div>
-                            <input class="checkbox" type="checkbox">(필수) 예약 변경 및 취소 규정 동의
-                            <a href="#">내용보기</a>
-                        </div>
+                        <label for="agree1">
+                            <input id="agree1" class="checkbox" type="checkbox">전체 동의
+                        </label>
+                        <label for="agree2">
+                            <div>
+                                <input id="agree2" class="checkbox" type="checkbox">(필수) 개인정보 수집항목 및 이용 동의
+                                <a href="#">내용보기</a>
+                            </div>
+                        </label>
+                        <label for="agree3">
+                            <div>
+                                <input id="agree3" class="checkbox" type="checkbox">(필수) 예약 변경 및 취소 규정 동의
+                                <a href="#">내용보기</a>
+                            </div>
+                        </label>
                     </form>
                 </div>
             </div>
@@ -139,11 +144,11 @@
                         <div class="payment_methods01">
                             <h3>결제 수단</h3>
                             <form action="#" class="payment_methods">
-                                <input class="radio" type="radio" name="gender"> 카드결제
-                                <input class="radio" type="radio" name="gender"> 무통장 입금
+                                <label for="card"><input id="card" class="radio" type="radio" name="gender" checked>카드결제</label>
+                                <label for="cash"><input id="cash" class="radio" type="radio" name="gender">무통장 입금</label>
                             </form>
                         </div>
-                        <div class="payment_methods02 active">
+                        <div class="payment_methods02">
                             <b>무통장 입금 안내</b>
                             <p>입금계좌<br>하나은행 759-910047-78107 이엽</p>
                             <ul>
