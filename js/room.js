@@ -1,4 +1,3 @@
-
 const textElement = document.querySelectorAll(".banner_text span");
 
 textElement.forEach((char, i) => {
@@ -15,7 +14,7 @@ var swiper = new Swiper(".mySwiper", {
         clickable: true,
     },
     autoplay: {
-        delay: 3000,  // 초마다 자동 전환
+        delay: 3000,  // 3초마다 자동 전환
         disableOnInteraction: false, // 유저가 조작해도 자동재생 유지
     },
     breakpoints: {
@@ -23,96 +22,89 @@ var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 20,
             centeredSlides: true,
-        },
+        },//640이상일때 슬라이드 1개
         1025:{
             slidesPerView: 2,
             spaceBetween: 20,
             centeredSlides: true,
-        }
-    }
-});
-
-
-
-const roomBtns = document.querySelectorAll('.room-indi li'); // 101~104호 버튼들
-const rooms = document.querySelectorAll('article'); // 각 방 article 요소
-
-// 클릭 시 해당 방으로 스크롤 이동 및 active 적용
-roomBtns.forEach((btn, i) => {
-    btn.addEventListener('click', function () {
-        const offset = 100; // 상단 여백 조정
-        const targetPosition = rooms[i].getBoundingClientRect().top + window.scrollY - offset;
-
-        // 부드러운 스크롤 이동
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-
-        // 모든 버튼에서 active 제거 후 클릭한 버튼에 추가
-        roomBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    });
-});
-
-// 🔥 스크롤 감지하여 현재 보이는 방에 맞게 active 자동 변경
-let ticking = false;
-
-window.addEventListener('scroll', function () {
-    if (!ticking) {
-        requestAnimationFrame(() => {
-            let currentIndex = -1;
-            let minDiff = Infinity;
-
-            rooms.forEach((room, i) => {
-                const rect = room.getBoundingClientRect();
-                const diff = Math.abs(rect.top - window.innerHeight / 2); // 화면 중앙과의 거리
-
-                if (diff < minDiff) {
-                    minDiff = diff;
-                    currentIndex = i; // 가장 가까운 방을 선택
-                }
-            });
-
-            if (currentIndex !== -1) {
-                // 모든 버튼의 active 제거 후, 현재 보이는 방의 버튼만 active 추가
-                roomBtns.forEach(b => b.classList.remove('active'));
-                roomBtns[currentIndex].classList.add('active');
-            }
-
-            ticking = false;
-        });
-
-        ticking = true;
-    }
-});
-
-// 돋보기 버튼 클릭 시 팝업 열기
-document.querySelectorAll('.swiper-slide a').forEach(btn => {
-    btn.addEventListener('click', function (event) {
-        event.preventDefault(); // 기본 링크 기능 방지
-        
-        // 클릭한 돋보기 버튼의 부모 .swiper-slide 내부 이미지 가져오기
-        const imgSrc = this.parentElement.querySelector('img').src;
-
-        // 팝업 이미지 변경
-        document.getElementById('popup-img').src = imgSrc;
-
-        // 팝업 보이기
-        document.getElementById('popup').style.display = 'flex';
-    });
-});
-
-// 팝업 닫기 기능
-document.querySelector('.close').addEventListener('click', function () {
-    document.getElementById('popup').style.display = 'none';
-});
-
-// 팝업 바깥 클릭 시 닫기
-document.getElementById('popup').addEventListener('click', function (event) {
-    if (event.target === this) {
-        this.style.display = 'none';
+        }//1025이상일때 슬라이드 2개
     }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+    const roomBtns = document.querySelectorAll(".room-indi li"); // 101~104호 버튼들
+    const rooms = document.querySelectorAll("article"); // 각 방 article 요소
+
+    function getOffset() {
+        if (window.innerWidth <= 1024) {
+            return 10; // 아이패드 여백 
+        }else{
+            return 100; // PC 여백 
+        }
+    }
+    // function getOffset() {
+    //     if (window.innerWidth <= 768) {
+    //         return 10; // 모바일 여백 
+    //     } else if (window.innerWidth <= 1024) {
+    //         return 20; // 아이패드 여백 
+    //     } else {
+    //         return 100; // PC 여백 
+    //     }
+    // }
+
+    roomBtns.forEach((btn, i) => {
+        btn.addEventListener("click", function () {
+            const offset = getOffset(); // 기기별 여백 가져오기
+            const targetPosition = rooms[i].getBoundingClientRect().top + window.scrollY - offset;
+
+            // 부드러운 스크롤 이동
+            window.scrollTo({ top: targetPosition, behavior: "smooth" });
+        });
+    });
+    
+    const roomIndi = document.querySelector(".room-indi"); // 스크롤에 따라 숨길 요소
+    const firstRoom = document.querySelector("article:first-child"); // 101호
+    let lastScrollY = window.scrollY; // 마지막 스크롤 위치 저장
+    let timeout; // 타이머 변수
+
+    function showRoomIndi() {
+        roomIndi.classList.add("visible");
+        roomIndi.classList.remove("hidden");
+    }
+
+    function hideRoomIndi() {
+        roomIndi.classList.add("hidden");
+        roomIndi.classList.remove("visible");
+    }
+
+
+    window.addEventListener("scroll", function () {
+        let currentScrollY = window.scrollY;
+        let firstRoomRect = firstRoom.getBoundingClientRect(); // 101호 위치 확인
+
+        // 101호가 화면 상단에 있을 때 .room-indi 보이게 설정
+        if (firstRoomRect.top >= 0) {
+            showRoomIndi();
+        } else {
+            // 스크롤 방향에 따라 보이거나 숨기기
+            if (currentScrollY > lastScrollY) {
+                showRoomIndi(); // 아래로 스크롤 시 보이기
+            } else {
+                hideRoomIndi(); // 위로 스크롤 시 숨기기
+            }
+        }
+
+        lastScrollY = currentScrollY; // 현재 스크롤 위치 저장
+
+        // 사용자가 스크롤하면 기존 타이머 초기화
+        clearTimeout(timeout);
+
+        // 3초 후 자동 표시 (다시 타이머 시작)
+        timeout = setTimeout(showRoomIndi, 1000);
+    });
+
+    // 페이지 로드시 3초 후 자동 표시 시작
+    timeout = setTimeout(showRoomIndi, 1000);
     const swiperSlides = document.querySelectorAll(".swiper-slide a"); // 돋보기 버튼들
     const popup = document.getElementById("popup");
     const popupSwiperWrapper = document.getElementById("popup-swiper-wrapper");
@@ -170,6 +162,38 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.style.display = "none";
         }
     });
+});
+
+// 🔥 스크롤 감지하여 현재 보이는 방에 맞게 active 자동 변경
+let ticking = false;
+
+window.addEventListener('scroll', function () {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            let currentIndex = -1;
+            let minDiff = Infinity;
+
+            rooms.forEach((room, i) => {
+                const rect = room.getBoundingClientRect();
+                const diff = Math.abs(rect.top - window.innerHeight / 2); // 화면 중앙과의 거리
+
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    currentIndex = i; // 가장 가까운 방을 선택
+                }
+            });
+
+            if (currentIndex !== -1) {
+                // 모든 버튼의 active 제거 후, 현재 보이는 방의 버튼만 active 추가
+                roomBtns.forEach(b => b.classList.remove('active'));
+                roomBtns[currentIndex].classList.add('active');
+            }
+
+            ticking = false;
+        });
+
+        ticking = true;
+    }
 });
 
 

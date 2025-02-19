@@ -2,7 +2,7 @@
 
 .banner{
     width: 100%;
-    margin: 0 auto 150px;
+    margin: 0 auto 0px;
     position: relative;
     color: #FFFFFF;
     text-align: center;
@@ -60,10 +60,11 @@
                     font-size: 60px;
                     color: #999F54;
                     font-family: 'Baloo Bhaijaan 2 SemiBold';
-                    margin: 14px 0 32px;
+                    margin: 0 0 32px;
                     line-height: 1;
                 }
                 p small{
+
                     font-size: 35px;
                     color: #ECEBC2;
                     font-family: 'Baloo Bhaijaan 2 SemiBold';
@@ -72,7 +73,6 @@
                     font-size: 20px;
                     color: #555555;
                     font-weight: bold;
-                    font-family: 'NanumSquare';
                 }
             }
         }
@@ -80,7 +80,7 @@
 }
 
 .bottom{
-    width:1400px; margin:150px auto;
+    width:1400px; margin:0px auto;
     article{
         height: 880px;
         h2{
@@ -99,7 +99,6 @@
                 background-color: #ECEBC2;
                 text-decoration: none;
                 color: #999F54;
-                font-family: 'NanumSquare';
                 
                 font-size: 20px;
                 &:nth-of-type(1){border-radius: 15px 0 0 0;}
@@ -122,7 +121,7 @@
                 background-color: #eee;
                 border: 1px solid #999F54;
                 display: none;
-                img{width:100%}
+                img{width:100%; height: 99.9%;}
                 &.active{display: block;}
             }
         }   
@@ -135,7 +134,8 @@
         color: #555555;
         font-family: "NanumSquare Regular";
         width: 50%;
-    li{padding: 10px;}
+        font-size: 16px;
+    li{padding: 10px 0;}
     }
 }
 
