@@ -15,7 +15,7 @@ let headRequest = async function(){
     elNavbug.onclick = function(){
         this.classList.toggle('active');
         elNav.classList.toggle('active');        
-        if(elNavbug.classList.contains('active')){
+        if(window.scrollY!=0 || elNavbug.classList.contains('active')){
             elNavbug_span.forEach(function(span){
                 span.style='background-color:#333;'
             })
@@ -24,10 +24,25 @@ let headRequest = async function(){
                 span.style=''
             })
         }
+        if(elNavbug.classList.contains('active')){
+            document.documentElement.style = 'overflow:hidden;'
+        }else{
+            document.documentElement.style = 'overflow:auto;'
+        }
     }
 
 }
 headRequest();
+
+//header-menu-eachRoom
+// const elBug_room = document.querySelectorAll('.nav-menu-roomNum>a');
+// // console.log(window.scrollY);
+
+// elBug_room.forEach((room,i)=>{
+//     room.onclick=()=>{
+        
+//     }
+// })
 
 
 
@@ -41,42 +56,32 @@ let scrollState = function(){
 let headerActive = function(e){
     const elHeader = document.querySelector('header');
     const elLogo = document.querySelector('.logo a');
-    const elRight_lang = document.querySelectorAll('.lang a');
     const elBug = document.querySelectorAll('.bug span');
     if(pos.state){
         // down
         elHeader.classList.add('active');
-        
     }else{
         // up
         elHeader.classList.remove('active');
         if(window.scrollY!=0){
             elHeader.style='background-color:#fff;'
             elLogo.style='color: #999F54;'
-            elRight_lang.forEach(function(lang){
-                lang.style='color: #333;'
-            })
             elBug.forEach(function(bug){
                 bug.style='background-color:#333;'
             })
         }else{
             elHeader.style=''
             elLogo.style=''
-            elRight_lang.forEach(function(lang){
-                lang.style=''
-            })
             elBug.forEach(function(bug){
                 bug.style=''
             })
         }
     }
 }
-window.onscroll = function(){
+window.addEventListener('scroll',()=>{
     scrollState();
     headerActive();
-}
-
-
+})
 
 
 

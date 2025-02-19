@@ -13,13 +13,25 @@
 </head>
 <body>
     <main>
-        <div class="top">
-            <img src="./img/room/room_top.jpg" alt="">
-            <div>
-                <b>Room List</b>
-                <p>지친 일상 속 자연을 느낄 수 있는 산그린펜션의 객실입니다.</p>
-            </div>
-        </div>
+        <div class="banner">
+            <p><img src="./img/tour/tour_top.png" alt=""></p>
+            <div class="banner_text">
+                <h2>
+                    <span>T</span>
+                    <span>o</span>
+                    <span>u</span>
+                    <span>r</span>
+                    <span>&nbsp;</span>
+                    <span>S</span>
+                    <span>p</span>
+                    <span>o</span>
+                    <span>t</span>
+                </h2>
+                <b>
+                    <span>펜션 근처 주요 관광지 정보를 확인해보세요.</span>
+                </b>
+            </div> 
+        </div> 
         <div class="tour">
             <ul>
                 <li>
@@ -97,7 +109,7 @@
                     </div>
                     <div class="info">
                         <p class="title"><b>청평호반</b></p>
-                        <p class="txt">주소: 경기 가평군 설악면 회곡리 산 116
+                        <p class="txt">주소: 경기 가평군 설악면 회곡리 산 116<br/>
                             위치: 펜션에서 약 29.4km, 차량으로 36분 거리<br/><br/>
                             청평호는 북한강을 막아 만든 청평댐으로 인해 생긴 인공호수이다.
                             주위의 산과 호반의 맑은 물이 빚어내는 경치가 매우 아름다울 뿐 아니라
@@ -108,7 +120,7 @@
                 </li>
             </ul>
             <div class="map">
-                <img src="./img/tour/map_title.png" alt=""><br/><br/>
+                <P class="m-title"><b>Tour Spot 한눈에보기</b></P>
                 <div id="imageBox">
                     <img src="./img/tour/tour_map_01.png" class="main-image">
                     <img src="./img/tour/tour_map_02.png" class="main-image">
@@ -116,8 +128,8 @@
                     <img src="./img/tour/tour_map_04.png" class="main-image">
                 </div>
                 <div class="btn-group">
-                    <button onclick="changeImage(0)">운악산</button>
-                    <button class="active" onclick="changeImage(1)">아침고요 수목원</button>
+                    <button class="active" onclick="changeImage(0)">운악산</button>
+                    <button onclick="changeImage(1)">아침고요수목원</button>
                     <button onclick="changeImage(2)">남이섬</button>
                     <button onclick="changeImage(3)">청평호반</button>
                 </div>
