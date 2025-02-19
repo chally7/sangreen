@@ -132,6 +132,18 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+.btn-group button {
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: #999F54;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 260px;
+  height: 100px;
+  text-align: center;
+  font-family: "NanumSquare";
+}
 
 button:hover, button.active {
   background-color: #566418;

@@ -1,3 +1,11 @@
+const textElement = document.querySelectorAll(".banner_text span");
+
+textElement.forEach((char, i) => {
+    let random = Math.random()*0.15;
+    char.style.animationDelay = i * random +'s';
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".special ul li");
 
@@ -19,5 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
           el: ".swiper-pagination",
           clickable: true,
       },
+      autoplay: {
+        delay: 3000,  // 초마다 자동 전환
+        disableOnInteraction: false, // 유저가 조작해도 자동재생 유지
+        },
   });
 });
