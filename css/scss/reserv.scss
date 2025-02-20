@@ -172,7 +172,7 @@ li{
 //예약하기 바
 .reserve_popupbar{
     width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto 150px;
     position: relative;
     .reserve_popupbar_flex{
         display: flex;
@@ -195,10 +195,10 @@ li{
             .room_list{
                 display: none;
                 position: absolute;
+                background-color: white;
                 top: -225px;
                 left: -12px;
                 z-index: 99;
-                background-color: rgb(255, 255, 255);
                 padding: 10px;
                 p{
                     padding: 5px 0;
@@ -213,7 +213,7 @@ li{
             }
             .line{
                 border-right: 1px solid #6f6f6f;
-                padding: 0 80px;
+                padding: 0 78px;
                 h3{ 
                     font-size: 14px;
                     font-weight: normal;
@@ -305,19 +305,16 @@ li{
         position: absolute;
         left: 315px;
         bottom: 109px;
-        width: 683px;
+        width: 500px;
         z-index: 1;
         h3::before{
             content: url(../img/reserv/reserv_date_01.svg);
             display: inline-block;
             font-size: 0px;
             vertical-align: middle;
-            margin-right: 260px;
+            margin-right: 170px;
         }
         .calender_flex{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
             border:1px solid #999F54;
             border-radius: 0 0 16px 16px;
             background-color: #fff;
@@ -379,11 +376,12 @@ li{
         width: 47%;
         position: sticky;
         top: 0;
+        background-color: #FFF8EB;
+        padding: 150px 60px;
+        margin: 0 auto 150px;
         .right_stick{
             position: sticky;
-            top: 0px;
-            background-color: #FFF8EB;
-            padding: 150px 60px;
+            top: 175px;
         }
         .cash{
             .room{
@@ -448,11 +446,12 @@ li{
 
 .reserv03{
     width: 1400px; 
-    margin: 0 auto;
+    margin: 0 auto 200px;
     .reserv03_inputbox{
         position: relative;
         margin: 0 auto;
         display: flex;
+        gap: 80px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
