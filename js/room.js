@@ -1,3 +1,12 @@
+let mql = window.matchMedia("(min-width:300px) and (max-width: 1024px)");
+
+let mql2 = window.matchMedia("(max-width: 480px)");
+// ㄴmatchMedia 반응형부분 들어갈 때 수정하는거, ture false 인지 확인해주는 역할
+let breakPoint = true;
+mql.addListener((e)=>{
+    breakPoint = e.matches;
+})
+
 const textElement = document.querySelectorAll(".banner_text span");
 
 textElement.forEach((char, i) => {
@@ -218,7 +227,15 @@ window.addEventListener('scroll', function () {
 });
 
 
-
+//reserv-btn
+if(mql2.matches){
+    const resAll = document.querySelector('.reserve_popupbar');
+    const resBtn = document.querySelector('.mb_reserv');
+    resBtn.onclick=()=>{
+        resBtn.classList.toggle('active');
+        resAll.classList.toggle('active');
+    }
+}
 
 
 // 1️⃣2️⃣3️⃣
