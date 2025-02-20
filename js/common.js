@@ -7,14 +7,21 @@ let headRequest = async function(){
     tag.innerHTML=data;
     document.body.prepend(tag);
 
+    setupHeaderEvent();
+}
+
+headRequest();
+
+function setupHeaderEvent(){
     //header-buger
     const elNavbug = document.querySelector('.bug');
     const elNavbug_span = document.querySelectorAll('.bug > span');
     const elNav = document.querySelector('.nav-menu00');
+    const elHead = document.querySelector('header');
     
     elNavbug.onclick = function(){
         this.classList.toggle('active');
-        elNav.classList.toggle('active');        
+        elNav.classList.toggle('active');
         if(window.scrollY!=0 || elNavbug.classList.contains('active')){
             elNavbug_span.forEach(function(span){
                 span.style='background-color:#333;'
@@ -25,14 +32,15 @@ let headRequest = async function(){
             })
         }
         if(elNavbug.classList.contains('active')){
+            elHead.classList.add('menu-open');
             document.documentElement.style = 'overflow:hidden;'
         }else{
+            elHead.classList.remove('menu-open');
             document.documentElement.style = 'overflow:auto;'
         }
     }
-
 }
-headRequest();
+
 
 //header-menu-eachRoom
 // const elBug_room = document.querySelectorAll('.nav-menu-roomNum>a');
@@ -57,6 +65,10 @@ let headerActive = function(e){
     const elHeader = document.querySelector('header');
     const elLogo = document.querySelector('.logo a');
     const elBug = document.querySelectorAll('.bug span');
+
+    if (!elHeader || elHeader.classList.contains('menu-open')) return;
+    // 버거 메뉴가 열려 있을 때는 실행 X
+
     if(pos.state){
         // down
         elHeader.classList.add('active');
