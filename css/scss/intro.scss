@@ -41,7 +41,7 @@
     }
 } 
 .center{
-    padding: 200px;
+    padding: 200px 0;
     background-color: #FFF8EB;
     .view-wrap{
         width:1400px;
@@ -64,7 +64,6 @@
                     line-height: 1;
                 }
                 p small{
-
                     font-size: 35px;
                     color: #ECEBC2;
                     font-family: 'Baloo Bhaijaan 2 SemiBold';
@@ -82,12 +81,12 @@
 .bottom{
     width:1400px; margin:0px auto;
     article{
-        height: 880px;
+        height: 930px;
         h2{
             color: #A66D45;
             font-size: 24px;
             font-family: 'Hakgyoansim Dunggeunmiso TTF';
-            padding: 150px 0 50px 0;
+            padding: 200px 0 50px 0;
         }
         .tab-head{
             font-family: 'inter Regular';
@@ -99,7 +98,7 @@
                 background-color: #ECEBC2;
                 text-decoration: none;
                 color: #999F54;
-                
+                font-family: 'NanumSquare';
                 font-size: 20px;
                 &:nth-of-type(1){border-radius: 15px 0 0 0;}
                 &:nth-of-type(2){border-radius: 0 15px 0 0;}
@@ -114,13 +113,13 @@
         .tab-body{
             position: relative;
             .map{
+                display: none;
                 width:100%;
                 height:564px;
                 position: absolute;
                 left: 0; top: 0;
                 background-color: #eee;
                 border: 1px solid #999F54;
-                display: none;
                 img{width:100%; height: 99.9%;}
                 &.active{display: block;}
             }
@@ -129,6 +128,7 @@
 }
 .bottom-text{
     display: flex;
+    margin-bottom: 200px;
     ul{
         list-style: none;
         color: #555555;
