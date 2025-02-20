@@ -62,6 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     
+
+    
+
     const roomIndi = document.querySelector(".room-indi"); // 스크롤에 따라 숨길 요소
     const firstRoom = document.querySelector("article:first-child"); // 101호
     let lastScrollY = window.scrollY; // 마지막 스크롤 위치 저장
@@ -151,10 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 팝업 닫기 기능
-    document.querySelector(".close").addEventListener("click", function () {
-        popup.style.display = "none";
-    });
 
     // 팝업 배경 클릭 시 닫기
     popup.addEventListener("click", function (event) {
@@ -164,7 +163,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// 🔥 스크롤 감지하여 현재 보이는 방에 맞게 active 자동 변경
+
+
+const roomBtns = document.querySelectorAll('.room-indi li'); // 101~104호 버튼들
+const rooms = document.querySelectorAll('article'); // 각 방 article 요소
+
+// 클릭 시 해당 방으로 스크롤 이동 및 active 적용
+roomBtns.forEach((btn, i) => {
+    btn.addEventListener('click', function () {
+        const offset = 100; // 상단 여백 조정
+        const targetPosition = rooms[i].getBoundingClientRect().top + window.scrollY - offset;
+
+        // 부드러운 스크롤 이동
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+        // 모든 버튼에서 active 제거 후 클릭한 버튼에 추가
+        roomBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+
+
+//  스크롤 감지하여 현재 보이는 방에 맞게 active 자동 변경
 let ticking = false;
 
 window.addEventListener('scroll', function () {
@@ -195,6 +216,9 @@ window.addEventListener('scroll', function () {
         ticking = true;
     }
 });
+
+
+
 
 
 // 1️⃣2️⃣3️⃣
