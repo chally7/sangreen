@@ -14,48 +14,233 @@
     background-color: #999F54;
 }
 
-.reserv{
+// 25 02 20 원래내꺼
+// .reserv{
+//     position: fixed;
+//     right: 0; bottom: 0;
+//     z-index: 2;
+
+//     display: flex;
+//     justify-content: end;
+//     align-items: center;
+//     .reserv_left{
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: white;
+//         height: 100px;
+//         div{
+//             display: inline-block;
+//             border-right: 1px solid #555;
+//             padding: 0 30px;
+//             p:nth-of-type(1){
+//                 font-size: 14px;
+//                 color: #555;
+//             }
+//             p:nth-of-type(2){
+//                 font-size: 20px;
+//                 font-family: 'NanumSquareBold';
+//                 color: #333;
+//             }
+//         }
+//         .adult{text-align: center;}
+//         .children{text-align: center; border: none;}
+//     }
+//     .reserv_rig{
+//         height: 100px;
+//         a{
+//             background-color: #F3EAD6;
+//             padding: 32px 82px;
+//             font-size: 24px;
+//             font-family: 'NanumSquareBold';
+//             display: block;
+//         }
+//     }
+// }
+.mb_reserv{display: none;}
+
+
+//팝업창 top 스타일
+.user_top, .calender_top, .reserv03_check_top, .room_select_top{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 5px 28px ;
+    background-color: #999F54;
+    border-radius: 16px 16px 0 0 ;
+    text-align: center;
+    h3{
+        color: #FFF8EB;
+        font-weight: normal;
+    }
+}
+//팝업창 닫기 버튼
+.close{
+    width: 12px; height: 12px;
+    background : url(../img/reserv/reserv_X_01.svg) 0 0 / cover no-repeat;
+}
+.reserve_popupbar{
+    position: relative;
     position: fixed;
     right: 0; bottom: 0;
     z-index: 2;
-
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    .reserv_left{
+    // width: 1400px;
+    margin: 0 auto;
+    .reserve_popupbar_flex{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
-        height: 100px;
-        div{
-            display: inline-block;
-            border-right: 1px solid #555;
-            padding: 0 30px;
-            p:nth-of-type(1){
-                font-size: 14px;
-                color: #555;
+        // height: 118px;
+        .left{
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            height: 100px;
+            //룸 선택
+            .room_name{
+                position: relative;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                align-items: center;
             }
-            p:nth-of-type(2){
-                font-size: 20px;
-                font-family: 'NanumSquareBold';
+            .room_list{
+                display: none;
+                position: absolute;
+                background-color: white;
+                top: -225px;
+                left: -12px;
+                z-index: 99;
+                padding: 10px;
+                p{
+                    padding: 5px 0;
+                    font-weight: normal !important;}
+            }
+            .room_list.active{display: block;}
+            .room_name>h3{grid-column: 1 / 3;}
+            .room_name>p{grid-column: 1 / 2;}
+            .room_name>.room_select{
+                grid-column: 2 / 3;
+                margin-left: 15px;
+            }
+            .line{
+                border-right: 1px solid #6f6f6f;
+                padding: 0 78px;
+                h3{ 
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+                p{
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                }
+                .room_select{
+                    width: 11px; height: 6px;
+                    background: url(../img/reserv/reserv_drop.svg) 0 0 / cover no-repeat;
+                }
+            }
+            .adult, .children{
+                text-align: center;
+            }
+            .children{
+                border: none;
+            }
+        }
+        .right{
+            height: 100px;
+            a{
+                display: block;
+                font-size: 1.5rem;
+                padding: 32px 91px;
+                font-weight: bold;
                 color: #333;
+                background-color: #F3EAD6;
             }
         }
-        .adult{text-align: center;}
-        .children{text-align: center; border: none;}
     }
-    .reserv_rig{
-        height: 100px;
-        a{
-            background-color: #F3EAD6;
-            padding: 32px 86px;
-            font-size: 24px;
-            font-family: 'NanumSquareBold';
-            display: block;
+    //인원선택
+    .user{
+        display: none;
+        position: absolute;
+        left: 698px;
+        bottom: 108px;
+        width: 250px;
+        z-index: 1;
+        h3::before{
+            content: url(../img/reserv/reserv_uesr_01.svg);
+            display: inline-block;
+            font-size: 0px;
+            vertical-align: middle;
+            margin-right: 36px;
         }
+        .plus_btn{
+            width: 26px; height: 26px;
+            background : url(../img/reserv/reserv_icoPlusBtn.svg) 0 0 / cover no-repeat;
+        }   
+        .minus_btn{
+            width: 26px; height: 26px;
+            background : url(../img/reserv/reserv_icoMinusBtn.svg) 0 0 / cover no-repeat;
+        }
+        .user_1{
+            border:1px solid #999F54;
+            border-radius: 0 0 16px 16px;
+            background-color: #fff;
+            padding: 20px 33px;
+            .user_btn{
+                text-align: center;
+                a{
+                    background-color: #ECEBC2;
+                    border-radius: 20px;
+                    padding: 13px 27px;
+                }
+            }
+        }
+        .user_adult, .user_children{
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            p:nth-of-type(2){
+                font-size: 0.7rem;
+            }
+        }
+        .button_num{
+            width: 90px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .user.active{
+        display: block;
+    }
+    //날짜선택
+    .calender{
+        display: none;
+        position: absolute;
+        left: 315px;
+        bottom: 109px;
+        width: 500px;
+        z-index: 1;
+        h3::before{
+            content: url(../img/reserv/reserv_date_01.svg);
+            display: inline-block;
+            font-size: 0px;
+            vertical-align: middle;
+            margin-right: 170px;
+        }
+        .calender_flex{
+            border:1px solid #999F54;
+            border-radius: 0 0 16px 16px;
+            background-color: #fff;
+            padding: 20px 33px;
+        }
+    }
+    .calender.active{
+        display: block;
     }
 }
+
+
 
 
 main{
@@ -411,9 +596,9 @@ main{
     }
     .tour{
         width: 1400px;
-        height: 100vh;
+        // height: 100vh;
         margin: 0 auto;
-        padding: 180px 0;
+        padding: 125px 0;
         .tour_slider{
             .tour_top{
                 position: relative;

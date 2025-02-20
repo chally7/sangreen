@@ -5,8 +5,10 @@ let mql2 = window.matchMedia("(max-width: 480px)");
 let breakPoint = true;
 mql.addListener((e)=>{
     breakPoint = e.matches;
-    
 })
+
+
+
 
 
 //roomlist
@@ -34,7 +36,7 @@ function init(){
     const elSpecialCon_img = document.querySelectorAll('.con_img');
     const elSpecialCon_txt = document.querySelectorAll('.con1_text');
     const elTour = document.querySelector('.tour');
-    const elReserv = document.querySelector('.reserv');
+    const elReserv = document.querySelector('.reserve_popupbar');
     let start, end, isScrolled = false, intervalId;
     let n1=0,opacityNum=0,incriNum=0, decreNum=1,
         pos = {y1:0,y2:0,state:true};
@@ -45,11 +47,25 @@ function init(){
         if(elTour.offsetTop >= window.scrollY){
             elReserv.style.display = 'flex';
             if(mql2.matches){
-            elReserv.style.display = 'block';
+                elReserv.style = 'flex-direction: column;'
+;
             }
         }else{
             elReserv.style.display = 'none';
         }
+
+        // if(mql2.matches && window.scroolY==0){
+        //     elReserv.style.display = 'block';
+        // }
+        // if(mql2.matches){
+        //     // const resAll = document.querySelector('.reserv');
+        //     const resBtn = document.querySelector('.mb_reserv');
+        //     resBtn.onclick=()=>{
+        //         resBtn.classList.toggle('active');
+        //         elReserv.classList.toggle('active');
+        //     }
+        //     // elReserv.style.display = 'none';
+        // }
     }
     
     function updown(){
@@ -126,6 +142,16 @@ function init(){
 
 window.onload = init;
 
+
+//reserv-btn
+if(mql2.matches){
+    const resAll = document.querySelector('.reserve_popupbar');
+    const resBtn = document.querySelector('.mb_reserv');
+    resBtn.onclick=()=>{
+        resBtn.classList.toggle('active');
+        resAll.classList.toggle('active');
+    }
+}
 
 
 //메인슬라이드
