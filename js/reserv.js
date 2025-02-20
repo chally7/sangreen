@@ -39,7 +39,7 @@ let num2 = 0;
 let oneDay = 24*60*60*1000;
 
 //예약 명단
-let reserveDeta = JSON.parse(localStorage.getItem('reserveDeta')) || {101:[],102:[],103:[],104:[]};
+let reserveDeta = JSON.parse(localStorage.getItem('reserveDeta'))|| {101:[],102:[],103:[],104:[]};
 console.log(reserveDeta);
 
 function reserv01(){
