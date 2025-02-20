@@ -1,0 +1,422 @@
+@import './common';
+
+@media (min-width: 768px) and (max-width:1024px) {
+    .banner{
+        position: relative;
+        color: #FFFFFF;
+        text-align: center;
+        p{
+            img {
+            max-width: 100%; height: auto;
+            }
+        }
+        .banner_text{
+            position: absolute;
+            text-align: center;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                justify-content: center;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 40px;
+                span{
+                    opacity: 0;
+                    animation: blink 0.5s 1 alternate forwards;
+                }
+    
+                @keyframes blink {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+            }
+            b{
+                font-weight: normal;
+                span{
+                    font-size:16px;
+                    opacity: 0;
+                    animation: blink 2s 1 alternate forwards;
+                    line-height: 24px;
+                }
+            }
+        }
+    } 
+    .room{
+        width:90%; 
+        margin:0 auto;
+        overflow: hidden;
+        article{
+            margin: 0 auto;
+            &:nth-of-type(4){
+                margin-bottom: 80px;
+            }
+            h5{
+                color: #999F54;
+                font-size: 40px;
+                font-family: 'HakgyoansimDunggeunmisoTTF-R';
+                padding:80px 0 10px 0;
+                margin:0 auto;
+                font-weight: normal;
+            b{
+                font-size: 80px;
+                // font-weight: normal;
+            }
+            }
+        }
+    
+    }
+
+    .room-2{
+        width: 100%;
+        display: flex;
+        margin: 20px auto;
+    ul{
+        width: auto;
+        li{
+            color: #333333;
+            font-family: 'NanumSquare Regular';
+            line-height: 1.5;
+        }
+    }
+    p{ 
+        color: #566418;
+        font-family: 'NanumSquare';
+        font-weight: bold;
+    }
+    }
+
+    .swiper{
+        position: relative;
+        transform: scale(1.0);
+        &-slide{
+            img{width:100%;}
+        }
+        a{
+            position: absolute;
+            right: 0; bottom: 0;
+            transform: scale(0.9);
+        }
+        &-pagination-bullet{
+            background-color: #999F54;
+        }
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 0px;
+        cursor: pointer;
+        color:black;
+    }
+    
+    /* 팝업 내부 컨텐츠 */
+    .popup-content {
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        .swiper-slide{overflow: hidden;}
+    }
+    /* Swiper 스타일 */
+    .popupSwiper {
+        width: 100%;
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            // transform: scale(2); /* 100% 확대 */
+        }
+    }
+
+
+    
+    .room-indi ul li {
+
+    }
+    .room-indi{
+        width: 100%;
+        max-width: 1024px;
+        position: sticky;
+        top: 13%;
+        max-width: 64%;
+        ul{
+            display: flex;
+            flex-wrap: nowrap;  /* 🔥 줄바꿈 방지 */
+            gap: 10px;
+
+            border-radius: 15px;
+            display: flex;
+            background-color:rgba($color:#FFFFFF, $alpha: 0.7) ;
+            li{
+                flex: 1 1 25%; /* 4개가 한 줄에 정렬되도록 설정 */
+                text-align: center;
+                white-space: nowrap; /* 🔥 텍스트 줄바꿈 방지 */
+
+                padding: 10px;
+                font-family: 'NanumSquare';
+                
+                color: #999F54;
+                font-weight: bold;
+                text-align: center;
+
+                &.active{
+                    color: #566418;
+                    font-weight: 900;
+                    text-decoration: underline;
+                }
+                &:hover{
+                    color: #566418;
+                    font-weight:900;
+                    text-decoration: underline;
+                    transform: translateY(20%);
+                }
+            }
+        }
+        
+    }
+    .res{
+        position: fixed;
+        width:50%;
+        left:75%; bottom:0;
+        transform: translateX(-50%);
+        z-index: 3;
+        div {
+            position: relative; // ul의 위치를 조정하기 위해 필요할 수 있음
+    
+            a {
+                width: 235px;
+                height: 80px;
+                display: inline-block;
+                font-family: 'NanumSquare';
+                font-size: 16px;
+                background-color: rgba(#F3EAD6,$alpha:0.7); // 오류 수정
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                text-align: center;
+                line-height: 1.1;
+
+            }
+    
+        }
+    }
+}
+@media (max-width: 480px) {
+    .banner{
+        position: relative;
+        color: #FFFFFF;
+        text-align: center;
+        margin: 0 auto 50px;
+        p{
+            img {
+            width: 100%; height: auto;
+            }
+        }
+        
+        .banner_text{
+            position: absolute;
+            text-align: center;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            h2{
+                display: flex;
+                justify-content: center;
+                font-family: 'HakgyoansimDunggeunmisoTTF-B';
+                font-size: 30px;
+                span{
+                    opacity: 0;
+                    animation: blink 0.5s 1 alternate forwards;
+                }
+    
+                @keyframes blink {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
+            }
+            b{
+                font-weight: normal;
+                span{
+                    font-size:10px;
+                    opacity: 0;
+                    animation: blink 2s 1 alternate forwards;
+                    line-height: 10px;
+                }
+            }
+        }
+    } 
+
+    .room{
+        width:90%; 
+        margin: auto;
+        overflow: hidden;
+        article{
+            margin: 50px auto;
+            &:nth-of-type(4){
+                margin-bottom: 0px;
+            }
+            h5{
+                margin:0 auto;
+                color:#999F54 ;
+                font-size: 30px;
+                font-family: 'HakgyoansimDunggeunmisoTTF-R';
+                padding-left: 0%;
+                padding-bottom: 2px;
+                font-weight: normal;
+            b{font-size: 60px;}
+            }
+        }
+    }
+
+    .room-2{
+        width: 100%;
+        display: block;
+        margin: 13px auto;
+    ul{
+        li{ 
+            color: #333333;
+            font-family: 'NanumSquare Regular';
+            font-size:14px;
+            padding: 6px;
+        }
+    }
+        p{  
+            display: block;
+            color: #566418;
+            font-family: 'NanumSquare';
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+        }
+    }
+
+    .swiper{
+        position: relative;
+        transform: scale(1.0);
+        &-slide{
+            img{width:100%;}
+        }
+        a{
+            position: absolute;
+            right: 0; bottom: 0;
+            transform: scale(0.7);
+    
+        }
+        &-pagination-bullet{
+            background-color: #999F54;
+        }
+
+    }
+
+    .popup {
+        display: none; /* 기본적으로 숨김 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+    
+    /* 팝업 내부 컨텐츠 */
+    .popup-content {
+        max-width: 100%;
+        max-height: 100%;
+        position: relative;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        .swiper-slide{overflow: hidden;}
+    }
+    
+.popupSwiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+     /* 닫기 버튼 스타일 */
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 0px;
+        cursor: pointer;
+        color: black;
+    }
+    
+    .room-indi{
+        position: static;
+        top: 0%;
+        width: 100%;
+
+        ul{
+            border-radius: 15px;
+            display: flex;
+            background-color:rgba($color:#FFFFFF, $alpha: 0.7) ;
+            li{
+                padding: 10px;
+                font-family: 'NanumSquare';
+                font-size: 16px;
+                color: #999F54;
+                font-weight: bold;
+                text-align: center;
+
+                &.active{
+                    color: #566418;
+                    font-weight: 900;
+                    text-decoration: underline;
+                }
+                &:hover{
+                    color: #566418;
+                    font-weight:900;
+                    text-decoration: underline;
+                    transform: translateY(20%);
+                }
+            }
+        }
+        
+    }
+
+    .res{
+        position: fixed;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        div{
+            position: relative; // ul의 위치를 조정하기 위해 필요할 수 있음
+            a{
+                padding: 15px 32px;
+                display: block;
+                width: 100%;
+                text-align: center;
+                display: inline-block;
+                font-family: 'NanumSquare';
+                font-size:15px;
+                background-color:#F3EAD6; // 오류 수정
+                text-decoration: none;
+                color: #333333;
+                font-weight: bold;
+                height: auto;
+            }
+        }
+    }
+}

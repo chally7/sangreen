@@ -1,0 +1,162 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+body {
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: "";
+}
+
+h1, h2, h3, h4, h5, p, figure {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input, textarea {
+  border: 0;
+}
+
+::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: "NanumSquare";
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+  padding: 20px;
+}
+
+.tour {
+  width: 1400px;
+  margin: 200px auto;
+}
+.tour ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 150px 0;
+  list-style-type: none;
+}
+.tour ul li .swiper img {
+  width: 100%;
+}
+.tour ul li div {
+  width: 47%;
+}
+
+.swiper-pagination-bullet {
+  background-color: #999f54;
+}
+
+.title {
+  margin-bottom: 50px;
+  font-size: 24px;
+  color: #999f54;
+  opacity: 0; /* 처음에는 안 보이게 설정 */
+  transform: translateY(30px); /* 아래에서 시작 */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.txt {
+  font-size: 20px;
+  color: black;
+  opacity: 0; /* 처음에는 안 보이게 설정 */
+  transform: translateY(30px); /* 아래에서 시작 */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #999F54;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-group button {
+  padding: 10px 20px;
+  font-size: 24px;
+  background-color: #999F54;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 260px;
+  height: 100px;
+  text-align: center;
+  font-family: "NanumSquare";
+}
+
+button:hover, button.active {
+  background-color: #566418;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 시 텍스트가 천천히 나타나는 효과</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; /* 배경 흰색 */
+            height: 200vh; /* 스크롤을 위한 높이 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 100px;
+        }
+        .text-section {
+            width: 80%;
+            max-width: 800px;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0; /* 처음에는 안 보이게 설정 */
+            transform: translateY(30px); /* 아래에서 시작 */
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="text-section">안녕하세요! 👋</p>
+    <p class="text-section">스크롤하면 텍스트가 천천히 나타납니다.</p>
+    <p class="text-section">배경은 흰색이며, 일반적인 단락 형식의 텍스트입니다.</p>
+    <p class="text-section">마우스 스크롤에 따라 자연스럽게 나타나는 효과가 적용되었습니다.</p>
+    <p class="text-section">JavaScript와 CSS로 구현되었습니다.</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".text-section");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+
+</body>
+</html>
