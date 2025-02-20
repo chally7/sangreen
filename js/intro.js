@@ -71,5 +71,5 @@ function kakaomap(){
     } 
     });    
 }
-elTab_btn[1].classList.add('active');
+elTab_contents[1].classList.add('active');
 kakaomap();
