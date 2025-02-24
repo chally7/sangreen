@@ -481,40 +481,56 @@ footer .footer .footer-rig .footer-icon a img {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  max-width: 80%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.popup-content .swiper-slide {
+  overflow: hidden;
+}
+.popup-content .close2 {
+  position: absolute;
+  top: 6%;
+  right: 3%;
+  z-index: 999;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url(../img/room/Room_X.svg) 0 0/cover no-repeat;
 }
 
 /* Swiper 스타일 */
 .popupSwiper {
   width: 100%;
-  height: 500px;
+  height: auto;
 }
 
 .popupSwiper .swiper-slide img {
-  width: 100%;
+  width: 95%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  transform: scale(1); /* 100% 확대 */
+  transform: scale(0.6); /* 100% 확대 */
+  overflow: hidden;
 }
 
 .room-indi {
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   position: fixed;
-  right: 5%;
-  top: 40%;
-  z-index: 3;
+  top: 40%; /* 화면 중앙 */
+  right: 20px; /* 오른쪽 정렬 */
+  transform: translateY(-100%); /* 정확한 중앙 위치 */
+  width: auto; /* 내용 크기만큼만 */
+  display: inline-block; /* 텍스트 크기에 맞게 조정 */
+  text-align: center;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transform: translateY(0) scale(1); /* ✨ 원래 크기로 */
   /* 아래로 스크롤하면 다시 보이기 */
 }
-.room-indi.hidden {
-  transform: translateY(-20%) scale(0.9); /* ✨ 위로 올리면서 살짝 작아지게 */
-  opacity: 0;
-  pointer-events: none;
-}
 .room-indi.visible {
-  transform: translateY(0) scale(1); /* ✨ 원래 크기로 */
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 .room-indi li {
@@ -522,17 +538,25 @@ footer .footer .footer-rig .footer-icon a img {
   color: #999F54;
   padding: 8px;
 }
+.room-indi li::after {
+  content: "";
+  display: block;
+}
 .room-indi li.active {
   color: #566418;
   font-weight: 900;
-  text-decoration: underline;
+}
+.room-indi li.active::after {
+  border-bottom: 1px solid #566418;
 }
 .room-indi li:hover {
   color: #566418;
   font-weight: 900;
-  text-decoration: underline;
   transform: translateX(20%);
   transition: 0.5s;
+}
+.room-indi li:hover::after {
+  border-bottom: 1px solid #566418;
 }
 
 .res {
@@ -880,14 +904,12 @@ footer .footer .footer-rig .footer-icon a img {
   /* Swiper 스타일 */
   .popupSwiper {
     width: 100%;
-    height: 500px;
+    height: auto;
   }
   .popupSwiper .swiper-slide img {
-    width: 100%;
-    height: 100%;
     -o-object-fit: contain;
        object-fit: contain;
-    transform: scale(1); /* 100% 확대 */
+    transform: scale(1.1); /* 100% 확대 */
   }
   .room-indi {
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -915,12 +937,10 @@ footer .footer .footer-rig .footer-icon a img {
   .room-indi li.active {
     color: #566418;
     font-weight: 900;
-    text-decoration: underline;
   }
   .room-indi li:hover {
     color: #566418;
     font-weight: 900;
-    text-decoration: underline;
     transform: translateX(20%);
     transition: 0.5s;
   }
@@ -1243,19 +1263,23 @@ footer .footer .footer-rig .footer-icon a img {
   /* Swiper 스타일 */
   .popupSwiper {
     width: 100%;
+    height: auto;
   }
   .popupSwiper .swiper-slide img {
     width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    height: 500px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    transform: scale(1.5); /* 100% 확대 */
   }
   .room-indi {
     width: 100%;
     max-width: 1024px;
     position: sticky;
     top: 13%;
-    max-width: 64%;
+    max-width: 34%;
+    opacity: 1;
+    visibility: visible;
   }
   .room-indi ul {
     display: flex;
@@ -1266,7 +1290,7 @@ footer .footer .footer-rig .footer-icon a img {
     background-color: rgba(255, 255, 255, 0.7);
   }
   .room-indi ul li {
-    flex: 1 1 25%; /* 4개가 한 줄에 정렬되도록 설정 */
+    /* 4개가 한 줄에 정렬되도록 설정 */
     text-align: center;
     white-space: nowrap; /* 🔥 텍스트 줄바꿈 방지 */
     padding: 10px;
@@ -1278,13 +1302,17 @@ footer .footer .footer-rig .footer-icon a img {
   .room-indi ul li.active {
     color: #566418;
     font-weight: 900;
-    text-decoration: underline;
+  }
+  .room-indi ul li.active::after {
+    border-bottom: 1px solid #566418;
   }
   .room-indi ul li:hover {
     color: #566418;
     font-weight: 900;
-    text-decoration: underline;
     transform: translateY(20%);
+  }
+  .room-indi ul li:hover::after {
+    border-bottom: px solid #566418;
   }
   .user_top, .calender_top, .reserv03_check_top {
     display: flex;
@@ -1463,7 +1491,7 @@ footer .footer .footer-rig .footer-icon a img {
     display: block;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .banner {
     position: relative;
     color: #FFFFFF;
@@ -1472,7 +1500,7 @@ footer .footer .footer-rig .footer-icon a img {
   }
   .banner p img {
     width: 100%;
-    height: auto;
+    height: 250px;
   }
   .banner .banner_text {
     position: absolute;
@@ -1480,6 +1508,7 @@ footer .footer .footer-rig .footer-icon a img {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    line-height: 1.1;
   }
   .banner .banner_text h2 {
     display: flex;
@@ -1562,7 +1591,7 @@ footer .footer .footer-rig .footer-icon a img {
     position: absolute;
     right: 0;
     bottom: 0;
-    transform: scale(0.7);
+    transform: scale(1);
   }
   .swiper-pagination-bullet {
     background-color: #999F54;
@@ -1593,10 +1622,9 @@ footer .footer .footer-rig .footer-icon a img {
     overflow: hidden;
   }
   .popupSwiper .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
+    transform: scale(1);
   }
   /* 닫기 버튼 스타일 */
   .close {
@@ -1611,6 +1639,7 @@ footer .footer .footer-rig .footer-icon a img {
     position: static;
     top: 0%;
     width: 100%;
+    visibility: visible;
   }
   .room-indi ul {
     margin-bottom: 15px;
@@ -1629,12 +1658,10 @@ footer .footer .footer-rig .footer-icon a img {
   .room-indi ul li.active {
     color: #566418;
     font-weight: 900;
-    text-decoration: underline;
   }
   .room-indi ul li:hover {
     color: #566418;
     font-weight: 900;
-    text-decoration: underline;
     transform: translateY(20%);
   }
   .res_all .user_top, .res_all .calender_top, .res_all .reserv03_check_top {
@@ -1833,7 +1860,7 @@ footer .footer .footer-rig .footer-icon a img {
   .res_all .mb_reserv span {
     position: absolute;
     display: inline-block;
-    background-color: white;
+    background-color: #999F54;
     width: 100%;
     height: 2px;
   }
