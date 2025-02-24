@@ -1,6 +1,6 @@
 let mql = window.matchMedia("(min-width:300px) and (max-width: 1024px)");
 
-let mql2 = window.matchMedia("(max-width: 480px)");
+let mql2 = window.matchMedia("(max-width: 767px)");
 // ㄴmatchMedia 반응형부분 들어갈 때 수정하는거, ture false 인지 확인해주는 역할
 let breakPoint = true;
 mql.addListener((e)=>{
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getOffset() {
         if (window.innerWidth <= 1024) {
-            return 10; // 아이패드 여백 
+            return 25; // 아이패드 여백 
         }else{
             return 100; // PC 여백 
         }
@@ -80,12 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let timeout; // 타이머 변수
 
     function showRoomIndi() {
-        roomIndi.classList.add("visible");
-        roomIndi.classList.remove("hidden");
+        roomIndi.classList.add("visible");   
     }
 
     function hideRoomIndi() {
-        roomIndi.classList.add("hidden");
         roomIndi.classList.remove("visible");
     }
 
@@ -95,28 +93,31 @@ document.addEventListener("DOMContentLoaded", function () {
         let firstRoomRect = firstRoom.getBoundingClientRect(); // 101호 위치 확인
 
         // 101호가 화면 상단에 있을 때 .room-indi 보이게 설정
-        if (firstRoomRect.top >= 0) {
-            showRoomIndi();
-        } else {
-            // 스크롤 방향에 따라 보이거나 숨기기
-            if (currentScrollY > lastScrollY) {
-                showRoomIndi(); // 아래로 스크롤 시 보이기
-            } else {
-                hideRoomIndi(); // 위로 스크롤 시 숨기기
+        if(!mql2.matches){
+            if (firstRoomRect.top < 0) {
+                // 스크롤 방향에 따라 보이거나 숨기기
+                if (currentScrollY > lastScrollY) {
+                    showRoomIndi(); // 아래로 스크롤 시 보이기
+                    
+                } else {
+                    hideRoomIndi(); // 위로 스크롤 시 숨기기
+                    // 사용자가 스크롤하면 기존 타이머 초기화
+                    clearTimeout(timeout);
+                    // 1.5초 후 자동 표시 (다시 타이머 시작)
+                    timeout = setTimeout(showRoomIndi, 1500);
+                }
+            }else{
+                hideRoomIndi();
             }
+
         }
 
         lastScrollY = currentScrollY; // 현재 스크롤 위치 저장
 
-        // 사용자가 스크롤하면 기존 타이머 초기화
-        clearTimeout(timeout);
-
-        // 3초 후 자동 표시 (다시 타이머 시작)
-        timeout = setTimeout(showRoomIndi, 1000);
+        
     });
 
-    // 페이지 로드시 3초 후 자동 표시 시작
-    timeout = setTimeout(showRoomIndi, 1000);
+    // 페이지 로드시 1.5초 후 자동 표시 시작
     const swiperSlides = document.querySelectorAll(".swiper-slide a"); // 돋보기 버튼들
     const popup = document.getElementById("popup");
     const popupSwiperWrapper = document.getElementById("popup-swiper-wrapper");
@@ -128,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // 클릭한 돋보기 버튼이 속한 Swiper 컨테이너 찾기
             const currentSwiper = btn.closest(".swiper");
-            const slides = currentSwiper.querySelectorAll(".swiper-slide img:not([src*='돋보기'])"); // 🔥 돋보기 이미지는 제외!
+            const slides = currentSwiper.querySelectorAll(".swiper-slide img:not([src*='room_a'])"); // 🔥 돋보기 이미지는 제외!
 
             // 팝업 Swiper 내부 슬라이드 초기화
             popupSwiperWrapper.innerHTML = ""; // 기존 내용 삭제
@@ -228,17 +229,111 @@ window.addEventListener('scroll', function () {
 
 
 //reserv-btn
+//reserv-btn
+const resAll = document.querySelector('.reserve_popupbar');
+const resBtn = document.querySelector('.mb_reserv');
+// const resLeft = document.querySelector('.reserve_popupbar .left');
 if(mql2.matches){
-    const resAll = document.querySelector('.reserve_popupbar');
-    const resBtn = document.querySelector('.mb_reserv');
     resBtn.onclick=()=>{
         resBtn.classList.toggle('active');
         resAll.classList.toggle('active');
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const resLeft = document.querySelector('.reserve_popupbar .left');
+    const resRight = document.querySelector('.reserve_popupbar .right');
+    // if (!resLeft || !resRight) return;
+    const originalDisplay = getComputedStyle(resLeft).display; // 원래 display 값 저장
+    let clicked = false; //클릭 상태 저장
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY !== 0) {
+            resLeft.style.display = "none";
+            clicked=false; // 스크롤 시 클릭 횟수 초기화
+        } else {
+            resLeft.style.display = originalDisplay; // 원래 상태로 복원
+        }
+        if(mql2.matches){
+            resLeft.style.display = originalDisplay;
+        }
+    });
+    resRight.onclick=(e)=>{
+        if(!clicked){
+            resLeft.style.display = originalDisplay;
+            clicked=true;
+            e.preventDefault(); // 첫 클릭에서는 링크 이동 막기
+        }else{
+            window.location.href="./reserv02.html" // 두 번째 클릭: 페이지 이동
+        }
+    }
+    if(mql2.matches){
+        resRight.onclick=()=>{
+            resLeft.style.display = originalDisplay;
+        }
+    }
+});
+
 
 // 1️⃣2️⃣3️⃣
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const swiperSlides = document.querySelectorAll(".swiper-slide img:not([src*='room_a'])"); // 돋보기 제외
+    const popup = document.getElementById("popup");
+    const popupSwiperWrapper = document.getElementById("popup-swiper-wrapper");
+    let popupSwiper;
+
+    swiperSlides.forEach((img, index) => {
+        img.addEventListener("click", function (event) {
+            event.preventDefault(); // 기본 동작 방지
+
+            // 클릭한 이미지가 속한 Swiper 컨테이너 찾기
+            const currentSwiper = img.closest(".swiper");
+            const slides = currentSwiper.querySelectorAll(".swiper-slide img:not([src*='room_a'])"); // 돋보기 제외
+
+            // 기존 팝업 내부 슬라이드 삭제 후 새로 추가
+            popupSwiperWrapper.innerHTML = "";
+
+            slides.forEach((slideImg) => {
+                const slide = document.createElement("div");
+                slide.classList.add("swiper-slide");
+
+                const image = document.createElement("img");
+                image.src = slideImg.src; // 돋보기 아이콘 제외한 이미지만 추가
+
+                slide.appendChild(image);
+                popupSwiperWrapper.appendChild(slide);
+            });
+
+            // 팝업 표시
+            popup.style.display = "flex";
+
+            // 기존 Swiper 초기화 후 새로 생성
+            if (popupSwiper) popupSwiper.destroy();
+
+            popupSwiper = new Swiper(".popupSwiper", {
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                loop: true,
+                initialSlide: index, // 클릭한 이미지 위치에서 시작
+            });
+        });
+    });
+
+    // 팝업 닫기 기능 추가
+    popup.addEventListener("click", function (event) {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+
+    const close = document.querySelector(' .close2');
+    close.onclick=function(){
+        popup.style.display="none";
+    }
+});
 

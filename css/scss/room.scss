@@ -133,54 +133,83 @@
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    max-width: 80%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    .swiper-slide{overflow: hidden;}
+    .close2{
+        position: absolute;
+        top: 6%; right: 3%;
+        z-index: 999;
+        cursor: pointer;
+        width: 20px; height: 20px;
+        background : url(../img/room/Room_X.svg) 0 0 / cover no-repeat;
+    }
 }
 
 /* Swiper 스타일 */
 .popupSwiper {
     width: 100%;
-    height: 500px;
+    height: auto;
 }
 
 .popupSwiper .swiper-slide img {
-    width: 100%;
+    width: 95%;
     height: 100%;
     object-fit: contain;
-    transform: scale(1.0); /* 100% 확대 */
+    transform: scale(0.6); /* 100% 확대 */
+    overflow: hidden;
 }
 
 .room-indi{
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     position: fixed;
-    right: 5%; top: 40%;
-    z-index: 3;
-    &.hidden {
-        transform: translateY(-20%) scale(0.9); /* ✨ 위로 올리면서 살짝 작아지게 */
-        opacity: 0;
-        pointer-events: none;
-    }
+    top: 40%; /* 화면 중앙 */
+    right: 20px; /* 오른쪽 정렬 */
+    transform: translateY(-100%); /* 정확한 중앙 위치 */
+    
+
+    
+    width: auto; /* 내용 크기만큼만 */
+    display: inline-block; /* 텍스트 크기에 맞게 조정 */
+    text-align: center;
+
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transform: translateY(0) scale(1); /* ✨ 원래 크기로 */
+    
     &.visible {
-        transform: translateY(0) scale(1); /* ✨ 원래 크기로 */
         opacity: 1;
+        visibility: visible;
         pointer-events: auto;
     }
     /* 아래로 스크롤하면 다시 보이기 */
     li{
+        &::after{
+            content: '';
+            display: block;
+
+        }
         font-size: 20px;
         color: #999F54;
         padding: 8px;
         &.active{
+            &::after{
+                border-bottom: 1px solid #566418;
+            }
             color: #566418;
             font-weight: 900;
-            text-decoration: underline;
+            
         }
         &:hover{
+            &::after{
+                border-bottom: 1px solid #566418;
+            }
             color: #566418;
             font-weight:900;
-            text-decoration: underline;
             transform: translateX(20%);
             transition: .5s;
+            
         }
     }
 }
