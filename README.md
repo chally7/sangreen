@@ -1,4 +1,4 @@
-# sangreen
+# SANGREEN
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-663399?style=flat&logo=CSS&logoColor=white)
@@ -107,5 +107,7 @@
 > 📂js
 
 README.md
+
+<h2>트러블 슈팅</h2>
 
 
