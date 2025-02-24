@@ -1,6 +1,6 @@
 
 let mql = window.matchMedia("(min-width:300px) and (max-width: 1024px)");
-let mql2 = window.matchMedia("(max-width: 480px)");
+let mql2 = window.matchMedia("(max-width: 767px)");
 // ㄴmatchMedia 반응형부분 들어갈 때 수정하는거, ture false 인지 확인해주는 역할
 let breakPoint = true;
 mql.addListener((e)=>{

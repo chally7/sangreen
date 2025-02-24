@@ -698,7 +698,7 @@ footer .footer .footer-rig .footer-icon a img {
     transform: translateY(0);
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   * {
     word-break: keep-all;
   }
@@ -711,7 +711,7 @@ footer .footer .footer-rig .footer-icon a img {
   }
   .banner p img {
     width: 100%;
-    height: 100%;
+    height: 250px;
   }
   .banner .banner_text {
     text-align: center;
@@ -719,6 +719,7 @@ footer .footer .footer-rig .footer-icon a img {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    line-height: 1.1;
   }
   .banner .banner_text h2 {
     display: flex;
