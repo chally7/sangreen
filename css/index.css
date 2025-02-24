@@ -140,7 +140,7 @@ header .header .header-rig .bug.active span:nth-of-type(3) {
   position: relative;
   width: 100%;
   z-index: 11;
-  transform: translateX(100%);
+  transform: translateX(300%);
   transition: 0.5s;
 }
 .nav-bg .nav-menu00 .nav-menu {
@@ -150,7 +150,11 @@ header .header .header-rig .bug.active span:nth-of-type(3) {
   width: 572px;
   height: 100vh;
   background-color: rgba(243, 234, 214, 0.93);
-  padding: 230px 0 0 127px;
+  padding: 0 0 0 127px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 .nav-bg .nav-menu00 .nav-menu > a {
   display: inline-block;
@@ -278,7 +282,7 @@ footer .footer .footer-rig .footer-icon a img {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   header .header {
-    padding: 25px 65px;
+    padding: 25px 50px;
   }
   footer .footer {
     width: 90%;
@@ -296,9 +300,9 @@ footer .footer .footer-rig .footer-icon a img {
     width: 20px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   header .header {
-    padding: 2% 5%;
+    padding: 1.5% 5%;
   }
   header .header .logo a {
     font-size: 20px;
@@ -312,7 +316,7 @@ footer .footer .footer-rig .footer-icon a img {
   }
   .nav-bg .nav-menu00 .nav-menu {
     width: 100%;
-    padding: 230px 0 0 50px;
+    padding: 0 0 0 50px;
     background-color: rgba(243, 234, 214, 0.95);
   }
   .nav-menu00.active {
@@ -327,7 +331,7 @@ footer .footer .footer-rig .footer-icon a img {
   footer .footer {
     width: 90%;
     display: block;
-    padding: 55px 0;
+    padding: 50px 0;
   }
   footer .footer .footer-left h3 a {
     font-size: 20px;
@@ -768,11 +772,12 @@ main .roomlist .room_img li {
 }
 main .roomlist .room_img li p {
   position: relative;
+  filter: brightness(1);
 }
 main .roomlist .room_img li p img {
   width: 350px;
 }
-main .roomlist .room_img li p span {
+main .roomlist .room_img li p span:nth-of-type(1) {
   position: absolute;
   left: 20px;
   top: 25px;
@@ -780,6 +785,10 @@ main .roomlist .room_img li p span {
   font-size: 20px;
   color: #fff;
   text-shadow: 5px 5px 10px rgba(125, 125, 125, 0.2);
+}
+main .roomlist .room_img li p:hover {
+  cursor: pointer;
+  filter: brightness(0.75);
 }
 main .roomlist .room_img li > div {
   position: absolute;
@@ -827,7 +836,7 @@ main .section3 .special {
   width: 1400px;
   height: 100vh;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 3% 0;
 }
 main .section3 .special .special_top {
   display: flex;
@@ -853,7 +862,6 @@ main .section3 .special .special_top .btn a {
 main .section3 .special .special_con {
   position: relative;
   width: 100%;
-  height: 100%;
 }
 main .section3 .special .special_con li {
   position: absolute;
@@ -875,11 +883,11 @@ main .section3 .special .special_con li .con1_text {
 }
 main .section3 .special .special_con li .con_img {
   width: 1400px;
-  height: 450px;
   overflow: hidden;
 }
 main .section3 .special .special_con li .con_img img {
   width: 100%;
+  max-height: 50vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1081,9 +1089,10 @@ main .tour .tour_slider .tour_con00 .tour-mySwiper .swiper-wrapper .swiper-slide
     height: 100px;
   }
   .reserve_popupbar .reserve_popupbar_flex .right a {
+    height: 100%;
     display: block;
     font-size: 1.4rem;
-    padding: 32px 65px;
+    padding: 33.2px 65px;
     color: #333;
     background-color: #F3EAD6;
   }
@@ -1640,7 +1649,7 @@ main .tour .tour_slider .tour_con00 .tour-mySwiper .swiper-wrapper .swiper-slide
     bottom: 1%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .res_all .user_top, .res_all .calender_top, .res_all .reserv03_check_top {
     display: flex;
     justify-content: space-between;
@@ -1831,7 +1840,7 @@ main .tour .tour_slider .tour_con00 .tour-mySwiper .swiper-wrapper .swiper-slide
     position: fixed;
     right: 3%;
     bottom: 1%;
-    z-index: 9;
+    z-index: 2;
     transform: translateX(-10%);
   }
   .res_all .mb_reserv span {
@@ -1840,6 +1849,7 @@ main .tour .tour_slider .tour_con00 .tour-mySwiper .swiper-wrapper .swiper-slide
     background-color: white;
     width: 100%;
     height: 2px;
+    box-shadow: 0px 0px 15px 1px #8e8e8e;
   }
   .res_all .mb_reserv span:nth-of-type(1) {
     right: 20px;

@@ -87,12 +87,11 @@ header{
 }
 
 .nav-bg{
-    
     .nav-menu00{
         position: relative;
         width: 100%;
         z-index: 11;
-        transform: translateX(100%);
+        transform: translateX(300%);
         transition: 0.5s;
         .nav-menu{
             position: absolute;
@@ -100,7 +99,11 @@ header{
             width: 572px;
             height: 100vh;
             background-color: rgba(243, 234, 214, 0.93);
-            padding: 230px 0 0 127px;
+            padding: 0 0 0 127px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
             >a{
                 display: inline-block;
                 // width: 330px;

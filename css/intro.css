@@ -140,7 +140,7 @@ header .header .header-rig .bug.active span:nth-of-type(3) {
   position: relative;
   width: 100%;
   z-index: 11;
-  transform: translateX(100%);
+  transform: translateX(300%);
   transition: 0.5s;
 }
 .nav-bg .nav-menu00 .nav-menu {
@@ -150,7 +150,11 @@ header .header .header-rig .bug.active span:nth-of-type(3) {
   width: 572px;
   height: 100vh;
   background-color: rgba(243, 234, 214, 0.93);
-  padding: 230px 0 0 127px;
+  padding: 0 0 0 127px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
 .nav-bg .nav-menu00 .nav-menu > a {
   display: inline-block;
@@ -278,7 +282,7 @@ footer .footer .footer-rig .footer-icon a img {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   header .header {
-    padding: 25px 65px;
+    padding: 25px 50px;
   }
   footer .footer {
     width: 90%;
@@ -296,9 +300,9 @@ footer .footer .footer-rig .footer-icon a img {
     width: 20px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   header .header {
-    padding: 2% 5%;
+    padding: 1.5% 5%;
   }
   header .header .logo a {
     font-size: 20px;
@@ -312,7 +316,7 @@ footer .footer .footer-rig .footer-icon a img {
   }
   .nav-bg .nav-menu00 .nav-menu {
     width: 100%;
-    padding: 230px 0 0 50px;
+    padding: 0 0 0 50px;
     background-color: rgba(243, 234, 214, 0.95);
   }
   .nav-menu00.active {
@@ -327,7 +331,7 @@ footer .footer .footer-rig .footer-icon a img {
   footer .footer {
     width: 90%;
     display: block;
-    padding: 55px 0;
+    padding: 50px 0;
   }
   footer .footer .footer-left h3 a {
     font-size: 20px;

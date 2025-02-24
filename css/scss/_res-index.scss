@@ -92,9 +92,10 @@
             .right{
                 height: 100px;
                 a{
+                    height: 100%;
                     display: block;
                     font-size: 1.4rem;
-                    padding: 32px 65px;
+                    padding: 33.2px 65px;
                     color: #333;
                     background-color: #F3EAD6;
                 }
@@ -728,7 +729,7 @@
 // ========================================================================================
 // ==========================================phone=========================================
 // ========================================================================================
-@media (max-width:480px){
+@media (max-width:767px){
     .res_all{
         // .reserv{
         //     width: 100%;
@@ -952,7 +953,6 @@
             display: block;
         }
     }
-    
         .mb_reserv{
             transition: 0.5s;
             display: block;
@@ -962,7 +962,7 @@
             position: fixed;
             right: 3%;
             bottom: 1%;
-            z-index: 9;
+            z-index: 2;
             transform: translateX(-10%);
             span{
                 position: absolute;
@@ -970,6 +970,7 @@
                 background-color: white;
                 width: 100%;
                 height: 2px;
+                box-shadow: 0px 0px 15px 1px #8e8e8e;
             }
             span:nth-of-type(1){
                 right: 20px;
