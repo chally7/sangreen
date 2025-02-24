@@ -55,6 +55,16 @@
     justify-content: flex-start;
     align-items: center;
     }
+    .box_relative{
+        position: relative;
+        .null{
+            position: absolute;
+            top: 61px;
+            left: 44px;
+            font-size: 0.9rem;
+            color: #FF6666;
+        }
+    }
     .input_icon{
     padding: 10px;
     font-size: 20px;
@@ -247,8 +257,8 @@
     .user{
         display: none;
         position: absolute;
-        left: 698px;
-        bottom: 108px;
+        left: 50%;
+        bottom: 0;
         width: 250px;
         z-index: 1;
         h3::before{
@@ -301,8 +311,8 @@
     .calender{
         display: none;
         position: absolute;
-        left: 315px;
-        bottom: 109px;
+        left: 26%;
+        bottom: 0;
         width: 500px;
         z-index: 1;
         h3::before{
@@ -454,18 +464,6 @@
         justify-content: center;
         align-items: center;
         form{width: 46%;}
-        .box_relative{
-            position: relative;
-        }
-        span{
-            position: absolute;
-            top: 61px;
-            left: 44px;
-            color: #333;
-        }
-        .null{
-            color: #FF6666;
-        }
     }
     a{
         text-align: center;
@@ -474,7 +472,6 @@
         display: inline-block;
         background-color: #999F54;
         padding: 30px 50px;
-        border-radius: 20px;
     }
 
     //조회하기 팝업창
@@ -490,12 +487,20 @@
             vertical-align: middle;
             margin-right: 132px;
         }
+        .checkbox03{
+            display: block;
+            .room_name03{
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                margin-bottom: 40px;
+                h2{
+                    font-size: 1.25rem;
+                }
+            }
+        }
         .room_num{
             margin-bottom: 50px;
-            h2{
-                font-size: 1.25rem;
-                margin-bottom: 40px;
-            }
             ul{
                 border-bottom: 1px solid #555;
                 li{
@@ -512,7 +517,7 @@
                 }
             }
         }
-        .room_check{
+        .room_check03{
             border:1px solid #999F54;
             border-radius: 0 0 16px 16px;
             background-color: #fff;
@@ -596,6 +601,16 @@
         padding: 10px;
         font-size: 20px;
         width: 100%;
+    }
+    .box_relative{
+        position: relative;
+        .null{
+            position: absolute;
+            top: 61px;
+            left: 44px;
+            font-size: 0.9rem;
+            color: #FF6666;
+        }
     }
     .name, .tel, .email, .num{
         height: 50px;
@@ -785,9 +800,9 @@
         .user{
             display: none;
             position: absolute;
-            left: 477px;
-            bottom: 109px;
-            width: 250px;
+            left: 54%;
+            bottom: 0;
+            width: 24%;
             z-index: 1;
             h3::before{
                 content: url(../img/reserv/reserv_uesr_01.svg);
@@ -840,8 +855,8 @@
             display: none;
             position: absolute;
             left: 179px;
-            bottom: 109px;
-            width: 522px;
+            bottom: 0;
+            width: 50%;
             z-index: 1;
             h3::before{
                 content: url(../img/reserv/reserv_date_01.svg);
@@ -985,19 +1000,6 @@
             align-items: center;
         }
         form{width: 46%;}
-        .box_relative{
-            position: relative;
-        }
-        span{
-            position: absolute;
-            top: 61px;
-            left: 44px;
-            color: #333;
-            color: #FF6666;
-        }
-        .null{
-            color: #FF6666;
-        }
         a{
             text-align: center;
             font-size: 1.25rem;
@@ -1005,7 +1007,6 @@
             display: inline-block;
             background-color: #999F54;
             padding: 30px 50px;
-            border-radius: 20px;
         }
 
         //조회하기 팝업창
@@ -1023,12 +1024,20 @@
                 vertical-align: middle;
                 margin-right: 132px;
             }
+            .checkbox03{
+                display: block;
+                .room_name03{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    margin-bottom: 40px;
+                    h2{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
             .room_num{
                 margin-bottom: 50px;
-                h2{
-                    font-size: 1.25rem;
-                    margin-bottom: 40px;
-                }
                 ul{
                     border-bottom: 1px solid #555;
                     li{
@@ -1045,7 +1054,7 @@
                     }
                 }
             }
-            .room_check{
+            .room_check03{
                 border:1px solid #999F54;
                 border-radius: 0 0 16px 16px;
                 background-color: #fff;
@@ -1082,7 +1091,7 @@
 =========================================================
 */
 
-@media (max-width:480px){
+@media (max-width:767px){
     //상단 배너
     .banner{
         width: 100%;
@@ -1092,10 +1101,11 @@
         text-align: center;
         p{
             img {
-            width: 100%; height: 100%;
+            width: 100%; height: 250px;
             }
         }
         .banner_text{
+            line-height: 1.1;
             text-align: center;
             position: absolute;
             left: 50%; top: 50%;
@@ -1139,6 +1149,16 @@
         justify-content: flex-start;
         align-items: center;
     }
+    .box_relative{
+        position: relative;
+        .null{
+            position: absolute;
+            font-size: 0.8rem;
+            top: 52px;
+            left: 37px;
+            color: #FF6666;
+        }
+    }
     .input_icon{
         padding: 5px;
         font-size: 15px;
@@ -1146,7 +1166,7 @@
     }
     .name, .tel, .email, .num{
         height: 50px;
-        margin-bottom: 15px;
+        margin-bottom: 10%;
         border-bottom: 1px solid #B6B6B6;
     }
     .name::before{
@@ -1549,19 +1569,6 @@
             justify-content: center;
             align-items: center;
             form{width: 100%;}
-            .box_relative{
-                position: relative;
-            }
-            span{
-                position: absolute;
-                top: 52px;
-                left: 37px;
-                color: #333;
-                font-size: 0.8rem;
-            }
-            .null{
-                color: #FF6666;
-            }
         }
         a{
             text-align: center;
@@ -1570,7 +1577,6 @@
             display: inline-block;
             background-color: #999F54;
             padding: 15px 25px;
-            border-radius: 10px;
         }
 
         //조회하기 팝업창
@@ -1587,12 +1593,20 @@
                 vertical-align: middle;
                 margin-right: 72px;
             }
+            .checkbox03{
+                display: block;
+                .room_name03{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    margin-bottom: 40px;
+                    h2{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
             .room_num{
                 margin-bottom: 50px;
-                h2{
-                    font-size: 1.25rem;
-                    margin-bottom: 40px;
-                }
                 ul{
                     border-bottom: 1px solid #555;
                     li{
@@ -1609,7 +1623,7 @@
                     }
                 }
             }
-            .room_check{
+            .room_check03{
                 border:1px solid #999F54;
                 border-radius: 0 0 16px 16px;
                 background-color: #fff;

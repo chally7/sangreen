@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation</title>
+    <link rel="icon" type="image/png" href="./img/index_favicon_01.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/index_favicon_02.png" sizes="16x16" />
+
     <link href="./css/fullcalendar.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/reserv.css">
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script defer src="./js/common.js"></script>
+    <script defer src="./js/reserveBar.js"></script>
     <script defer src="./js/reserv.js"></script>
 </head>
 <body>
@@ -30,7 +34,7 @@
                     <span>n</span>
                 </h2>
                 <b>
-                    <span>산그린 펜션 예약 현황 확인 하기</span>
+                    <span>산그린펜션 예약 현황 확인하기</span>
                 </b>
             </div>
         </div>
@@ -115,6 +119,9 @@
             </div>
             <!-- 날짜선택 팝업창 -->
             <div class="calender">
+                <div class="img">
+                    <img src="./img/reserv/reserv_video.gif" alt="">
+                </div>
                 <div class="calender_top">
                     <h3>날짜 선택</h3>
                     <button class="close"></button>
