@@ -259,7 +259,7 @@
     
   }
  
-@media (max-width: 480px) {
+@media (max-width: 767px) {
 
   *{word-break: keep-all;}
   
@@ -272,7 +272,7 @@
       text-align: center;
       p{
           img {
-          width: 100%; height: 100%;
+          width: 100%; height: 250px;
           }
       }
       .banner_text{
@@ -280,6 +280,7 @@
           position: absolute;
           left: 50%; top: 50%;
           transform: translate(-50%, -50%);
+          line-height: 1.1;
           h2{
               display: flex;
               justify-content: center;
