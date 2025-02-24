@@ -7,8 +7,13 @@ let roomPrice = {101 : 129000, 102 : 129000, 103 : 149000, 104 : 199000};
 let roomData ="101";
 
 //예약하기 바에서 날짜 선택
-let startDate01; //입실날짜
-let endDate01; //퇴실날짜
+let startDate01 = null; //입실날짜 : 한국 기준 날짜 변환
+let endDate01 = null; //퇴실날짜 : 한국 기준 날짜 변환
+
+let startDate = null; //입실날짜
+let endDate = null; //퇴실날짜
+let formattedStartStr = null;
+let formattedEndStr = null;
 
 //입실날짜 - 퇴실날짜
 let night = 0;
@@ -20,68 +25,58 @@ let roomData2;
 let num = 0;
 let num2 = 0;
 
+//오늘 표준 시간
+let today = new Date();
+
+//하루를 밀리초로 변환
+//24시간(1일) * 60분(1시간) * 60초(1분) * 1000밀리초(1초) = 86400000
 let oneDay = 24*60*60*1000;
+
+const days = ["일", "월", "화", "수", "목", "금", "토"];
+
+//날짜를 2025. 02. 22 토 모양으로 변환하기
+function formatDate(date) {
+    let year = date.getFullYear();
+    let month = String(date.getMonth() + 1).padStart(2, "0");
+    let day = String(date.getDate()).padStart(2, "0");
+    let dayOfWeek = days[date.getDay()]; // 요일 가져오기
+
+    return `${year}. ${month}. ${day} ${dayOfWeek}`;
+}
 
 //예약 명단
 let reserveDeta = JSON.parse(localStorage.getItem('reserveDeta'))|| {101:[],102:[],103:[],104:[]};
 console.log(reserveDeta);
 
 function reserv01(){
+    
          // 캘린더 요소 선택
         var calendarleftEl = document.getElementById('calender_left');
 
-        function formatDate(date) {
-            const days = ["일", "월", "화", "수", "목", "금", "토"];
-        
-            let year = date.getFullYear();
-            let month = String(date.getMonth() + 1).padStart(2, "0");
-            let day = String(date.getDate()).padStart(2, "0");
-            let dayOfWeek = days[date.getDay()]; // 요일 가져오기
-        
-            return `${year}. ${month}. ${day} ${dayOfWeek}`;
+        if (!startDate || !endDate) {
+            startDate = new Date(); // 오늘 날짜
+            endDate = new Date();
+            endDate.setDate(endDate.getDate() + 1); // 내일 날짜
         }
         
-        // 오늘 날짜
-        let today = new Date();
-        let formattedToday = formatDate(today);
+        function todayTWR(){
+            
+            startDate01 = startDate.toLocaleDateString("ko-KR");
+            endDate01 = endDate.toLocaleDateString("ko-KR");
+    
+            formattedStartStr = formatDate(startDate);
+            formattedEndStr = formatDate(endDate);
+    
+            checkedtextEl.innerHTML = `${formattedStartStr} - ${formattedEndStr}`;
+        }
+        todayTWR();
         
-        // 내일 날짜
-        let tomorrow = new Date();
-        tomorrow.setDate(today.getDate() + 1);
-        let formattedTomorrow = formatDate(tomorrow);
-
-        checkedtextEl.innerHTML = `${formattedToday} - ${formattedTomorrow}`
-
         var calendarleftEl = new FullCalendar.Calendar(calendarleftEl, {
             
+            
             selectable: true,
-            select: function(info) {
-                let startDate = new Date(info.startStr);
-                startDate01 = startDate.toISOString().split("T")[0];
-
-                let endDate = new Date(info.endStr);
-                let endDate03 = endDate.setDate(endDate.getDate() - 1); // 하루 빼기
-                endDate01 = endDate.toISOString().split("T")[0];
-                
-                let formatDate = (date) => {
-                    let year = date.getFullYear();
-                    let month = String(date.getMonth() + 1).padStart(2, '0'); // 월 (01, 02 형식)
-                    let day = String(date.getDate()).padStart(2, '0'); // 일 (01, 02 형식)
-                    let weekday = date.toLocaleDateString('ko-KR', { weekday: 'short' }).replace('.', ''); // 요일 (토, 일 등)
-                    
-                    return `${year}. ${month}. ${day} ${weekday}`;
-                };
-                night = (endDate - startDate)/oneDay;
-
-                formattedStartStr = formatDate(startDate);
-                formattedEndStr = formatDate(endDate);
-
-                //선택 날짜 P태그에 옮기기
-                checkedtextEl.innerHTML = `${formattedStartStr} - ${formattedEndStr}`;
-                calenderEl01.classList.remove('active');
-            },
             selectMirror: true,
-
+            
             height: 'auto',
             initialView: 'dayGridMonth',
             locale: 'en',
@@ -91,6 +86,17 @@ function reserv01(){
                 right: 'next',
             },
             initialDate: today, // 현재 날짜 기준 (이번 달)
+
+            //드래그 옵션
+            select: function(info) {
+                startDate = new Date(info.startStr); //첫번째 선택 날짜
+                endDate = new Date(info.endStr); //마지막 선택 날짜
+                endDate.setDate(endDate.getDate() - 1); // 하루 빼기
+
+                todayTWR();
+                console.log(startDate01);
+                calenderEl01.classList.remove('active');
+            },
             views: {
                 dayGridMonth: {
                     titleFormat: function(date) {
@@ -101,64 +107,82 @@ function reserv01(){
                 }
             },
             datesSet: function(arg) {
-                let disabledDate = reserveDeta[roomData];
-                
-                let dayCells = document.querySelectorAll('.fc-day');  // 모든 날짜 셀 가져오기
-                
-                dayCells.forEach(function(cell) {
-                  let date = cell.getAttribute('data-date'); // 셀의 날짜 속성 가져오기
+                const Elyesterday = document.querySelectorAll(`#calender_left .fc-daygrid-day`)
 
-                    disabledDate.forEach(function(ele, i){
-                        let checkInDate = new Date(disabledDate[i].입실날짜);  // 입실날짜
-                        let checkOutDate = new Date(disabledDate[i].퇴실날짜);  // 퇴실날짜
-                        // 퇴실날짜 하루 전으로 설정
-                        checkOutDate.setDate(checkOutDate.getDate() - 1);
-                    
-                        // 날짜 범위 색칠
-                        let currentDate = new Date(checkInDate);
-                        
-                        while (currentDate <= checkOutDate) {
-                            let dateStr = currentDate.toISOString().split('T')[0];  // 'yyyy-mm-dd' 형식
-                            let dayElement = document.querySelector(`#calender_left .fc-day[data-date="${dateStr}"]`);
-                            
-                            if (dayElement) {
-                                dayElement.style.backgroundColor = '#ccc';  // 회색 배경색 설정
+                Elyesterday.forEach((ele)=>{
+                    //Elyesterday의 data- 값 불러오기
+                    let dateStr = ele.dataset.date;
+                    if (dateStr) { 
+                        let eleDate = new Date(dateStr);
+
+                        if (eleDate < today) {
+                            let numberCell = ele.querySelector('.fc-daygrid-day-number'); // 날짜 숫자 부분 선택
+                            if (numberCell) {
+                                numberCell.style.color = '#aaa'; // 글자 색 회색으로 변경
                             }
+                        }
+                    }
+                });
+
+                let disabledDate = reserveDeta[roomData];
+
+                Elyesterday.forEach(function(cell) {
+                    let dateStr = new Date(cell.dataset.date);
+                    let Alldays = dateStr.toLocaleDateString("ko-KR");
+
+                    console.log(Alldays);
+                    console.log(reserveDeta[roomData][0]);
+                    
+                    console.log(disabledDate);
+                    disabledDate.forEach(function(ele, i){
+                        if (Alldays === ele.입실날짜){
+                            let checkInDate = new Date(Date.parse(ele.입실날짜));
+                                checkInDate.setHours(12, 0, 0, 0); // 정오(12:00)로 설정하여 표준시간 오류 방지
+
+                            let checkOutDate = new Date(ele.퇴실날짜);  // 퇴실날짜
+                                checkOutDate.setHours(12, 0, 0, 0); // 정오(12:00)로 설정하여 표준시간 오류 방지
+
+                            // 퇴실날짜 하루 전으로 설정
+                            checkOutDate.setDate(checkOutDate.getDate() - 1);
+                        
+                            // 날짜 범위 색칠
+                            let currentDate = new Date(checkInDate);
                             
-                            // 날짜 1일 추가
-                            currentDate.setDate(currentDate.getDate() + 1);
-                            
+                            //while : 조건이 거짓이 될 때 까지 반복 | if : 조건이 참일 때 한번 실행
+                            while (currentDate <= checkOutDate) {
+                                let dateStr = currentDate.toISOString().split('T')[0];  // 'yyyy-mm-dd' 형식
+                                let dayElement = document.querySelector(`#calender_left .fc-day[data-date="${dateStr}"]`);
+                                
+                                if (dayElement) {
+                                    dayElement.style.backgroundColor = '#ccc';  // 회색 배경색 설정
+                                }
+                                
+                                // 날짜 1일 추가
+                                currentDate.setDate(currentDate.getDate() + 1);
+                            }
                         }
                     });
-
-                    // disabledDate.forEach(function(ele, i){
-                    //     if (date === disabledDate[i].입실날짜) {
-                    //         let b = new Date(disabledDate[i].입실날짜)
-                    //         // b.getDate()+2
-                    //         // console.log(b.getDate()+night);
-                    //         console.log(night);
-                            
-                            
-                    //         cell.style.pointerEvents = 'none'; // 클릭 불가
-                    //       cell.style.backgroundColor = '#ccc'; // 비활성화된 색상
-                    //       cell.style.opacity = '0.5'; // 투명도
-                    //     }
-                    // })
                 });
             },
 
             selectAllow: function(selectInfo) {
-                let dayEl = document.querySelector(`#calender_left .fc-day[data-date="${selectInfo.startStr}"]`); // td 요소 선택
+                today.setHours(0, 0, 0, 0);  // 시간을 자정으로 설정 (오늘 날짜만 비교)
 
+                //오늘 이전 날짜는 선택 불가
+                if (selectInfo.start < today) {
+                    return false;
+                }
+
+                //배경색이 회색이면 선택 불가
+                let dayEl = document.querySelector(`#calender_left .fc-day[data-date="${selectInfo.startStr}"]`); // td 요소 선택
                 if (dayEl) {
                     let bgColor = window.getComputedStyle(dayEl).backgroundColor; // td의 실제 배경색 가져오기
-                    console.log(`날짜: ${selectInfo.startStr}, 배경색: ${bgColor}`); // 디버깅 로그
-
-                    return bgColor !== 'rgb(204, 204, 204)'; // 배경색이 회색이면 false 반환 (선택 불가)
+                    if (bgColor === 'rgb(204, 204, 204)') { // 배경색이 회색이면 선택 불가
+                        return false;
+                    }
                 }
-                return true; // 요소가 없으면 선택 가능
-
-                // console.log(selectInfo);
+                // 위 두 조건을 모두 만족할 경우 선택 가능 - return은 selectAllow 함수에서 날짜를 선택 할지 반환하여 적용됨
+                return true;
 
                 // let disabledDate = reserveDeta[roomData];
                 // let date = selectInfo.start;
@@ -178,7 +202,12 @@ function reserv01(){
                 // else{ return true;}
             }
         });
-    
+
+        const Elgif = document.querySelector('.calender > .img')
+            setTimeout(()=>{
+                Elgif.style.display = 'none';
+            },6500);
+
         // reserv01.html
         // 예약하기 바 룸 선택
         const roombtnEl = document.querySelectorAll('.room_name p, .room_select');
@@ -190,9 +219,7 @@ function reserv01(){
         const closeEl = document.querySelector(".calender_top > .close");
         const closeEl2 = document.querySelector(".user_top > .close");
         
-        
         document.addEventListener('click', function(e){
-
             if (!roombtnEl[0].contains(e.target) && !roomEl.contains(e.target)) {
                 roomEl.classList.remove('active')
             }
@@ -277,22 +304,27 @@ function reserv01(){
         const userbtnEl = document.querySelector('.user_btn');
         const adulttext = document.querySelector('.adult > p');
         const childrentext = document.querySelector('.children > p');
-        const popupuser = document.querySelector('.user');
+        const popupUser = document.querySelector('.user');
         const reserv01 = document.querySelector('.right a')
         
         userbtnEl.onclick=function(e){
             e.preventDefault(); //새로고침 방지
             adulttext.innerHTML = num;
             childrentext.innerHTML = num2;
-            if(popupuser.classList.contains('active')){
-                popupuser.classList.remove('active')
+            if(popupUser.classList.contains('active')){
+                popupUser.classList.remove('active')
             }
         }
         reserv01.onclick=function(e){
-            //1회성 localStorage
-            roomData2 = {호실 : roomData, 입실날짜 : startDate01, 퇴실날짜 : endDate01, 성인 :num, 어린이 : num2}
-            console.log(roomData2);
-            localStorage.setItem('roomData2', JSON.stringify(roomData2));
+            if(!num == 0){
+                //1회성 localStorage
+                roomData2 = {호실 : roomData, 입실날짜 : startDate01, 퇴실날짜 : endDate01, 성인 :num, 어린이 : num2}
+                console.log(roomData2);
+                localStorage.setItem('roomData2', JSON.stringify(roomData2));
+            }else{
+                e.preventDefault();
+                alert('인원 수를 선택해주세요 !');
+            }
         }
 };
 reserv01();
