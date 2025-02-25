@@ -414,10 +414,19 @@
     .calender{
         display: none;
         position: absolute;
-        left: 315px;
+        left: 19.6%;
         bottom: 109px;
         width: 500px;
         z-index: 1;
+        > div{
+            width: 100%;
+            img{
+                position: absolute;
+                top: 42.8%;
+                left: 29.8%;
+                width: 39.9%;
+            }
+        }
         h3::before{
             content: url(../img/reserv/reserv_date_01.svg);
             display: inline-block;
