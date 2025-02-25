@@ -110,7 +110,7 @@ https://chally7.github.io/sangreen/
  * 개발 도구 → Visual Studio Code (VS Code)
  * 웹 브라우저 → Google Chrome (개발자 도구 활용)
 
-### 2. 프론트엔드 (Frontend)
+### 2. 개발 언어 (Development Languages)
  * HTML5 → 웹 페이지의 구조 정의
  * CSS3 / Sass → 스타일링 및 디자인 적용
  * JavaScript (Vanilla JS) → 동적 기능 및 사용자 인터랙션
