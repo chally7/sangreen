@@ -1,6 +1,5 @@
 # 🌱 SANGREEN
 
-
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-663399?style=flat&logo=CSS&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat&logo=Sass&logoColor=white)
@@ -88,6 +87,16 @@
 ┃  ┣ 📂special
 ┃  ┗ 📂tour
 ┣ 📂js
+┣ 📜footer.html
+┣ 📜header.html
+┣ 📜index.html
+┣ 📜intro.html
+┣ 📜reserv01.html
+┣ 📜reserv02.html
+┣ 📜reserv03.html
+┣ 📜room.html
+┣ 📜special.html
+┣ 📜tour.html
 ┗ README.md
 ```
 
@@ -115,39 +124,36 @@
 ### 5. 개발 및 빌드 도구 (Development & Build Tools)
  * 버전 관리 → Git & GitHub
 
-
 ## 💥 트러블 슈팅
 
-### 1. 과거 날짜와 예약이 완료된 날짜 모두 드래그가 가능한 이슈 발생
+### 📌 예약하기.html
+
+ 1. 과거 날짜와 예약이 완료된 날짜 모두 드래그가 가능한 이슈 발생
   
-  * 예약이 완료된 날짜
-      
-      ⇒ **해결방법**: fullcalendar의 datesSet : 모든 데이터의 날짜를 가져와 while문으로 입실 날짜, 퇴실의 전날까지의 날짜를 회색으로 표현
-    
-      ⇒ **해결방법**: fullcalendar의 selectAllow : backgroundColor가 #CCC 일때 클릭 불가
+     * 예약이 완료된 날짜
+       
+       ⇒ **해결방법**: fullcalendar의 datesSet : 모든 데이터의 날짜를 가져와 while문으로 입실 날짜, 퇴실의 전날까지의 날짜를 회색으로 표현<br>
+       ⇒ **해결방법**: fullcalendar의 selectAllow : backgroundColor가 #CCC 일때 클릭 불가
 
-  * 과거 날짜
-      
-      ⇒ **해결방법**: fullcalendar의 selectAllow : if문으로 오늘 날짜보다 적을 때 클릭 불가 
+     * 과거 날짜
+         
+       ⇒ **해결방법**: fullcalendar의 selectAllow : if문으로 오늘 날짜보다 적을 때 클릭 불가 
 
-### 2. newDate()로 변경 시, 표준시간대(UTC) 기준으로 설정되어 한국 날짜와 9시간 차이나는 이슈
+ 2. newDate()로 변경 시, 표준시간대(UTC) 기준으로 설정되어 한국 날짜와 9시간 차이나는 이슈
  
- ⇒ **해결방법**: 현재 브라우저의 로컬 시간대 기준으로 정오(12:00) 시간을 설정해줄 수 있는 setHours(12, 0, 0, 0) 메서드를 사용
+      ⇒ **해결방법**: 현재 브라우저의 로컬 시간대 기준으로 정오(12:00) 시간을 설정해줄 수 있는 setHours(12, 0, 0, 0) 메서드를 사용
 
-### 3. 이름, 전화번호가 동일한 예약정보가 2개 이상일 때, 하나의 예약정보만 보여지는 이슈 발생
-
- * 기존 코드에서는 객체의 index값을 반복하는 filter와 break로 하나의 값만 찾고 반복문에서 탈출
+ 3. 이름, 전화번호가 동일한 예약정보가 2개 이상일 때, 하나의 예약정보만 보여지는 이슈 발생
+ 
+     * 기존 코드에서는 객체의 index값을 반복하는 filter와 break로 하나의 값만 찾고 반복문에서 탈출
     
-    ⇒ **해결방법**: forEach, push를 사용하여 객체의 index값을 반복하여 이름, 전화번호가 동일한 정보를 모두 let a = [] 변수에 담아둠
-
+      ⇒ **해결방법**: forEach, push를 사용하여 객체의 index값을 반복하여 이름, 전화번호가 동일한 정보를 모두 let a = [] 변수에 담아둠<br>
      또한 2개 이상의 예약 정보가 확인 될 때 createElement() 메서드를 사용하여 첫 번째 내역의 태그와 동일하게 태그를 생성
 
-### 4. 예약 정보가 2개 이상 확인 될 때 원하는 예약을 삭제하지 못하는 이슈 발생
+4. 예약 정보가 2개 이상 확인 될 때 원하는 예약을 삭제하지 못하는 이슈 발생
 
- ⇒ **해결방법**: 예약정보 마다 ```<input type="checkbox">```생성
- 
-   checked 된 예약정보에 대해 for~in문, filter을 사용하여 특정 조건(호실, 입실 날짜, 퇴실 날짜가 동일하지 않은 경우)으로 필터링
-   
-   필터링된 데이터를 다시 Local Storage에 저장
+      ⇒ **해결방법**: 예약정보 마다 ```<input type="checkbox">``` 생성<br>
+        checked 된 예약정보에 대해 for~in문, filter을 사용하여 특정 조건 (호실, 입실 날짜, 퇴실 날짜가 동일하지 않은 경우) 으로 필터링<br>
+        필터링된 데이터를 다시 Local Storage에 저장
 
 
