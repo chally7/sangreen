@@ -2216,8 +2216,9 @@ li {
   }
   .reserve_popupbar .reserve_popupbar_flex .left {
     width: 100%;
-    display: block;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     background-color: transparent;
     height: auto;
   }
@@ -2345,6 +2346,15 @@ li {
     top: -56%;
     transform: translate(-50%, -50%);
     width: 100%;
+  }
+  .reserve_popupbar .calender > div {
+    width: 100%;
+  }
+  .reserve_popupbar .calender > div img {
+    position: absolute;
+    top: 70.8%;
+    left: 29.8%;
+    width: 39.9%;
   }
   .reserve_popupbar .calender h3::before {
     content: url(../img/reserv/reserv_date_01.svg);

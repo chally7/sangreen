@@ -537,10 +537,19 @@ footer .footer .footer-rig .footer-icon a img {
 .reserve_popupbar .calender {
   display: none;
   position: absolute;
-  left: 315px;
+  left: 19.6%;
   bottom: 109px;
   width: 500px;
   z-index: 1;
+}
+.reserve_popupbar .calender > div {
+  width: 100%;
+}
+.reserve_popupbar .calender > div img {
+  position: absolute;
+  top: 42.8%;
+  left: 29.8%;
+  width: 39.9%;
 }
 .reserve_popupbar .calender h3::before {
   content: url(../img/reserv/reserv_date_01.svg);

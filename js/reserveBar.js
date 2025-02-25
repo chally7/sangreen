@@ -315,16 +315,62 @@ function reserv01(){
                 popupUser.classList.remove('active')
             }
         }
-        reserv01.onclick=function(e){
-            if(!num == 0){
-                //1회성 localStorage
-                roomData2 = {호실 : roomData, 입실날짜 : startDate01, 퇴실날짜 : endDate01, 성인 :num, 어린이 : num2}
-                console.log(roomData2);
-                localStorage.setItem('roomData2', JSON.stringify(roomData2));
-            }else{
-                e.preventDefault();
-                alert('인원 수를 선택해주세요 !');
+        
+
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const resLeft = document.querySelector('.reserve_popupbar .left');
+            const resRight = document.querySelector('.reserve_popupbar .right');
+            // if (!resLeft || !resRight) return;
+            const originalDisplay = getComputedStyle(resLeft).display; // 원래 display 값 저장
+            let clicked = false; //클릭 상태 저장
+
+            let pathname = window.location.pathname;
+            window.addEventListener("scroll", () => {
+                if(pathname.includes('resev01.html')){
+                    if (window.scrollY !== 0) {
+                        resLeft.style.display = "none";
+                        clicked=false; // 스크롤 시 클릭 횟수 초기화
+                    } else {
+                        clicked=true;
+                        resLeft.style.display = originalDisplay; // 원래 상태로 복원
+                    }
+                    if(mql2.matches){
+                        resLeft.style.display = originalDisplay;
+                    }
+                }
+            });
+
+            
+            resRight.onclick=(e)=>{
+                if(!clicked && !resLeft.style.display == 'flex'){
+                    resLeft.style.display = originalDisplay;
+                
+                    e.preventDefault(); // 첫 클릭에서는 링크 이동 막기
+                }else{
+                    if(!num == 0){
+                        window.location.href="./reserv02.html" // 두 번째 클릭: 페이지 이동
+                        //1회성 localStorage
+                        roomData2 = {호실 : roomData, 입실날짜 : startDate01, 퇴실날짜 : endDate01, 성인 :num, 어린이 : num2}
+                        console.log(roomData2);
+                        localStorage.setItem('roomData2', JSON.stringify(roomData2));
+                    }else{
+                        e.preventDefault();
+                        alert('인원 수를 선택해주세요 !');
+                    }
+                }
+                if(mql2.matches){
+                    resRight.onclick=()=>{
+                        resLeft.style.display = originalDisplay;
+                        resLeft.style.display == 'block'
+                    }
+                }
             }
-        }
+        });
+
+        // reserv01.onclick=function(e){
+        // }
 };
 reserv01();

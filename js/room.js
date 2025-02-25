@@ -264,7 +264,16 @@ document.addEventListener("DOMContentLoaded", () => {
             clicked=true;
             e.preventDefault(); // 첫 클릭에서는 링크 이동 막기
         }else{
-            window.location.href="./reserv02.html" // 두 번째 클릭: 페이지 이동
+            if(!num == 0){
+                //1회성 localStorage
+                roomData2 = {호실 : roomData, 입실날짜 : startDate01, 퇴실날짜 : endDate01, 성인 :num, 어린이 : num2}
+                console.log(roomData2);
+                localStorage.setItem('roomData2', JSON.stringify(roomData2));
+                window.location.href="./reserv02.html" // 두 번째 클릭: 페이지 이동
+            }else{
+                e.preventDefault();
+                alert('인원 수를 선택해주세요 !');
+            }
         }
     }
     if(mql2.matches){
