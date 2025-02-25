@@ -1,15 +1,3 @@
-# 🌱 SANGREEN
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-663399?style=flat&logo=CSS&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat&logo=Sass&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white) <br>
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white)
-![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white)
-![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=flat&logo=Swiper&logoColor=white)
-![JSON](https://img.shields.io/badge/JSON-000000?style=flat&logo=JSON&logoColor=white)
-
-
 ## ✨ 소개
 저희는 사이트 배포 후 관리가 필요한 기존 사이트를 선정하여,<br>
 고객 확보를 위한 트렌디한 디자인과<br>
@@ -36,9 +24,7 @@ https://chally7.github.io/sangreen/
 
 ### 4. 주요 기술 스택
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white) 
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white) 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
+HTML5, Sass, JavaScript
 
 
 ## 📆 기간 및 인원
@@ -106,25 +92,41 @@ https://chally7.github.io/sangreen/
 ## 💻 개발 환경
 
 ### 1. 시스템 환경 (System Environment)
- * OS → Windows
- * 개발 도구 → Visual Studio Code (VS Code)
- * 웹 브라우저 → Google Chrome (개발자 도구 활용)
+
+| Badge | 항목 | 설명 |
+| :---:| :---: | :---: |
+|![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows&logoColor=white)| **OS** | Windows |
+|![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat-square&logo=visual-studio-code&logoColor=white)| **개발 도구** | Visual Studio Code (VS Code) |
+|![GoogleChrome](https://img.shields.io/badge/GoogleChrome-000000?style=flat-square&logo=GoogleChrome&logoColor=white)| **웹 브라우저** | Google Chrome (개발자 도구 활용) |
 
 ### 2. 개발 언어 (Development Languages)
- * HTML5 → 웹 페이지의 구조 정의
- * CSS3 / Sass → 스타일링 및 디자인 적용
- * JavaScript (Vanilla JS) → 동적 기능 및 사용자 인터랙션
+
+| Badge | 언어 | 설명 |
+| :---:| :---: | :---: |
+|![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white)| **HTML5** | 웹 페이지의 **구조 정의** |
+|![CSS](https://img.shields.io/badge/CSS-663399?style=flat-square&logo=CSS&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white)| **CSS3 / Sass** | **스타일링** 및 **디자인 적용** |
+|![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat-square&logo=JavaScript&logoColor=%23F7DF1E)| **JavaScript (Vanilla JS)** | **동적 기능** 및 **사용자 인터랙션 처리** | 
 
 ### 3. 라이브러리 (Libraries & Plugins)
- * FullCalendar → 캘린더 기능 구현
- * Swiper.js → 이미지 슬라이드 및 캐러셀 효과
+
+| Badge | 라이브러리 | 설명 |
+| :---:| :---: | :---: |
+|![FullCalendar](https://img.shields.io/badge/FullCalendar-6332F6?style=flat-square&logo=FullCalendar&logoColor=white)| **FullCalendar** | **캘린더 기능 구현** |
+|![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=flat-square&logo=Swiper&logoColor=white)| **Swiper.js** | **이미지 슬라이드 및 캐러셀 효과** |
 
 ### 4. 데이터 처리 (Data Handling & Storage)
- * LocalStorage → 브라우저 내 데이터 저장 및 관리
- * JSON → API 연동 및 데이터 구조화
+
+| Badge | 기술 | 설명 |
+| :---:| :---: | :---: |
+|![LocalStorage](https://img.shields.io/badge/LocalStorage-000000?style=flat-square&logo=LocalStorage&logoColor=white)| **LocalStorage** | **브라우저 내 데이터 저장 및 관리** |
+|![JSON](https://img.shields.io/badge/JSON-000000?style=flat-square&logo=JSON&logoColor=white)| **JSON** | **API 연동 및 데이터 구조화**  |
 
 ### 5. 개발 및 빌드 도구 (Development & Build Tools)
- * 버전 관리 → Git & GitHub
+
+| Badge | 항목 | 설명 |
+| :---:| :---: | :---: |
+|![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)| **버전 관리** | GitHub |
+|![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=Figma&logoColor=white) | **디자인 & UI/UX** | Figma (화면 설계 및 프로토타이핑) |
 
 ## 💥 트러블 슈팅
 
