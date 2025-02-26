@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약하기</title>
+    <title>Reservation</title>
+
+    <link rel="icon" type="image/png" href="./img/index_favicon_01.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/index_favicon_02.png" sizes="16x16" />
     <link rel="stylesheet" href="./css/reserv.css">
     <script defer src="./js/common.js"></script>
+    <script defer src="./js/reserveBar.js"></script>
     <script defer src="./js/reserv.js"></script>
 </head>
 <body>
@@ -28,9 +32,7 @@
                     <span>n</span>
                 </h2>
                 <b>
-                    <span>산그린 펜션</span>
-                    <span>예약 현황</span>
-                    <span>확인 하기</span>
+                    <span>산그린펜션 예약하기</span>
                 </b>
             </div>
         </div>
@@ -51,14 +53,17 @@
                     <h3>예약자 정보</h3>
                     <form action="#">
                         <ul>
-                            <li class="name content_box_01">
+                            <li class="name content_box_01 box_relative">
                                 <input class="input_icon" type="text" placeholder="이름">
+                                <span class="null">⁕ 필수 정보입니다.</span>
                             </li>
-                            <li class="tel content_box_01">
-                                <input class="input_icon" type="tel" placeholder="전화번호">
+                            <li class="tel content_box_01 box_relative">
+                                <input class="input_icon" type="tel" placeholder=" ' - ' 없이 전화번호를 입력해 주세요." maxlength="11">
+                                <span class="null">⁕ 필수 정보입니다.</span>
                             </li>
-                            <li class="email content_box_01">
+                            <li class="email content_box_01 box_relative">
                                 <input class="input_icon" type="email" placeholder="이메일">
+                                <span class="null">⁕ 필수 정보입니다.</span>
                             </li>
                         </ul>
                     </form>
@@ -128,7 +133,7 @@
                             </div>
                             <div class="reserv_adult">
                                 <b>Adult</b>
-                                <p>2</p>
+                                <p>0</p>
                             </div>
                             <div class="reserv_children">
                                 <b>Children</b>
@@ -158,7 +163,7 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="#">결제하기</a>
+                    <a href="./index.html">예약완료</a>
                 </div>
             </div>
         </div>
