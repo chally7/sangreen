@@ -1163,7 +1163,7 @@ main .tour .tour_slider .tour_con00 .tour-mySwiper .swiper-wrapper .swiper-slide
   .reserve_popupbar .calender {
     display: none;
     position: absolute;
-    left: 315px;
+    left: 26%;
     bottom: 109px;
     width: 500px;
     z-index: 1;
